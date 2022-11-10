@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/authSelectors';
 import HomeIcon from '@mui/icons-material/Home';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
-import s from './Navigation.module.css';
+import s from './HeaderWallet.module.css';
 export const Navigation = () => {
   const token = useSelector(selectToken);
   return (
@@ -11,12 +11,14 @@ export const Navigation = () => {
       <ul className={s.navigation}>
         <li>
           <NavLink to="/" end>
-            <HomeIcon/>
+            <HomeIcon />
           </NavLink>
         </li>
         {token && (
           <li>
-            <NavLink to="/contacts"><PermContactCalendarIcon/></NavLink>
+            <NavLink to="/contacts">
+              <PermContactCalendarIcon />
+            </NavLink>
           </li>
         )}
       </ul>

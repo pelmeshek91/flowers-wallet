@@ -1,10 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { HomePage } from 'pages/HomePage/HomePage';
-import { UsersPage } from 'pages/StatisticsPage/StatisticsPage';
-import { LoginPage } from 'pages/LoginPage/LoginPage';
-import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
+
 import { Layout } from './Layout/Layout';
 import { PrivateRoute } from 'HOCs/PrivateRoute';
 import { PublicRoute } from 'HOCs/PublicRoute';
@@ -26,23 +23,23 @@ export const App = () => {
           <Route path="/" element={<Layout />}>
             <Route
               index
-              element={
-                <PublicRoute>
-                  <HomePage />
-                </PublicRoute>
-              }
+              element={<PublicRoute>{/* <HomePage /> */}</PublicRoute>}
             />
             <Route
               path="contacts"
-              element={<PrivateRoute>{<UsersPage />}</PrivateRoute>}
+              element={<PrivateRoute>{/* {<UsersPage />} */}</PrivateRoute>}
             />
             <Route
               path="register"
-              element={<PublicRoute restricted>{<RegisterPage />}</PublicRoute>}
+              element={
+                <PublicRoute restricted>{/* {<RegisterPage />} */}</PublicRoute>
+              }
             />
             <Route
               path="login"
-              element={<PublicRoute restricted>{<LoginPage />}</PublicRoute>}
+              element={
+                <PublicRoute restricted>{/* {<LoginPage />} */}</PublicRoute>
+              }
             />
           </Route>
         </Routes>

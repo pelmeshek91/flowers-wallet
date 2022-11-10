@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.navigation a {
+  color: #000;
+  text-decoration: none;
+}
+.navigation.active {
+  color: rgb(5, 25, 248);
+}
+
+.navigation svg {
+  width: 35px;
+  height: 35px;
+}

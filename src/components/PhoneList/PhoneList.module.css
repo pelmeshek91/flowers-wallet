@@ -1,0 +1,39 @@
+.phoneList {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.phoneItem {
+  margin-bottom: 10px;
+}
+
+.phoneItem .btnDelete {
+  margin-left: 5px;
+
+  padding-left: 13px;
+  padding-right: 3px;
+  min-width: 0px;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+}
+
+.itemWrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.phoneButtons {
+  display: flex;
+}
+.spanWrap {
+  flex-grow: 2;
+  min-width: 200px;
+}
+
+.updateForm {
+  margin-top: 5px;
+}

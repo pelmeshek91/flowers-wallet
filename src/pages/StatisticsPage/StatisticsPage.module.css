@@ -1,0 +1,8 @@
+.userPage {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  gap: 150px;
+}
+.filtredContacts {
+}

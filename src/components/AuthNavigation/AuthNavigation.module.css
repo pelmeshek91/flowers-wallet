@@ -1,0 +1,18 @@
+.authNavigationItem {
+    padding: 10px;
+    border: 1px solid rgba(25, 118, 210, 0.5);
+    color: #1976d2;
+    cursor: pointer;
+    border-radius: 4px;
+
+
+}
+
+.authNavigationItem a{
+    color: inherit;
+}
+.authNavigationList {
+    display: flex;
+    gap: 10px;
+
+}

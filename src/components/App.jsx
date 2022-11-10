@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from './Layout/Layout';
-import { PrivateRoute } from 'HOCs/PrivateRoute';
+import { ProtectedRoute } from 'HOCs/ProtectedRoute';
 import { PublicRoute } from 'HOCs/PublicRoute';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
 import { selectIsFetchingCurrentUser } from 'redux/auth/authSelectors';
@@ -27,7 +27,9 @@ export const App = () => {
             />
             <Route
               path="contacts"
-              element={<PrivateRoute>{/* {<UsersPage />} */}</PrivateRoute>}
+              element={
+                <ProtectedRoute>{/* {<DashboardPage/>} */}</ProtectedRoute>
+              }
             />
             <Route
               path="register"

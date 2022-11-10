@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { HomePage } from 'pages/HomePage/HomePage';
-import { UsersPage } from 'pages/UserPage/UserPage';
+import { UsersPage } from 'pages/StatisticsPage/StatisticsPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { Layout } from './Layout/Layout';

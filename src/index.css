@@ -21,11 +21,3 @@ ul {
   padding: 0;
   list-style: none;
 }
-a.active {
-  color: #1976d2;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}

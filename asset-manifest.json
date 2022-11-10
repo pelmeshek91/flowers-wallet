@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/flowers-wallet/static/css/main.efcc89f0.css",
-    "main.js": "/flowers-wallet/static/js/main.f46ba878.js",
+    "main.css": "/flowers-wallet/static/css/main.6b141519.css",
+    "main.js": "/flowers-wallet/static/js/main.874bdd38.js",
     "index.html": "/flowers-wallet/index.html",
-    "main.efcc89f0.css.map": "/flowers-wallet/static/css/main.efcc89f0.css.map",
-    "main.f46ba878.js.map": "/flowers-wallet/static/js/main.f46ba878.js.map"
+    "main.6b141519.css.map": "/flowers-wallet/static/css/main.6b141519.css.map",
+    "main.874bdd38.js.map": "/flowers-wallet/static/js/main.874bdd38.js.map"
   },
   "entrypoints": [
-    "static/css/main.efcc89f0.css",
-    "static/js/main.f46ba878.js"
+    "static/css/main.6b141519.css",
+    "static/js/main.874bdd38.js"
   ]
 }

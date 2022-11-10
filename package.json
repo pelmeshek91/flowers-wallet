@@ -1,23 +1,12 @@
 {
-  "name": "parcel-project-template",
-  "version": "2.0.0",
-  "description": "",
-  "homepage": "https://pelmeshek91.github.io/flowers-wallet",
-  "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /flowers-wallet/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
-  },
-  "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
-  },
+  "name": "react-homework-template",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://pelmeshek91.github.io/flowers-wallet/",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.13",
     "@reduxjs/toolkit": "^1.9.0",
@@ -38,13 +27,32 @@
     "redux-persist": "^6.0.0",
     "styled-component": "^2.8.0",
     "web-vitals": "^3.0.4",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "react-scripts": "5.0.1"
   },
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
-    "parcel": "^2.6.0",
-    "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:js": "eslint src/**/*.{js,jsx}"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

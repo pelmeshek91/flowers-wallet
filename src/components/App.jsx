@@ -7,6 +7,8 @@ import { ProtectedRoute } from 'HOCs/ProtectedRoute';
 import { PublicRoute } from 'HOCs/PublicRoute';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
 import { selectIsFetchingCurrentUser } from 'redux/auth/authSelectors';
+import { LoginPage } from 'pages/LoginPage/LoginPage';
+import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -34,13 +36,17 @@ export const App = () => {
             <Route
               path="register"
               element={
-                <PublicRoute restricted>{/* {<RegisterPage />} */}</PublicRoute>
+                <PublicRoute restricted>
+                  <RegisterPage />
+                </PublicRoute>
               }
             />
             <Route
               path="login"
               element={
-                <PublicRoute restricted>{/* {<LoginPage />} */}</PublicRoute>
+                <PublicRoute restricted>
+                  <LoginPage />
+                </PublicRoute>
               }
             />
           </Route>

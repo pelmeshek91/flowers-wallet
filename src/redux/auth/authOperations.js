@@ -13,6 +13,7 @@ const token = {
 export const register = createAsyncThunk(
   'auth/register',
   async (userData, { rejectWithValue }) => {
+    console.log(userData);
     try {
       const { data } = await axios.post(
         'https://wallet.goit.ua/api/auth/sign-up',

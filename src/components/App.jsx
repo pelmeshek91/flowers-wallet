@@ -9,6 +9,7 @@ import { fetchCurrentUser } from 'redux/auth/authOperations';
 import { selectIsFetchingCurrentUser } from 'redux/auth/authSelectors';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
+import { Statistics } from 'components/Statistics/Statistics';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ export const App = () => {
           </Route>
         </Routes>
       )}
+      <Statistics></Statistics>
     </>
   );
 };

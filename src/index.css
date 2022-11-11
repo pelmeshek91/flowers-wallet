@@ -9,14 +9,45 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 20px;
-  background: rgba(177, 134, 134, 0.4);
+  background: #e7eaf2;
   backdrop-filter: blur(25px);
 }
 
-code {
+@font-face {
+  font-family: 'Circe Bold';
+  src: url('./fonts/Circe/Circe-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Circe Regular';
+  src: url('./fonts/Circe/Circe-Regular.ttf') format('truetype');
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: 'Poppins Bold';
+  src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: regular;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 ul {
   margin: 0;

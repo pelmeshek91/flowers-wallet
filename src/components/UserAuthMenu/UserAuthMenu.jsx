@@ -1,23 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'redux/auth/authOperations';
-import { selectEmail } from 'redux/auth/authSelectors';
-import { Button } from '@mui/material';
-import s from './UserAuthMenu.module.css';
+import { selectName } from 'redux/auth/authSelectors';
+import css from './UserAuthMenu.module.css';
 
 export const UserAuthMenu = () => {
   const dispatch = useDispatch();
-  const email = useSelector(selectEmail);
+  const name = useSelector(selectName);
   return (
-    <div className={s.authMenu}>
-      <p>{`Welcome ${email}`}</p>
-      <Button
+    <div className={css.authMenu}>
+      <p>{name}</p>
+      <button
         onClick={() => dispatch(logout())}
-        variant="outlined"
-        width="40"
-        height="20"
-      >
-        Log Out
-      </Button>
+        className={css.logout_btn}
+      ></button>
     </div>
   );
 };

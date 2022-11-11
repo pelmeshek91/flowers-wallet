@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { Layout } from './Layout/Layout';
 import { ProtectedRoute } from 'HOCs/ProtectedRoute';
@@ -9,7 +9,8 @@ import { fetchCurrentUser } from 'redux/auth/authOperations';
 import { selectIsFetchingCurrentUser } from 'redux/auth/authSelectors';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
-import { Statistics } from 'components/Statistics/Statistics';
+import { Statistics } from 'pages/StatisticsPage/StatisticsPage';
+import { HomePage } from 'pages/HomePage/HomePage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -26,12 +27,18 @@ export const App = () => {
           <Route path="/" element={<Layout />}>
             <Route
               index
-              element={<PublicRoute>{/* <HomePage /> */}</PublicRoute>}
+              element={
+                <ProtectedRoute>
+                  <Navigate to="home" />
+                </ProtectedRoute>
+              }
             />
             <Route
-              path="contacts"
+              path="home"
               element={
-                <ProtectedRoute>{/* {<DashboardPage/>} */}</ProtectedRoute>
+                <ProtectedRoute>
+                  <HomePage />
+                </ProtectedRoute>
               }
             />
             <Route

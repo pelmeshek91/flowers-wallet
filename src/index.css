@@ -9,6 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 20px;
+
 }
 
 code {
@@ -16,8 +17,24 @@ code {
     monospace;
 }
 
-ul {
+ul, p, li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.active {
+  color: #000000;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a.inactive {
+  color: #000000;
+  font-weight: 400;
 }

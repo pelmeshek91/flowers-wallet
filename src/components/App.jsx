@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
@@ -11,7 +11,11 @@ import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { Statistics } from 'pages/StatisticsPage/StatisticsPage';
 import { HomePage } from 'pages/HomePage/HomePage';
+
 import { StatisticsPage } from 'pages/StatisticsPage/StatisticsPage';
+
+import Loader from './Loader/Loader';
+
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -68,6 +72,7 @@ export const App = () => {
             />
           </Route>
         </Routes>
+
       )}
       {/* <Statistics></Statistics> */}
     </>

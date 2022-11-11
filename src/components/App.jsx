@@ -60,7 +60,7 @@ export const App = () => {
           </Route>
         </Routes>
       )}
-      <Statistics></Statistics>
+      {/* <Statistics></Statistics> */}
     </>
   );
 };

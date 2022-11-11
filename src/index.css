@@ -54,3 +54,14 @@ ul {
   padding: 0;
   list-style: none;
 }
+a.active {
+  color: #000000;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a.inactive {
+  color: #000000;
+  font-weight: 400;
+}

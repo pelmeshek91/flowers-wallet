@@ -1,0 +1,12 @@
+.navigation {
+ 
+}
+
+.navigation__item:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.navigation__img {
+    box-shadow: (0px 3px 10px rgba(74, 86, 226, 0.5));
+    margin-right: 20px;
+}

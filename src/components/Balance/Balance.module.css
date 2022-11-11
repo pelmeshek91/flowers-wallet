@@ -1,0 +1,32 @@
+.balance {
+  margin-left: 16px;
+  margin-top: 28px;
+
+  width: 395px;
+  height: 80px;
+
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.balance__title {
+  margin-left: 40px;
+  padding-top: 8px;
+
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.3;
+
+  color: #a6a6a6;
+}
+
+.balance__total {
+  margin-left: 40px;
+  margin-bottom: 11px;
+
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.5;
+
+  color: #000000;
+}

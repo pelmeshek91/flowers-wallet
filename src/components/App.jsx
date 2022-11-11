@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
@@ -7,10 +7,12 @@ import { ProtectedRoute } from 'HOCs/ProtectedRoute';
 import { PublicRoute } from 'HOCs/PublicRoute';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
 import { selectIsFetchingCurrentUser } from 'redux/auth/authSelectors';
+import { Loader } from './Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
   const isFetchingCurrentUser = useSelector(selectIsFetchingCurrentUser);
+  const isLoading = useState(false);
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
@@ -46,6 +48,7 @@ export const App = () => {
           </Route>
         </Routes>
       )}
+      {isLoading && <Loader />}
     </>
   );
 };

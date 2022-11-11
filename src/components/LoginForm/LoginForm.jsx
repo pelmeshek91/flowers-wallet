@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
 import { useDispatch } from 'react-redux';
 
 import { login } from '../../redux/auth/authOperations';
-// import { AuthButton } from '../Button/Button';
+import { AuthButton } from '../Button/Button';
 
 import s from './LoginForm.module.css';
 
@@ -56,7 +57,14 @@ export const LoginForm = () => {
               <div>{errors.password}</div>
             ) : null}
 
-            <button type="submit">Submit</button>
+            <AuthButton type={'submit'} className={s.authSubmitButton} />
+
+            <button type="submit" className={s.authSubmitButton}>
+              Log in
+            </button>
+            <Link className={s.navLink} to="/register">
+              <button className={s.authNavButton}>Register</button>
+            </Link>
           </Form>
         )}
       </Formik>

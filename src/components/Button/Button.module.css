@@ -1,0 +1,80 @@
+.buttonAdd {
+  display: block;
+  box-sizing: border-box;
+  width: 288px;
+  height: 40px;
+  margin: 20px auto 0;
+
+  color: #ffffff;
+  background: #4cc6f5;
+  border: 1px solid #c5c5c5;
+  border-radius: 6px;
+
+  order: 1;
+  align-self: stretch;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    background: #29abdd;
+  }
+}
+.buttonDel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  order: 1;
+  align-self: stretch;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.buttonDelSvg {
+  color: #000000;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+}
+
+.buttonLogOut {
+  position: absolute;
+  bottom: 34px;
+  left: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  color: #ffffff;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 137%;
+  background: none;
+  border: none;
+  align-self: stretch;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+}
+
+.buttonLogOutSvg {
+  color: #ffffff;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import { object, string, ref } from 'yup';
 
@@ -7,8 +8,6 @@ import { register } from '../../redux/auth/authOperations';
 // import { AuthButton } from '../Button/Button';
 
 import s from './RegisterForm.module.css';
-
-// export const LoginForm
 
 const SignupSchema = object().shape({
   username: string()
@@ -83,7 +82,12 @@ export const RegisterForm = () => {
               <div>{errors.username}</div>
             ) : null}
 
-            <button type="submit">Submit</button>
+            <button type="submit" className={s.authSubmitButton}>
+              Register
+            </button>
+            <Link className={s.navLink} to="/login">
+              <button className={s.authNavButton}>Log in</button>
+            </Link>
           </Form>
         )}
       </Formik>

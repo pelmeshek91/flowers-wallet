@@ -1,4 +1,4 @@
-/* .modal {
+.modal {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.4);
@@ -10,7 +10,7 @@
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: 0.5s;
+
 }
 .modal.active {
   opacity: 1;
@@ -21,7 +21,9 @@
   border-radius: 20px;
   background-color: #fff;
   transform: scale(0.5);
-  width: 50vw;
+  width: 762px;
+  display: flex;
+    flex-wrap: wrap;
 }
 .modal__content.active {
   transform: scale(1);
@@ -30,7 +32,15 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 140.5%;
-
-  /* display: flex;
-  align-items: center; */
-/* } */ 
+  width: 300px;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+.contained{
+  margin-right: 5px;
+}
+.container__button{
+  display: flex;
+  gap: 15px;
+}

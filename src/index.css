@@ -1,40 +1,45 @@
 @import-normalize;
 /* bring in normalize.css styles */
 
+
+@font-face {
+  font-family: "Circe Bold";
+  src: url("./fonts/Circe/Circe-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Circe Regular";
+  src: url("./fonts/Circe/Circe-Regular.ttf") format("truetype");
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("./fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Poppins Regular";
+  src: url("./fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: regular;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 20px;
-
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
-ul, p, li {
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-a.active {
-  color: #000000;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-a.inactive {
-  color: #000000;
-  font-weight: 400;
 }

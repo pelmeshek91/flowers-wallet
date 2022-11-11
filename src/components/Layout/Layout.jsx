@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/authSelectors';
-// import { Navigation } from 'components/HeaderWallet/HeaderWallet';
+import logoImage from '../../images/logo-icon.svg';
 
 import { UserAuthMenu } from 'components/UserAuthMenu/UserAuthMenu';
 import { Link, Outlet } from 'react-router-dom';
 import css from './Layout.module.css';
+import { Dashboard } from 'components/Dashboard/Dashboard';
 
 export const Layout = () => {
   const token = useSelector(selectToken);
@@ -13,12 +14,13 @@ export const Layout = () => {
       {token && (
         <header className={css.header}>
           <Link href="/" className={css.headerLogo}>
-            <img src="../../images/logo-icon.svg" alt="logo-icon" />
-            <img src="../../images/logo-text.png" alt="logo-text" />
+            <img src={logoImage} alt="logo-icon" />
+            <p className={css.logoText}>Wallet</p>
           </Link>
           <UserAuthMenu />
         </header>
       )}
+      <Dashboard />
       <Outlet />
     </>
   );

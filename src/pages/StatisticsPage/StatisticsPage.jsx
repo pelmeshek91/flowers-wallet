@@ -1,7 +1,7 @@
-import { Box, DigrBox, FilterBox, StatistBox } from './Statistics.styled';
+import { Box, DigrBox, FilterBox, StatistBox } from './StatisticsPage.styled';
 import { Dropdown } from 'components/Dropdown/Dropdown';
 import { Table } from './Table/Table';
-import data from 'components/Statistics/data.json';
+import data from 'pages/StatisticsPage/data.json';
 const { Month, Year, dataTable } = data;
 // import { Doughnut } from 'react-chartjs-2';
 

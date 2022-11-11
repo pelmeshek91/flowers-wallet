@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Currency = () => {
   const [currency, setCurrency] = useState([]);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     const instance = axios.create({
@@ -21,7 +21,8 @@ const Currency = () => {
         const currencyInformation = data.filter(({ ccy }) => ccy !== 'RUR');
         setCurrency(currencyInformation);
       } catch (error) {
-        setError(error.message);
+        console.log(error.message);
+        // setError(error.message);
       }
     }
     fetchApi();
@@ -37,7 +38,7 @@ const Currency = () => {
             <th>Sale</th>
           </tr>
         </thead>
-        <tbody className={css.table__body__item} >
+        <tbody className={css.table__body__item}>
           {currency.length > 0 &&
             currency.map(({ ccy, buy, sale }) => {
               return (

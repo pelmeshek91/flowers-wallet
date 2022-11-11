@@ -11,6 +11,7 @@ import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { Statistics } from 'pages/StatisticsPage/StatisticsPage';
 import { HomePage } from 'pages/HomePage/HomePage';
+import { StatisticsPage } from 'pages/StatisticsPage/StatisticsPage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -38,6 +39,14 @@ export const App = () => {
               element={
                 <ProtectedRoute>
                   <HomePage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="statistics"
+              element={
+                <ProtectedRoute>
+                  <StatisticsPage />
                 </ProtectedRoute>
               }
             />

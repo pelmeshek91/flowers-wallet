@@ -1,61 +1,52 @@
-// import { createSlice } from '@reduxjs/toolkit';
-// import {
-//   fetchContacts,
-//   deleteContact,
-//   addContact,
-//   updateContact,
-// } from './transactionsOperations';
+import { createSlice } from '@reduxjs/toolkit';
+import { addTransaction } from './transactionsOperations';
+import { toast } from 'react-toastify';
 
-// const contactsSlice = createSlice({
-//   name: 'contacts',
-//   initialState: { items: [], isLoading: false, error: null },
-//   extraReducers: {
-//     [fetchContacts.pending]: state => {
-//       state.isLoading = true;
-//       state.error = '';
-//     },
-//     [fetchContacts.fulfilled]: (state, { payload }) => {
-//       state.items = payload;
-//       state.isLoading = false;
-//     },
-//     [fetchContacts.rejected]: (state, { payload }) => {
-//       state.error = payload;
-//       state.isLoading = false;
-//     },
-//     [deleteContact.pending]: state => {
-//       state.isLoading = true;
-//     },
-//     [deleteContact.fulfilled]: (state, { payload }) => {
-//       state.items = state.items.filter(({ id }) => id !== payload);
-//       state.isLoading = false;
-//     },
-//     [deleteContact.rejected]: (state, { payload }) => {
-//       state.error = payload;
-//       state.isLoading = false;
-//     },
-//     [addContact.pending]: state => {
-//       state.isLoading = true;
-//     },
-//     [addContact.fulfilled]: (state, { payload }) => {
-//       state.items = [...state.items, payload];
-//       state.isLoading = false;
-//     },
-//     [addContact.rejected]: (state, { payload }) => {
-//       state.error = payload;
-//       state.isLoading = false;
-//     },
-//     [updateContact.pending]: state => {
-//       state.isLoading = true;
-//     },
-//     [updateContact.fulfilled]: (state, { payload }) => {
-//       const index = state.items.findIndex(contact => contact.id === payload.id);
-//       state.items[index] = payload;
-//       state.isLoading = false;
-//     },
-//     [updateContact.rejected]: (state, { payload }) => {
-//       state.error = payload;
-//       state.isLoading = false;
-//     },
-//   },
-// });
-// export const contactsReducer = contactsSlice.reducer;
+const initialState = {
+  data: null,
+  totalBalance: null,
+  summary: null,
+  error: null,
+  categories: null,
+  isLoading: false,
+  isModalAddTransactionOpen: false,
+};
+
+const financeSlice = createSlice({
+  name: 'finance',
+  initialState,
+  reducers: {
+    toggleModalAddTransaction: state => {
+      state.isModalAddTransactionOpen = !state.isModalAddTransactionOpen;
+    },
+  },
+  extraReducers: {
+    [addTransaction.pending]: state => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [addTransaction.fulfilled]: (state, { payload }) => {
+      state.isLoading = false;
+      if (payload) {
+        toast.success('Add successfull');
+      } else {
+        toast.error('Try later');
+      }
+      state.data = [...state.data, payload];
+      state.totalBalance = payload.balanceAfter;
+    },
+    [addTransaction.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      state.error = payload;
+      console.log('addTransaction', payload);
+      if (payload === 'Request failed with status code 409') {
+        toast.error('Error, try another one');
+      } else {
+        toast.error('Try later');
+      }
+    },
+  },
+});
+
+export const { resetFinance, toggleModalAddTransaction } = financeSlice.actions;
+export const financeReducer = financeSlice.reducer;

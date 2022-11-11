@@ -4,6 +4,19 @@
   align-items: center;
   padding: 15px 20px;
 }
+
 .headerLogo {
   display: flex;
+  gap: 20px;
+
+  color: #000000;
+  text-decoration: none;
+}
+
+.logoText {
+  font-family: 'Poppins Regular';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: calc(45 / 30);
 }

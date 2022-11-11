@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { selectToken } from 'redux/auth/authSelectors';
+// import { selectToken } from 'redux/auth/authSelectors';
 import css from './Navigation.module.css';
 import home from '../../images/baseline-home-24px.png';
 import timeline from '../../images/baseline-timeline-24px.png';

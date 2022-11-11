@@ -5,6 +5,7 @@ import logoImage from '../../images/logo-icon.svg';
 import { UserAuthMenu } from 'components/UserAuthMenu/UserAuthMenu';
 import { Link, Outlet } from 'react-router-dom';
 import css from './Layout.module.css';
+import { Dashboard } from 'components/Dashboard/Dashboard';
 
 export const Layout = () => {
   const token = useSelector(selectToken);
@@ -19,6 +20,7 @@ export const Layout = () => {
           <UserAuthMenu />
         </header>
       )}
+      <Dashboard />
       <Outlet />
     </>
   );

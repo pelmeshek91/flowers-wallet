@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/authSelectors';
 import HomeIcon from '@mui/icons-material/Home';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
-import s from './HeaderWallet.module.css';
+import s from './WalletHeader.module.css';
 export const Navigation = () => {
   const token = useSelector(selectToken);
   return (

@@ -28,15 +28,7 @@
 .modal__content.active {
   transform: scale(1);
 }
-.pretitle {
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 140.5%;
-  width: 300px;
-  margin-right: 20px;
-  margin-top: 30px;
-  margin-bottom: 0px;
-}
+
 .contained{
   margin-right: 5px;
 }

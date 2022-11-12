@@ -2,12 +2,14 @@ import Button from '@mui/material/Button';
 import { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/auth/authOperations';
+import s from '../ModalLogOut/ModalLogOut.module.css';
 import '../ModalLogOut/ModalLogOut.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import modalLogoutImage from '../../images/ModalLogOut/ModalLogOut.jpg';
 import { createPortal } from 'react-dom';
 
 export const ModalLogout = ({ active, setActive }) => {
+  const modalRoot = document.querySelector('#modal-root');
   const dispatch = useDispatch();
   const closeModalByEsc = useCallback(
     e => {
@@ -25,7 +27,7 @@ export const ModalLogout = ({ active, setActive }) => {
       },
     },
   });
-  const modalRoot = document.querySelector('#modal-root');
+
   useEffect(() => {
     window.addEventListener('keydown', closeModalByEsc);
     return () => {
@@ -43,7 +45,7 @@ export const ModalLogout = ({ active, setActive }) => {
           className={active ? 'modal__content active' : 'modal'}
           onClick={e => e.stopPropagation()}
         >
-          <p className="pretitle">
+          <p className={s.pretitle}>
             Are you sure you want to log out of your account?
           </p>
           <div className="modalLogoutImage">

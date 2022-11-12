@@ -13,12 +13,24 @@ export const TransactionTable = () => {
         </thead>
         <tbody>
           <tr>
-            <td data-label="Date">04.01.19</td>
-            <td data-label="Type">+</td>
-            <td data-label="Category">Regular Income</td>
-            <td data-label="Comment">Sallary</td>
-            <td data-label="Sum">10000</td>
-            <td data-label="Balance">10000</td>
+            <td className={css.cell} data-label="Date">
+              04.01.19
+            </td>
+            <td className={css.cell} data-label="Type">
+              +
+            </td>
+            <td className={css.cell} data-label="Category">
+              Regular Income
+            </td>
+            <td className={css.cell} data-label="Comment">
+              Sallary
+            </td>
+            <td className={css.cell} data-label="Sum">
+              10000
+            </td>
+            <td className={css.cell} data-label="Balance">
+              10000
+            </td>
           </tr>
           <tr>
             <td data-label="Date">08.01.19</td>

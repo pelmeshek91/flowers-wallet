@@ -2,12 +2,13 @@ import Button from '@mui/material/Button';
 import { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/auth/authOperations';
-import '../ModalLogOut/ModalLogOut.css';
+import s from '../ModalLogOut/ModalLogOut.module.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import modalLogoutImage from '../../images/ModalLogOut/ModalLogOut.jpg';
 import { createPortal } from 'react-dom';
 
 export const ModalLogout = ({ active, setActive }) => {
+  const modalRoot = document.querySelector('#modal-root');
   const dispatch = useDispatch();
   const closeModalByEsc = useCallback(
     e => {
@@ -25,7 +26,7 @@ export const ModalLogout = ({ active, setActive }) => {
       },
     },
   });
-  const modalRoot = document.querySelector('#modal-root');
+
   useEffect(() => {
     window.addEventListener('keydown', closeModalByEsc);
     return () => {
@@ -36,36 +37,37 @@ export const ModalLogout = ({ active, setActive }) => {
   return createPortal(
     <>
       <div
-        className={active ? 'modal active' : 'modal'}
+        className={active ? `${s.modal} ${s.active}` : `${s.modal}`}
         onClick={() => setActive(false)}
       >
         <div
-          className={active ? 'modal__content active' : 'modal'}
+          className={active ? `${s.modal__content} ${s.active}` : `${s.modal}`}
           onClick={e => e.stopPropagation()}
         >
-          <p className="pretitle">
+          <p className={s.pretitle}>
             Are you sure you want to log out of your account?
+            <div className={s.container__button}>
+              <ThemeProvider theme={theme}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => setActive(false)}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => dispatch(logout())}
+                >
+                  log out
+                </Button>
+              </ThemeProvider>
+            </div>
           </p>
-          <div className="modalLogoutImage">
-            <img src={modalLogoutImage} alt="modalLogoutImage" />
-          </div>
-          <div className="container__button">
-            <ThemeProvider theme={theme}>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => setActive(false)}
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => dispatch(logout())}
-              >
-                log out
-              </Button>
-            </ThemeProvider>
+
+          <div className={s.modalLogoutImage}>
+            <img src={modalLogoutImage} alt="modalLogoutImage" width={300} />
           </div>
         </div>
       </div>

@@ -1,14 +1,14 @@
 import Navigation from 'components/Navigation';
 import Balance from 'components/Balance';
 import Currency from 'components/Currency';
-import { Box } from './Dashboard.styled';
+import s from './Dashboard.module.css';
 
 export const Dashboard = () => {
   return (
-    <Box>
+    <div className={s.box}>
       <Navigation />
       <Balance />
       <Currency />
-    </Box>
+    </div>
   );
 };

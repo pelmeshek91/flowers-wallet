@@ -3,6 +3,7 @@
   max-width: 715px;
   border-collapse: collapse;
   margin: 0 auto;
+  height: min-content;
 }
 
 .table thead {
@@ -10,7 +11,7 @@
   font-size: 18px;
   line-height: 1.5;
   background: #eee3e3;
-  /* color: #000; */
+  color: #000;
 }
 
 .table thead th:first-child {
@@ -22,21 +23,8 @@
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }
-
-.table td {
-  background-color: aqua;
-}
-
-
+.table td,
 .table th {
-  padding: 2px 15px;
-  height: 54px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.cell {
   padding: 2px 15px;
   height: 54px;
   text-align: center;
@@ -70,6 +58,7 @@
   }
 
   .table td::before {
+    content: attr(data-label);
     position: absolute;
     left: 0;
     width: 50%;

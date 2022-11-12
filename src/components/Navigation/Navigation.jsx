@@ -17,8 +17,9 @@ const Navigation = () => {
             <img
               className={css.navigation__img}
               src={home}
-              width="24px"
               alt="Home"
+              width="24px"
+              height='24px'
             />
             Home
           </NavLink>
@@ -32,7 +33,6 @@ const Navigation = () => {
             <img
               className={css.navigation__img}
               src={timeline}
-              width="24px"
               alt="Statistics"
             />
             Statistics

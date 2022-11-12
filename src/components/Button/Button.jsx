@@ -1,28 +1,28 @@
 // import PropTypes from 'prop-types';
 
-import {
-  // HiOutlineTrash,
-  // HiOutlinePencil,
-  // HiOutlineUserAdd,
-  HiOutlineLogout,
-} from 'react-icons/hi';
-import s from './Button.module.css';
+// import {
+//   // HiOutlineTrash,
+//   // HiOutlinePencil,
+//   // HiOutlineUserAdd,
+//   // HiOutlineLogout,
+// } from 'react-icons/hi';
+// import s from './Button.module.css';
 
-export const AuthButton = ({ text, clickHeandler }) => {
+export const AuthButton = ({ type, text, className }) => {
   return (
-    <button className={s.buttonAdd} onClick={clickHeandler}>
+    <button className={className} type={type}>
       {text}
     </button>
   );
 };
 
-export const LogOutButton = ({ text, clickHeandler }) => {
-  return (
-    <button className={s.buttonLogOut} onClick={clickHeandler}>
-      {text} <HiOutlineLogout className={s.buttonLogOutSvg} size={24} />
-    </button>
-  );
-};
+// export const LogOutButton = ({ text, clickHeandler }) => {
+//   return (
+//     <button className={s.buttonLogOut} onClick={clickHeandler}>
+//       {text} <HiOutlineLogout className={s.buttonLogOutSvg} size={24} />
+//     </button>
+//   );
+// };
 
 // export const SaveButton = () => {
 //   return <button className={s.buttonAdd}>Save</button>;

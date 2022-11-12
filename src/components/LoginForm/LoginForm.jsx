@@ -8,6 +8,7 @@ import { login } from '../../redux/auth/authOperations';
 import { AuthButton } from '../Button/Button';
 
 import s from './LoginForm.module.css';
+import sb from '../Button/Button.module.css';
 
 const SignupSchema = object().shape({
   password: string()
@@ -22,8 +23,8 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>SignIn</h1>
+    <div className={s.container}>
+      <h1 className={s.title}>Wallet</h1>
       <Formik
         initialValues={{
           password: '',
@@ -46,24 +47,34 @@ export const LoginForm = () => {
               type="email"
               placeholder="E-mail"
             />
-            {errors.email && touched.email ? <div>{errors.email}</div> : null}
+            <div className={s.error}>
+              {errors.email && touched.email ? <div>{errors.email}</div> : null}
+            </div>
+
             <Field
               className={s.input}
               name="password"
               type="password"
               placeholder="Password"
             />
-            {errors.password && touched.password ? (
-              <div>{errors.password}</div>
-            ) : null}
+            <div className={s.error}>
+              {errors.password && touched.password ? (
+                <div>{errors.password}</div>
+              ) : null}
+            </div>
 
-            <AuthButton type={'submit'} className={s.authSubmitButton} />
+            <AuthButton
+              type={'submit'}
+              text={'Log in'}
+              className={sb.authSubmitButton}
+            />
 
-            <button type="submit" className={s.authSubmitButton}>
-              Log in
-            </button>
             <Link className={s.navLink} to="/register">
-              <button className={s.authNavButton}>Register</button>
+              <AuthButton
+                type={'button'}
+                text={'Register'}
+                className={sb.authLinkButton}
+              />
             </Link>
           </Form>
         )}

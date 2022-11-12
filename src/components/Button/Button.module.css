@@ -1,80 +1,63 @@
-.buttonAdd {
-  display: block;
+.authSubmitButton {
+  /* display: block; */
   box-sizing: border-box;
-  width: 288px;
-  height: 40px;
-  margin: 20px auto 0;
+  width: 280px;
+  height: 50px;
 
-  color: #ffffff;
-  background: #4cc6f5;
-  border: 1px solid #c5c5c5;
-  border-radius: 6px;
+  margin: 0 auto 20px;
 
-  order: 1;
-  align-self: stretch;
-
-  &:focus,
-  &:hover {
-    cursor: pointer;
-    background: #29abdd;
-  }
-}
-.buttonDel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-
-  background: transparent;
+  background: #24cca7;
   border: none;
-  order: 1;
-  align-self: stretch;
+  border-radius: 20px;
 
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.buttonDelSvg {
-  color: #000000;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.5);
-  }
-}
-
-.buttonLogOut {
-  position: absolute;
-  bottom: 34px;
-  left: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 11px;
-  color: #ffffff;
-  font-family: 'Inter';
+  font-family: 'Circe';
   font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 137%;
-  background: none;
-  border: none;
-  align-self: stretch;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.5);
-  }
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(27 / 18);
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
-.buttonLogOutSvg {
-  color: #ffffff;
+.authSubmitButton:focus {
+  cursor: pointer;
+  background: #4a56e2;
+}
+.authSubmitButton:hover {
+  cursor: pointer;
+  background: #4a56e2;
+}
+.authLinkButton {
+  box-sizing: border-box;
+  width: 280px;
+  height: 50px;
 
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.5);
-  }
+  margin: 0 auto 20px;
+
+  background: none;
+  border: 1px solid #4a56e2;
+  border-radius: 20px;
+
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(27 / 18);
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4a56e2;
+}
+
+.authLinkButton:focus {
+  cursor: pointer;
+  background: #4a56e2;
+  color: #ffffff;
+}
+.authLinkButton:hover {
+  cursor: pointer;
+  background: #4a56e2;
+  color: #ffffff;
 }

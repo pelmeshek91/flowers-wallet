@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
@@ -9,7 +9,12 @@ import { fetchCurrentUser } from 'redux/auth/authOperations';
 import { selectIsFetchingCurrentUser } from 'redux/auth/authSelectors';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
+
 import { HomePage } from 'pages/HomePage/HomePage';
+
+import { StatisticsPage } from 'pages/StatisticsPage/StatisticsPage';
+
+import Loader from './Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,42 +27,52 @@ export const App = () => {
   return (
     <>
       {!isFetchingCurrentUser && (
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route
-              index
-              element={
-                <ProtectedRoute>
-                  <Navigate to="home" />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="home"
-              element={
-                <ProtectedRoute>
-                  <HomePage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="register"
-              element={
-                <PublicRoute restricted>
-                  <RegisterPage />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="login"
-              element={
-                <PublicRoute restricted>
-                  <LoginPage />
-                </PublicRoute>
-              }
-            />
-          </Route>
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <Navigate to="home" />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="home"
+                element={
+                  <ProtectedRoute>
+                    <HomePage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="statistics"
+                element={
+                  <ProtectedRoute>
+                    <StatisticsPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="register"
+                element={
+                  <PublicRoute restricted>
+                    <RegisterPage />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="login"
+                element={
+                  <PublicRoute restricted>
+                    <LoginPage />
+                  </PublicRoute>
+                }
+              />
+            </Route>
+          </Routes>
+        </Suspense>
       )}
     </>
   );

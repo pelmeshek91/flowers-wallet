@@ -1,0 +1,33 @@
+{
+  "Month": [
+    { "id": 0, "label": "All" },
+    { "id": 1, "label": "January" },
+    { "id": 2, "label": "February" },
+    { "id": 3, "label": "March" },
+    { "id": 4, "label": "April" },
+    { "id": 5, "label": "May" },
+    { "id": 6, "label": "June" },
+    { "id": 7, "label": "July" },
+    { "id": 8, "label": "August" },
+    { "id": 9, "label": "September" },
+    { "id": 10, "label": "October" },
+    { "id": 11, "label": "November" },
+    { "id": 12, "label": "December" }
+  ],
+  "Year": [
+    { "id": 0, "label": "All" },
+    { "id": 7, "label": "2017" },
+    { "id": 8, "label": "2018" },
+    { "id": 9, "label": "2019" },
+    { "id": 10, "label": "2021" },
+    { "id": 11, "label": "2022" }
+  ],
+  "dataTable": [
+    { "id": 7, "Category": "Basic expenses", "Sum": "8700.00" },
+    { "id": 8, "Category": "Products", "Sum": "3800.74" },
+    { "id": 9, "Category": "Car", "Sum": "1500.00" },
+    { "id": 10, "Category": "Self care", "Sum": "800.00" },
+    { "id": 11, "Category": "Херсон наш", "Sum": "100000.50" },
+    { "id": 12, "Category": "Child care", "Sum": "2208.50" }
+  ]
+}

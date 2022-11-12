@@ -51,6 +51,7 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.error = payload;
     },
+
     [fetchCurrentUser.pending]: state => {
       state.isLoading = true;
       state.isFetchingCurrentUser = true;

@@ -21,6 +21,8 @@
     "react-datetime": "^3.2.0",
     "react-datetime-picker": "^4.1.1",
     "react-dom": "^18.2.0",
+    "react-hook-use-state": "^1.1.0",
+    "react-icons": "^4.6.0",
     "react-loader-spinner": "^5.3.4",
     "react-media": "^1.10.0",
     "react-redux": "^8.0.5",
@@ -28,7 +30,9 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
     "redux-persist": "^6.0.0",
+    "sass": "^1.56.1",
     "styled-component": "^2.8.0",
+    "styled-components": "^5.3.6",
     "web-vitals": "^3.0.4",
     "yup": "^0.32.11"
   },

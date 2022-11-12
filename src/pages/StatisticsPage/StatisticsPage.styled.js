@@ -3,8 +3,33 @@ export const Div = styled.div`
   display: flex;
 `;
 
+export const Diagram = styled.div`
+  & div {
+    position: relative;
+    & p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      margin: 0;
+
+      font-family: 'Circe';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 27px;
+      text-align: center;
+
+      color: #000000;
+    }
+  }
+`;
+
 export const Box = styled.div`
   display: flex;
+  width: 100%;
+  padding-top: 32px;
+  padding-left: 70px;
   gap: 32px;
 
   & h2 {
@@ -27,7 +52,7 @@ export const DigrBox = styled.div`
   background-color: aquamarine;
 `;
 export const StatistBox = styled.div`
-  min-width: 395px;
+  width: 100%;
 `;
 
 export const FilterBox = styled.div`

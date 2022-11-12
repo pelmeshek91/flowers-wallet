@@ -1,11 +1,16 @@
-import { Box, FilterBox, StatistBox, Div } from './StatisticsPage.styled';
+import {
+  Box,
+  FilterBox,
+  StatistBox,
+  Div,
+  Diagram,
+} from './StatisticsPage.styled';
 import { Dropdown } from 'components/Dropdown/Dropdown';
 import { Table } from './Table/Table';
 import data from 'pages/StatisticsPage/data.json';
 import { Dashboard } from 'components/Dashboard/Dashboard';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { useEffect, useState } from 'react';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -28,6 +33,7 @@ export const StatisticsPage = () => {
         label: '# of Votes',
         data: sum,
         backgroundColor: color,
+        borderWidth: 0,
       },
     ],
   };
@@ -36,10 +42,20 @@ export const StatisticsPage = () => {
     <Div>
       <Dashboard />
       <Box>
-        <div>
+        <Diagram>
           <h2>Statistics</h2>
-          <Doughnut innerRadius="20px" outerRadius="20px" data={dataPie} />
-        </div>
+
+          <div>
+            <Doughnut
+              data={dataPie}
+              strokeWidth={20}
+              labels={true}
+              percent={true}
+              style={{ position: ' relative' }}
+            />
+            <p>${sumIncome}</p>
+          </div>
+        </Diagram>
 
         <StatistBox>
           <FilterBox>

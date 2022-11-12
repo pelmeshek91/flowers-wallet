@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  max-width: 395px;
+  width: 100%;
 `;
 
 export const Header = styled.div`

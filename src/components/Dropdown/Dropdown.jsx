@@ -1,53 +1,55 @@
 import { useState } from 'react';
-import { MdArrowBackIosNew } from 'react-icons/md';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import './Dropdown.styled.scss';
 
-export const Dropdown = ({ data, name, toggleSelect }) => {
-  const [isOpen, setOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+export const Dropdown = ({ data, name }) => {
+  const [age, setAge] = useState('');
+  const [open, setOpen] = useState(false);
+
+  const handleChange = event => {
+    setAge(event.target.value);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
   return (
-    <div className="dropdown">
-      <select reuired>
-        <option value="">--選択</option>
-        <option value="dog">犬</option>
-        <option value="cat">猫</option>
-        <option value="rabbit">うさぎ</option>
-        <option value="hedgehog">ハリネズミ</option>
-        <option value="lizard">トカゲ</option>
-        <option value="fish">魚</option>
-      </select>
+    <div>
+      <FormControl sx={{ width: '100%', margin: 0 }}>
+        <InputLabel id="demo-controlled-open-select-label">{name}</InputLabel>
+        <Select
+          style={{
+            borderRadius: '30px',
+            div: {
+              background: 'none',
+              overflow: 'hidden',
+              borderRadius: '20px',
+            },
+          }}
+          labelId="demo-controlled-open-select-label"
+          id="demo-controlled-open-select"
+          open={open}
+          onClose={handleClose}
+          onOpen={handleOpen}
+          value={age}
+          label={name}
+          onChange={handleChange}
+        >
+          {data.map(item => (
+            <MenuItem key={item.id} value={item.id}>
+              {item.label}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     </div>
   );
 };
-
-// <div className="dropdown">
-//   <div className="dropdown-header" onClick={toggleDropdown}>
-//     {selectedItem !== null
-//       ? data.find(item => item.id === selectedItem).label
-//       : name}
-//     <i className={` icon ${isOpen && 'open'}`}>
-//       <MdArrowBackIosNew />
-//     </i>
-//   </div>
-//   <div className={`dropdown-body ${isOpen && 'open'}`}>
-//     {data.map(item => (
-//       <div
-//         key={item.id}
-//         className="dropdown-item"
-//         onClick={() => handleItemClick(item.id)}
-//         id={item.id}
-//       >
-//         {item.label}
-//       </div>
-//     ))}
-//   </div>
-// </div>
-
-// 	const toggleDropdown = () => setOpen(!isOpen);
-
-//   const handleItemClick = id => {
-//     setSelectedItem(id);
-//     selectedItem === id ? setSelectedItem(null) : setSelectedItem(id);
-//     setOpen(!isOpen);
-//   };

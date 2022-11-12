@@ -9,7 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 20px;
-  background: #e7eaf2;
+  background: #ffffff;
   backdrop-filter: blur(25px);
 }
 
@@ -54,14 +54,31 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
 a.active {
-  color: #000000;
+  display: flex;
+  align-items: center;
+
+  font-family: 'Poppins';
+  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.5;
+
+  color: #000000;
 }
 
 a.inactive {
-  color: #000000;
+  display: flex;
+  align-items: center;
+
+  font-family: 'Poppins';
+  font-style: normal;
   font-weight: 400;
+
+  color: #000000;
 }

@@ -41,8 +41,6 @@ export const RegisterForm = () => {
         }}
         validationSchema={SignupSchema}
         onSubmit={({ email, password, username }, { resetForm }) => {
-          // same shape as initial values
-          console.log({ email, password, username });
           dispatch(register({ username, email, password }));
           resetForm();
         }}

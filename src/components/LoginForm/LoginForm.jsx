@@ -33,7 +33,6 @@ export const LoginForm = () => {
         }}
         validationSchema={SignupSchema}
         onSubmit={({ email, password }, { resetForm }) => {
-          console.log({ email, password });
           dispatch(login({ email, password }));
           resetForm();
         }}

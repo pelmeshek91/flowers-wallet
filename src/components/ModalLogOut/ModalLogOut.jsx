@@ -5,6 +5,7 @@ import { logout } from '../../redux/auth/authOperations';
 import '../ModalLogOut/ModalLogOut.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import modalLogoutImage from '../../images/ModalLogOut/ModalLogOut.jpg';
+import { createPortal } from 'react-dom';
 
 export const ModalLogout = ({ active, setActive }) => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export const ModalLogout = ({ active, setActive }) => {
       },
     },
   });
+  const modalRoot = document.querySelector('#modal-root');
   useEffect(() => {
     window.addEventListener('keydown', closeModalByEsc);
     return () => {
@@ -31,7 +33,7 @@ export const ModalLogout = ({ active, setActive }) => {
     };
   }, [closeModalByEsc]);
 
-  return (
+  return createPortal(
     <>
       <div
         className={active ? 'modal active' : 'modal'}
@@ -67,6 +69,7 @@ export const ModalLogout = ({ active, setActive }) => {
           </div>
         </div>
       </div>
-    </>
+    </>,
+    modalRoot
   );
 };

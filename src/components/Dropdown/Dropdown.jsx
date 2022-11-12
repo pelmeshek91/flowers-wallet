@@ -1,41 +1,55 @@
 import { useState } from 'react';
-import { MdArrowBackIosNew } from 'react-icons/md';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import './Dropdown.styled.scss';
 
 export const Dropdown = ({ data, name }) => {
-  const [isOpen, setOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [age, setAge] = useState('');
+  const [open, setOpen] = useState(false);
 
-  const toggleDropdown = () => setOpen(!isOpen);
+  const handleChange = event => {
+    setAge(event.target.value);
+  };
 
-  const handleItemClick = id => {
-    setSelectedItem(id);
-    selectedItem === id ? setSelectedItem(null) : setSelectedItem(id);
-    setOpen(!isOpen);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
   };
 
   return (
-    <div className="dropdown">
-      <div className="dropdown-header" onClick={toggleDropdown}>
-        {selectedItem !== null
-          ? data.find(item => item.id === selectedItem).label
-          : name}
-        <i className={` icon ${isOpen && 'open'}`}>
-          <MdArrowBackIosNew />
-        </i>
-      </div>
-      <div className={`dropdown-body ${isOpen && 'open'}`}>
-        {data.map(item => (
-          <div
-            key={item.id}
-            className="dropdown-item"
-            onClick={() => handleItemClick(item.id)}
-            id={item.id}
-          >
-            {item.label}
-          </div>
-        ))}
-      </div>
+    <div>
+      <FormControl sx={{ width: '100%', margin: 0 }}>
+        <InputLabel id="demo-controlled-open-select-label">{name}</InputLabel>
+        <Select
+          style={{
+            borderRadius: '30px',
+            div: {
+              background: 'none',
+              overflow: 'hidden',
+              borderRadius: '20px',
+            },
+          }}
+          labelId="demo-controlled-open-select-label"
+          id="demo-controlled-open-select"
+          open={open}
+          onClose={handleClose}
+          onOpen={handleOpen}
+          value={age}
+          label={name}
+          onChange={handleChange}
+        >
+          {data.map(item => (
+            <MenuItem key={item.id} value={item.id}>
+              {item.label}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     </div>
   );
 };

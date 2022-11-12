@@ -1,6 +1,7 @@
 import axios from 'axios';
 import css from './Currency.module.css';
 import { useState, useEffect } from 'react';
+import decoration from "../../images/decoration-line.svg";
 
 const Currency = () => {
   const [currency, setCurrency] = useState([]);
@@ -21,7 +22,6 @@ const Currency = () => {
         const currencyInformation = data.filter(({ ccy }) => ccy !== 'RUR');
         setCurrency(currencyInformation);
       } catch (error) {
-        console.log(error.message);
         // setError(error.message);
       }
     }
@@ -29,7 +29,7 @@ const Currency = () => {
   }, []);
 
   return (
-    <>
+    <div className={css.div}>
       <table className={css.table}>
         <thead className={css.table__header}>
           <tr className={css.table__header__item}>
@@ -38,7 +38,7 @@ const Currency = () => {
             <th>Sale</th>
           </tr>
         </thead>
-        <tbody className={css.table__body__item}>
+        <tbody className={css.table__body}>
           {currency.length > 0 &&
             currency.map(({ ccy, buy, sale }) => {
               return (
@@ -50,8 +50,9 @@ const Currency = () => {
               );
             })}
         </tbody>
+        <img className={css.table__image} src={decoration} alt="decoration line" />
       </table>
-    </>
+    </div>
   );
 };
 

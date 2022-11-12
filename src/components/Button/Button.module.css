@@ -1,0 +1,63 @@
+.authSubmitButton {
+  /* display: block; */
+  box-sizing: border-box;
+  width: 280px;
+  height: 50px;
+
+  margin: 0 auto 20px;
+
+  background: #24cca7;
+  border: none;
+  border-radius: 20px;
+
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(27 / 18);
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.authSubmitButton:focus {
+  cursor: pointer;
+  background: #4a56e2;
+}
+.authSubmitButton:hover {
+  cursor: pointer;
+  background: #4a56e2;
+}
+.authLinkButton {
+  box-sizing: border-box;
+  width: 280px;
+  height: 50px;
+
+  margin: 0 auto 20px;
+
+  background: none;
+  border: 1px solid #4a56e2;
+  border-radius: 20px;
+
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(27 / 18);
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4a56e2;
+}
+
+.authLinkButton:focus {
+  cursor: pointer;
+  background: #4a56e2;
+  color: #ffffff;
+}
+.authLinkButton:hover {
+  cursor: pointer;
+  background: #4a56e2;
+  color: #ffffff;
+}

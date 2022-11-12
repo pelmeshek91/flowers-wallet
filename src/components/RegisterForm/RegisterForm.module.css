@@ -1,30 +1,22 @@
-.form {
-  display: block;
-  width: 334px;
-  height: 100%;
-  margin: auto;
-  padding-bottom: 20px;
+.container {
+  padding: 107px 20px;
+  margin-left: auto;
+  margin-right: auto;
 
-  font-family: 'Roboto';
-  background: #ecf0efdb;
-  box-shadow: 0px 1px 4px rgba(126, 147, 255, 0.2);
-  border-radius: 6px;
+  width: 100%;
 }
 
-.label {
+.title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+
+.form {
   display: block;
-  width: 288px;
-  margin: 0 auto;
-  padding: 20px 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 14px;
-
-  color: #575b5f;
-
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  width: 280px;
+  height: 100%;
+  margin: auto;
 }
 
 .input {
@@ -32,18 +24,39 @@
   box-sizing: border-box;
   width: 288px;
   height: 40px;
-  margin-top: 20px;
+  padding-left: 55px;
 
-  background: #f4f4f4;
-  border: 1px solid #c5c5c5;
-  border-radius: 6px;
-
+  outline: transparent;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
   order: 1;
   align-self: stretch;
 
-  &:focus,
-  &:hover {
-    cursor: pointer;
-    outline: 1px solid #4cc6f5;
-  }
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: #bdbdbd;
+}
+
+.input:focus {
+  cursor: pointer;
+  color: #24cca7;
+  border-bottom: 1px solid #24cca7;
+}
+.input:hover {
+  cursor: pointer;
+  color: #24cca7;
+  border-bottom: 1px solid #24cca7;
+}
+
+.error {
+  display: block;
+  width: auto;
+  min-height: 34px;
+  padding-top: 6px;
+  text-align: center;
+  color: red;
 }

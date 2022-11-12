@@ -1,21 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import Navigation from 'components/Navigation/index';
+import Balance from 'components/Balance';
+import Currency from 'components/Currency';
+import { Box } from './Dashboard.styled';
 
 export const Dashboard = () => {
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/" end>
-              Home
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/statistics">Statistics</NavLink>
-          </li>
-        </ul>
-      </nav>
-    </>
+    <Box>
+      <Navigation />
+      <Balance />
+      <Currency />
+    </Box>
   );
 };

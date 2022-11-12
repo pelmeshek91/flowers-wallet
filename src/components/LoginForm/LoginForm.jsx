@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
 import { useDispatch } from 'react-redux';
 
 import { login } from '../../redux/auth/authOperations';
-// import { AuthButton } from '../Button/Button';
+import { AuthButton } from '../Button/Button';
 
 import s from './LoginForm.module.css';
+import sb from '../Button/Button.module.css';
 
 const SignupSchema = object().shape({
   password: string()
@@ -21,8 +23,8 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>SignIn</h1>
+    <div className={s.container}>
+      <h1 className={s.title}>Wallet</h1>
       <Formik
         initialValues={{
           password: '',
@@ -31,8 +33,6 @@ export const LoginForm = () => {
         }}
         validationSchema={SignupSchema}
         onSubmit={({ email, password }, { resetForm }) => {
-          // same shape as initial values
-          console.log({ email, password });
           dispatch(login({ email, password }));
           resetForm();
         }}
@@ -45,18 +45,35 @@ export const LoginForm = () => {
               type="email"
               placeholder="E-mail"
             />
-            {errors.email && touched.email ? <div>{errors.email}</div> : null}
+            <div className={s.error}>
+              {errors.email && touched.email ? <div>{errors.email}</div> : null}
+            </div>
+
             <Field
               className={s.input}
               name="password"
               type="password"
               placeholder="Password"
             />
-            {errors.password && touched.password ? (
-              <div>{errors.password}</div>
-            ) : null}
+            <div className={s.error}>
+              {errors.password && touched.password ? (
+                <div>{errors.password}</div>
+              ) : null}
+            </div>
 
-            <button type="submit">Submit</button>
+            <AuthButton
+              type={'submit'}
+              text={'Log in'}
+              className={sb.authSubmitButton}
+            />
+
+            <Link className={s.navLink} to="/register">
+              <AuthButton
+                type={'button'}
+                text={'Register'}
+                className={sb.authLinkButton}
+              />
+            </Link>
           </Form>
         )}
       </Formik>

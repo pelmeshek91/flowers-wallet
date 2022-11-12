@@ -1,5 +1,5 @@
 .overlay {
-  align-items: start;
+  align-items: flex-start;
   margin-top: 60px;
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;

@@ -19,11 +19,14 @@ export const HomePage = () => {
   }, [dispatch, categories]);
 
   return (
-    <Box>
-      <Dashboard />
-      <TransactionTable />
-      <Outlet />
-      {showModal && <ModalAddTransaction />}
-    </Box>
+    <>
+      <Box>
+        <Dashboard />
+        <TransactionTable />
+        <Outlet />
+        {showModal && <ModalAddTransaction />}
+      </Box>
+      <ButtonAddTransactions />
+    </>
   );
 };

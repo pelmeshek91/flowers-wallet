@@ -26,7 +26,6 @@ const SignupSchema = object().shape({
 });
 
 export const RegisterForm = () => {
-  console.log('q');
   const dispatch = useDispatch();
 
   return (

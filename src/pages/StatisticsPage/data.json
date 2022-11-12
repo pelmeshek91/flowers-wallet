@@ -27,7 +27,9 @@
     { "id": 8, "Category": "Products", "Sum": "3800.74" },
     { "id": 9, "Category": "Car", "Sum": "1500.00" },
     { "id": 10, "Category": "Self care", "Sum": "800.00" },
-    { "id": 11, "Category": "Херсон наш", "Sum": "100000.50" },
-    { "id": 12, "Category": "Child care", "Sum": "2208.50" }
+    { "id": 11, "Category": "Херсон наш", "Sum": "5000.50" },
+    { "id": 12, "Category": "Child care", "Sum": "2208.50" },
+    { "id": 13, "Category": "Child care", "Sum": "2208.50" },
+    { "id": 14, "Category": "Child care", "Sum": "308.50" }
   ]
 }

@@ -8,7 +8,7 @@ export const Box = styled.div`
   gap: 32px;
 
   & h2 {
-    font-family: 'Poppins';
+    font-family: 'Poppins Regular';
     font-style: normal;
     font-weight: 400;
     font-size: 30px;

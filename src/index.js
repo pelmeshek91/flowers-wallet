@@ -23,4 +23,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 );
 
-//  basename = '/flowers-wallet/';
+//  basename = '/flowers-wallet/'

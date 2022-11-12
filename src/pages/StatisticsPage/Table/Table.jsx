@@ -1,25 +1,40 @@
 import {
   List,
   Header,
-  Item,
   Decription,
   Total,
   Expenses,
   Income,
+  Item,
 } from './Table.styled';
+import { setBg } from 'components/RandomHexColor/RandomHexColor';
 
-export const Table = ({ dataTable }) => {
+export const Table = ({ dataTable, toGetData, sumIncome }) => {
   let sum = 0;
-
   return (
     <List>
       <Header>
         <div>Category</div> <div>Sum</div>
       </Header>
       {dataTable.map(({ id, Category, Sum }) => {
-        sum += Number(Sum);
+        const total = Number(Sum);
+        let setBgColor = setBg();
+        sum += total;
+        toGetData(total, setBgColor, dataTable.length);
         return (
-          <Item key={id}>
+          <Item key={id} style={{}}>
+            <div
+              style={{
+                position: 'absolute',
+                width: '24px',
+                height: '24px',
+                left: '28px',
+                top: '50%',
+                transform: `translateY(-50%)`,
+                backgroundColor: `${setBgColor}`,
+                borderRadius: `2px`,
+              }}
+            ></div>
             <Decription>
               <p>{Category}</p>
               <p>{Sum}</p>
@@ -35,7 +50,7 @@ export const Table = ({ dataTable }) => {
       </Total>
       <Total>
         <Income>
-          Income: <span>22549.24</span>
+          Income: <span>{sumIncome}</span>
         </Income>
       </Total>
     </List>

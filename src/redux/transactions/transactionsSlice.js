@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addTransaction } from './transactionsOperations';
+import { addTransaction, getCategories } from './transactionsOperations';
 import { toast } from 'react-toastify';
+import { colors } from '../../services/const';
 
 const initialState = {
   data: null,
@@ -21,6 +22,26 @@ const financeSlice = createSlice({
     },
   },
   extraReducers: {
+    [getCategories.pending]: state => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [getCategories.fulfilled]: (state, { payload }) => {
+      state.isLoading = false;
+      state.categories = payload.map((obj, i) => {
+        return obj.type === 'EXPENSE'
+          ? { ...obj, backgroundColor: colors[i] }
+          : obj;
+      });
+    },
+    [getCategories.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      console.log('getCategories', payload);
+      state.error = payload;
+      if (payload) {
+        toast.error('Fatal error');
+      }
+    },
     [addTransaction.pending]: state => {
       state.isLoading = true;
       state.error = null;

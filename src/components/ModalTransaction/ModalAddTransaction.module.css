@@ -1,0 +1,292 @@
+:root {
+  --main-bg-color: #24cca7;
+  --expense-color: #ff6596;
+  --income-color: #24cca7;
+  --main-text-color: #000000;
+  --secondary-text-color: #bdbdbd;
+  --accent-active-color: #4a56e2;
+  --main-bg-cl: #ffffff;
+}
+
+.transaction {
+  padding: 20px 0px;
+  position: relative;
+}
+.buttonClose {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.form__title {
+  font-size: 24px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.checkbox {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkboxLabel {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+}
+.checkboxLabel input[type='checkbox'] {
+  display: none;
+}
+
+.checkboxLabel .checkboxSwitch {
+  position: absolute;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background-color 250ms ease;
+}
+
+.checkboxLabel .checkboxSwitch::before {
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  background-position: center;
+  left: -5px;
+  top: -3px;
+  width: 44px;
+  height: 44px;
+  background-color: var(--expense-color);
+  border-radius: 50%;
+  box-shadow: 0px 6px 15px rgba(255, 101, 150, 0.5);
+  transition: transform 250ms ease;
+  transform: translateX(40px);
+}
+
+.checkboxLabel input[type='checkbox']:checked + .checkboxSwitch::before {
+  content: '';
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--income-color);
+  box-shadow: 0px 6px 15px rgba(36, 204, 167, 0.5);
+  transform: translateX(0);
+}
+
+.checkboxIncome {
+  margin-right: 20px;
+}
+
+.checkboxExpense {
+  margin-left: 20px;
+}
+
+.checkboxIncome,
+.checkboxExpense {
+  font-family: 'Circe', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--secondary-text-color);
+  transition: all 250ms ease;
+}
+
+.checkboxChecked.checkboxIncome {
+  color: var(--income-color);
+}
+.checkboxChecked.checkboxExpense {
+  color: var(--expense-color);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.money {
+  width: 280px;
+  height: 32px;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  text-align: left;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 40px;
+}
+.money::placeholder {
+  font-family: 'Circe', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  color: var(--secondary-text-color);
+}
+
+.moneyWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.moneyError {
+  color: var(--expense-color);
+  position: absolute;
+  top: 35px;
+}
+
+.date input {
+  font-family: 'Circe';
+  width: 280px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000000;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dateWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dateIcon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  right: 10px;
+  color: var(--accent-active-color);
+  pointer-events: none;
+}
+
+.comment {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  min-width: 280px;
+  height: 32px;
+  color: var(--main-text-color);
+  font-family: 'Circe', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+
+  outline: none;
+  resize: none;
+  overflow: hidden;
+}
+.comment::placeholder {
+  color: var(--secondary-text-color);
+}
+
+.commentWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  justify-content: center;
+}
+
+.commentError {
+  color: var(--expense-color);
+  position: absolute;
+  bottom: 180px;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btnSubmit {
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  height: 50px;
+  width: 300px;
+  border-radius: 20px;
+  color: var(--main-bg-cl);
+  background-color: var(--income-color);
+  transition: all 250ms ease;
+}
+.btnSubmit:hover,
+.btnSubmit:focus {
+  background-color: var(--main-bg-color);
+}
+.btnSubmit:first-child {
+  margin-bottom: 20px;
+}
+
+.btnCancel {
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  height: 50px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: var(--main-bg-cl);
+  border: 1px solid #000000;
+  color: var(--accent-active-color);
+  transition: all 250ms ease;
+}
+.btnCancel:hover,
+.btnCancel:focus {
+  background-color: var(--main-bg-color);
+  color: var(--main-bg-cl);
+  border: 1px solid transparent;
+}
+.btnCancel:first-child {
+  margin-bottom: 20px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+.category {
+  display: flex;
+  justify-content: center;
+}
+
+.categoryError {
+  top: 206px;
+  position: absolute;
+  color: var(--expense-color);
+}

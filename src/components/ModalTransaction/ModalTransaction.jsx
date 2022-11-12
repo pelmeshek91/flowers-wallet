@@ -5,15 +5,15 @@ import { IconContext } from 'react-icons';
 import { GrClose } from 'react-icons/gr';
 import { MdDateRange } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleModalAddTransaction } from 'redux/global/global-slice';
-import financeSelectors from 'redux/finance/finance-selectors';
-import { addTransaction } from '../../redux/finance/finance-operation';
-import Modal from 'components/Modal/Modal';
+import { toggleModalAddTransaction } from '../../redux/transactions/transactionsSlice';
+import financeSelectors from '../../redux/transactions/transactionsSelector';
+import { addTransaction } from '../../redux/transactions/transactionsOperations';
+import Modal from '../Modal/Modal';
 import ModalSelect from '../ModalSelect/ModalSelect';
 import { validationSchema } from './validationAddTransaction';
 import moment from 'moment';
 import 'react-datetime/css/react-datetime.css';
-import s from './ModalAddTransaction.module.scss';
+import s from './ModalAddTransaction.module.css';
 import { toast } from 'react-toastify';
 
 const handleAmount = value => {
@@ -38,7 +38,7 @@ const valid = function (current) {
 };
 const ModalAddTransaction = () => {
   const dispatch = useDispatch();
-  const categories = useSelector(financeSelectors.getCategories);
+  const categories = useSelector(financeSelectors.selectCategories);
   const [chooseType, setChooseType] = useState(false);
   const [type, setType] = useState('EXPENSE');
   const startDate = new Date();

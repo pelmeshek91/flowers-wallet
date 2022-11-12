@@ -1,13 +1,25 @@
-// import { createSelector } from '@reduxjs/toolkit';
-// /* export const selectedFilter = state => state.filter.filter;
-// export const selectContacts = state => state.contacts.items; */
-// export const selectIsLoading = state => state.contacts.isLoading;
-// export const selectError = state => state.contacts.error;
+import normalizeAmount from 'services/normalizeAmount';
 
-// // export const selectRenderContacts = createSelector(
-// //   [selectContacts, selectedFilter],
-// //   (contacts, filter) =>
-// //     contacts.filter(({ name }) => 
-// //       name.toLowerCase().includes(filter.toLowerCase())
-// //     )
-// // );
+const selectTotalBalance = state => state.finance.totalBalance;
+const selectTransactionsData = state => state.finance.data;
+const selectCategories = state => state.finance.categories;
+const selectSummary = state => state.finance.summary;
+const selectError = state => state.finance.error;
+const selectLoading = state => state.finance.loading;
+const selectIsModalAddTransaction = state =>
+  state.finance.isModalAddTransactionOpen;
+
+const selectBalance = state => normalizeAmount(selectTotalBalance(state));
+
+const financeSelectors = {
+  selectTotalBalance,
+  selectIsModalAddTransaction,
+  selectBalance,
+  selectTransactionsData,
+  selectCategories,
+  selectSummary,
+  selectError,
+  selectLoading,
+};
+
+export default financeSelectors;

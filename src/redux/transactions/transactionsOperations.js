@@ -1,51 +1,36 @@
-// import axios from 'axios';
-// import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-// // axios.defaults.baseURL = "https://connections-api.herokuapp.com";
+export const addTransaction = createAsyncThunk(
+  'add',
+  async (transaction, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(
+        'https://wallet.goit.ua/api/transactions',
+        transaction
+      );
+      console.log(data);
+      const fixedData = {
+        ...data,
+        balanceAfter: Number(data.balanceAfter.toFixed(2)),
+      };
+      return fixedData;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-// export const fetchContacts = createAsyncThunk(
-//   'contacts/fetchAll',
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const { data } = await axios('/contacts');
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error);
-//     }
-//   }
-// );
-// export const deleteContact = createAsyncThunk(
-//   'contacts/deleteContacts',
-//   async (contactId, { rejectWithValue }) => {
-//     try {
-//       await axios.delete(`/contacts/${contactId}`);
-//       return contactId;
-//     } catch (error) {
-//       return rejectWithValue(error);
-//     }
-//   }
-// );
-// export const addContact = createAsyncThunk(
-//   'contacts/addContacts',
-//   async (contact, { rejectWithValue }) => {
-//     try {
-//       const { data } = await axios.post('/contacts', contact);
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error);
-//     }
-//   }
-// );
-
-// export const updateContact = createAsyncThunk(
-//   'contacts/updateContact',
-//   async ({ id, ...contact }, { rejectWithValue }) => {
-//     try {
-//       const newContact = await axios.patch(`/contacts/${id}`, contact);
-//       console.log(newContact);
-//       return newContact.data;
-//     } catch (error) {
-//       return rejectWithValue(error);
-//     }
-//   }
-// );
+export const getCategories = createAsyncThunk(
+  'getCategories',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        'https://wallet.goit.ua/api/transaction-categories'
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

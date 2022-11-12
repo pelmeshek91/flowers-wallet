@@ -2,10 +2,7 @@ import normalizeAmount from 'services/normalizeAmount';
 
 const selectTotalBalance = state => state.finance.totalBalance;
 const selectTransactionsData = state => state.finance.data;
-const selectCategories = state => {
-  console.log(state);
-  return state.finance.categories;
-};
+const selectCategories = state => state.finance.categories;
 const selectSummary = state => state.finance.summary;
 const selectError = state => state.finance.error;
 const selectLoading = state => state.finance.loading;

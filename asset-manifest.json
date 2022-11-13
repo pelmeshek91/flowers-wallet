@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/flowers-wallet/static/css/main.9f220ff8.css",
-    "main.js": "/flowers-wallet/static/js/main.798ce079.js",
+    "main.css": "/flowers-wallet/static/css/main.36903c46.css",
+    "main.js": "/flowers-wallet/static/js/main.6e10927e.js",
     "static/media/Circe-Regular.ttf": "/flowers-wallet/static/media/Circe-Regular.4f184170d7403c914388.ttf",
     "static/media/Circe-Bold.ttf": "/flowers-wallet/static/media/Circe-Bold.78ec3e6d306010466f80.ttf",
     "static/media/Poppins-Regular.ttf": "/flowers-wallet/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -10,14 +10,15 @@
     "static/media/logo-icon.svg": "/flowers-wallet/static/media/logo-icon.82ae2436f4ce8306bb929c5418bad3e5.svg",
     "static/media/decoration-line.svg": "/flowers-wallet/static/media/decoration-line.a369be88a9437c5cea33fc1f34866161.svg",
     "index.html": "/flowers-wallet/index.html",
+    "static/media/logout-icon.svg": "/flowers-wallet/static/media/logout-icon.33c354f5f8c2e090bb700b18a4c402c6.svg",
     "static/media/password-icon.svg": "/flowers-wallet/static/media/password-icon.8eaaa6fe30d4fe41fcc4d961656d7115.svg",
     "static/media/name-icon.svg": "/flowers-wallet/static/media/name-icon.11edd4b5d444e5868e2fd5dd3defd0a9.svg",
     "static/media/mail-icon.svg": "/flowers-wallet/static/media/mail-icon.5a58fa9a7b1c77f266dc65e36b85b886.svg",
-    "main.9f220ff8.css.map": "/flowers-wallet/static/css/main.9f220ff8.css.map",
-    "main.798ce079.js.map": "/flowers-wallet/static/js/main.798ce079.js.map"
+    "main.36903c46.css.map": "/flowers-wallet/static/css/main.36903c46.css.map",
+    "main.6e10927e.js.map": "/flowers-wallet/static/js/main.6e10927e.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f220ff8.css",
-    "static/js/main.798ce079.js"
+    "static/css/main.36903c46.css",
+    "static/js/main.6e10927e.js"
   ]
 }

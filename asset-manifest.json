@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/flowers-wallet/static/css/main.d0657be5.css",
-    "main.js": "/flowers-wallet/static/js/main.83fae62d.js",
+    "main.css": "/flowers-wallet/static/css/main.9f220ff8.css",
+    "main.js": "/flowers-wallet/static/js/main.798ce079.js",
     "static/media/Circe-Regular.ttf": "/flowers-wallet/static/media/Circe-Regular.4f184170d7403c914388.ttf",
     "static/media/Circe-Bold.ttf": "/flowers-wallet/static/media/Circe-Bold.78ec3e6d306010466f80.ttf",
     "static/media/Poppins-Regular.ttf": "/flowers-wallet/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Bold.ttf": "/flowers-wallet/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "static/media/ModalLogOut.jpg": "/flowers-wallet/static/media/ModalLogOut.0e2e0f6ff8b1b99e4863.jpg",
-    "static/media/logo-icon.svg": "/flowers-wallet/static/media/logo-icon.6ab02c7b4b8e88e1ad5e21ad2c5b917b.svg",
+    "static/media/logo-icon.svg": "/flowers-wallet/static/media/logo-icon.82ae2436f4ce8306bb929c5418bad3e5.svg",
     "static/media/decoration-line.svg": "/flowers-wallet/static/media/decoration-line.a369be88a9437c5cea33fc1f34866161.svg",
     "index.html": "/flowers-wallet/index.html",
-    "main.d0657be5.css.map": "/flowers-wallet/static/css/main.d0657be5.css.map",
-    "main.83fae62d.js.map": "/flowers-wallet/static/js/main.83fae62d.js.map"
+    "static/media/password-icon.svg": "/flowers-wallet/static/media/password-icon.8eaaa6fe30d4fe41fcc4d961656d7115.svg",
+    "static/media/name-icon.svg": "/flowers-wallet/static/media/name-icon.11edd4b5d444e5868e2fd5dd3defd0a9.svg",
+    "static/media/mail-icon.svg": "/flowers-wallet/static/media/mail-icon.5a58fa9a7b1c77f266dc65e36b85b886.svg",
+    "main.9f220ff8.css.map": "/flowers-wallet/static/css/main.9f220ff8.css.map",
+    "main.798ce079.js.map": "/flowers-wallet/static/js/main.798ce079.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0657be5.css",
-    "static/js/main.83fae62d.js"
+    "static/css/main.9f220ff8.css",
+    "static/js/main.798ce079.js"
   ]
 }

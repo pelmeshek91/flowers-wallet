@@ -45,6 +45,7 @@
   cursor: pointer;
   color: #24cca7;
   border-bottom: 1px solid #24cca7;
+  /* border-radius: 15px; */
 }
 .input:hover {
   cursor: pointer;
@@ -59,4 +60,15 @@
   padding-top: 6px;
   text-align: center;
   color: red;
+}
+
+.label {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
 }

@@ -14,7 +14,6 @@ export const Layout = () => {
         <header className={css.header}>
           <Link href="/" className={css.headerLogo}>
             <img src={logoImage} alt="logo-icon" />
-            <p className={css.logoText}>Wallet</p>
           </Link>
           <UserAuthMenu />
         </header>

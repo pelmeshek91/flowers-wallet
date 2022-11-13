@@ -1,7 +1,7 @@
 @import-normalize;
 /* bring in normalize.css styles */
 
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -9,9 +9,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 20px;
-  background: #ffffff;
-  backdrop-filter: blur(25px);
-}
+ 
+} */
 
 @font-face {
   font-family: 'Circe Bold';
@@ -42,6 +41,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
+  backdrop-filter: blur(25px);
 }
 
 /* code {

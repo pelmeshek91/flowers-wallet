@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { selectName } from 'redux/auth/authSelectors';
 import { ModalLogout } from '../ModalLogOut/ModalLogOut';
+import logout from '../../images/logout-icon.svg';
 import css from './UserAuthMenu.module.css';
 
 export const UserAuthMenu = () => {
@@ -10,11 +11,12 @@ export const UserAuthMenu = () => {
   const [closeModal] = useState(true);
   return (
     <div className={css.authMenu}>
-      <p>{name}</p>
-      <button
-        onClick={() => setModalActive(true)}
-        className={css.logout_btn}
-      ></button>
+      <p className={css.user_name}>{name}</p>
+      <span className={css.authMenu_line}></span>
+      <button onClick={() => setModalActive(true)} className={css.logout_btn}>
+        <img src={logout} alt="" />
+        <span className={css['logout_btn-text']}>Exit</span>
+      </button>
       <ModalLogout
         active={modalActive}
         setActive={setModalActive}

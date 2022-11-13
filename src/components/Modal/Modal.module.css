@@ -1,6 +1,5 @@
 .overlay {
   align-items: flex-start;
-  margin-top: 60px;
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
@@ -9,6 +8,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+ align-items: center;
   z-index: 1200;
 }
 

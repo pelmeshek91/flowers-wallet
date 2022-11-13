@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 export const Div = styled.div`
   display: flex;
+  padding: 0 16px;
 `;
 
 export const Diagram = styled.div`

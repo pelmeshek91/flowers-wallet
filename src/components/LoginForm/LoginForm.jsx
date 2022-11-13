@@ -7,8 +7,14 @@ import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/authOperations';
 import { AuthButton } from '../Button/Button';
 
+import { ReactComponent as LogoIcon } from '../../images/AuthForm/logo-icon.svg';
+import { ReactComponent as Mail } from '../../images/AuthForm/mail-icon.svg';
+import { ReactComponent as Password } from '../../images/AuthForm/password-icon.svg';
+// import { ReactComponent as Name } from '../../images/AuthForm/name-icon.svg';
+
 import s from './LoginForm.module.css';
 import sb from '../Button/Button.module.css';
+// import { Label } from '@mui/icons-material';
 
 const SignupSchema = object().shape({
   password: string()
@@ -24,7 +30,14 @@ export const LoginForm = () => {
 
   return (
     <div className={s.container}>
-      <h1 className={s.title}>Wallet</h1>
+      <h1 className={s.title}>
+        <LogoIcon
+          style={{
+            height: '30px',
+            width: `120px`,
+          }}
+        />
+      </h1>
       <Formik
         initialValues={{
           password: '',
@@ -39,34 +52,37 @@ export const LoginForm = () => {
       >
         {({ errors, touched }) => (
           <Form className={s.form}>
-            <Field
-              className={s.input}
-              name="email"
-              type="email"
-              placeholder="E-mail"
-            />
+            <div className={s.label}>
+              <Mail className={s.inputIcon} />
+              <Field
+                className={s.input}
+                name="email"
+                type="email"
+                placeholder="E-mail"
+              />
+            </div>
             <div className={s.error}>
               {errors.email && touched.email ? <div>{errors.email}</div> : null}
             </div>
-
-            <Field
-              className={s.input}
-              name="password"
-              type="password"
-              placeholder="Password"
-            />
+            <div className={s.label}>
+              <Password className={s.inputIcon} />
+              <Field
+                className={s.input}
+                name="password"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
             <div className={s.error}>
               {errors.password && touched.password ? (
                 <div>{errors.password}</div>
               ) : null}
             </div>
-
             <AuthButton
               type={'submit'}
               text={'Log in'}
               className={sb.authSubmitButton}
             />
-
             <Link className={s.navLink} to="/register">
               <AuthButton
                 type={'button'}

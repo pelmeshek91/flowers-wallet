@@ -60,3 +60,14 @@
   text-align: center;
   color: red;
 }
+
+.label {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+}

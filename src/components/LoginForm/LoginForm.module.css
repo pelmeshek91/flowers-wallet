@@ -77,7 +77,7 @@
   min-height: 34px;
   padding-top: 6px;
   text-align: center;
-  color: var(--expense-color);
+  color: red;
 }
 
 .label {

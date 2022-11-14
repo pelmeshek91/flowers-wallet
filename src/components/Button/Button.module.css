@@ -17,7 +17,7 @@
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--main-bg-color);
+  color: var(--main-bg-cl);
 }
 
 @media screen and (min-width: 768px) {
@@ -66,11 +66,11 @@
 .authLinkButton:focus {
   cursor: pointer;
   background: var(--accent-active-color);
-  color: var(--main-bg-color);
+  color: var(--main-bg-cl);
 }
 
 .authLinkButton:hover {
   cursor: pointer;
   background: var(--accent-active-color);
-  color: var(--main-bg-color);
+  color: var(--main-bg-cl);
 }

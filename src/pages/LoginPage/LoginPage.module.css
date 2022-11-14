@@ -1,0 +1,54 @@
+.loginSection {
+  padding: 107px 0;
+  margin: 0 auto;
+
+  /* width: 100%; */
+}
+
+@media screen and (min-width: 768px) {
+  .loginSection {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 196px;
+
+    background: #e5e5e5;
+  }
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 117px;
+  }
+}
+
+.pictureBox {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.text {
+  font-size: 30px;
+  line-height: calc(45 / 30);
+
+  color: #000000;
+}
+
+.ellipsPink {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ellipsViolet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

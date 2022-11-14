@@ -14,8 +14,9 @@ import { ReactComponent as Name } from '../../images/AuthForm/name-icon.svg';
 
 import s from './RegisterForm.module.css';
 import sb from '../Button/Button.module.css';
+import { useMediaQuery } from 'react-responsive';
 
-export const SignUp = () => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const SignupSchema = object().shape({
@@ -61,7 +62,10 @@ export const SignUp = () => {
 
   const passwordArr = [...values.password];
   const confirmPasswordArr = [...values.confirmPassword];
-  const w = 288;
+
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  let w;
+  isTablet ? (w = 410) : (w = 288);
   let k = 0;
 
   const confirmPasswordTrue = confirmPasswordArr.every((item, i) => {
@@ -73,14 +77,9 @@ export const SignUp = () => {
     : (k = 0);
 
   return (
-    <div className={s.container}>
+    <div className={s.formBox}>
       <h1 className={s.title}>
-        <LogoIcon
-          style={{
-            height: '30px',
-            width: `120px`,
-          }}
-        />
+        <LogoIcon className={s.logoIcon} />
       </h1>
       <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
         <div className={s.label}>
@@ -132,14 +131,7 @@ export const SignUp = () => {
           !confirmPasswordTrue ? (
             <div>{errors.confirmPassword}</div>
           ) : (
-            <div
-              style={{
-                border: 'none',
-                backgroundColor: '#E5F1EF',
-                height: '4px',
-                width: `288px`,
-              }}
-            >
+            <div className={s.statusBar}>
               <div
                 style={{
                   borderTop: '4px solid #24CCA7',
@@ -162,7 +154,6 @@ export const SignUp = () => {
             value={values.username}
             onChange={handleChange}
             onBlur={handleBlur}
-            // className={errors.age && touched.age ? 'input-error' : ''}
           />
         </div>
         <div className={s.error}>
@@ -187,4 +178,3 @@ export const SignUp = () => {
     </div>
   );
 };
-// export default SignUp;

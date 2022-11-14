@@ -1,10 +1,30 @@
-import { SignUp } from 'components/RegisterForm/RegisterForm';
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import { useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/authSelectors';
 
+import { ReactComponent as Picture } from '../../images/AuthForm/women-picture.svg';
+import { ReactComponent as EllipsPink } from '../../images/AuthForm/ellipse-pink.svg';
+import { ReactComponent as EllipsViolet } from '../../images/AuthForm/ellipse-violet.svg';
+
+import s from './RegisterPage.module.css';
+import { useMediaQuery } from 'react-responsive';
+
 export const RegisterPage = () => {
   const token = useSelector(selectToken);
-  return <>{!token && <SignUp />}</>;
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  return (
+    <section className={s.registerSection}>
+      {isTablet && <EllipsPink className={s.ellipsPink} />}
+      {isTablet && <EllipsViolet className={s.ellipsViolet} />}
+      <div className={s.container}>
+        {isTablet && (
+          <div className={s.pictureBox}>
+            <Picture />
+            <p className={s.text}>Finance App</p>
+          </div>
+        )}
+        {!token && <RegisterForm />}
+      </div>
+    </section>
+  );
 };
-
-// RegisterForm;

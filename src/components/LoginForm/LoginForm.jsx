@@ -29,7 +29,7 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className={s.container}>
+    <div className={s.formBox}>
       <h1 className={s.title}>
         <LogoIcon
           style={{

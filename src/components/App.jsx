@@ -75,7 +75,6 @@ export const App = () => {
           />
         </Route>
       </Routes>
-      )
       <ToastContainer
         position="top-right"
         autoClose={3000}

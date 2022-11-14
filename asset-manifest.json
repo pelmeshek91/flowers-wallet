@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/flowers-wallet/static/css/main.3cb813af.css",
-    "main.js": "/flowers-wallet/static/js/main.3e532e8a.js",
+    "main.js": "/flowers-wallet/static/js/main.652bec35.js",
     "static/media/Circe-Regular.ttf": "/flowers-wallet/static/media/Circe-Regular.4f184170d7403c914388.ttf",
     "static/media/Circe-Bold.ttf": "/flowers-wallet/static/media/Circe-Bold.78ec3e6d306010466f80.ttf",
     "static/media/Poppins-Regular.ttf": "/flowers-wallet/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -23,10 +23,10 @@
     "static/media/plus.svg": "/flowers-wallet/static/media/plus.6194a661e88e1e5113d2.svg",
     "static/media/minus.svg": "/flowers-wallet/static/media/minus.c1930871236002c803c7.svg",
     "main.3cb813af.css.map": "/flowers-wallet/static/css/main.3cb813af.css.map",
-    "main.3e532e8a.js.map": "/flowers-wallet/static/js/main.3e532e8a.js.map"
+    "main.652bec35.js.map": "/flowers-wallet/static/js/main.652bec35.js.map"
   },
   "entrypoints": [
     "static/css/main.3cb813af.css",
-    "static/js/main.3e532e8a.js"
+    "static/js/main.652bec35.js"
   ]
 }

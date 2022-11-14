@@ -1,8 +1,6 @@
 .registerSection {
   padding: 107px 0;
   margin: 0 auto;
-
-  /* width: 100%; */
 }
 
 @media screen and (min-width: 768px) {
@@ -12,6 +10,12 @@
     padding-bottom: 196px;
 
     background: var(--extra-bg-color);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .registerSection {
+    padding: 0;
   }
 }
 
@@ -26,12 +30,32 @@
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .container {
+    display: flex;
+    padding: 0;
+
+    background: #e5e5e5;
+  }
+}
+
 .pictureBox {
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
   gap: 40px;
+}
+
+@media screen and (min-width: 1280px) {
+  .pictureBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 153px 0 0;
+    margin-left: 76px;
+    margin-right: 31px;
+  }
 }
 
 .text {
@@ -43,6 +67,7 @@
 
 .ellipsPink {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
 }

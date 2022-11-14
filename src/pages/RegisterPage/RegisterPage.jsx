@@ -12,6 +12,8 @@ import { useMediaQuery } from 'react-responsive';
 export const RegisterPage = () => {
   const token = useSelector(selectToken);
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+
   return (
     <section className={s.registerSection}>
       {isTablet && <EllipsPink className={s.ellipsPink} />}
@@ -19,7 +21,8 @@ export const RegisterPage = () => {
       <div className={s.container}>
         {isTablet && (
           <div className={s.pictureBox}>
-            <Picture />
+            {isTablet && !isDesktop && <Picture width={274} height={250} />}
+            {isDesktop && <Picture width={452} height={412} />}
             <p className={s.text}>Finance App</p>
           </div>
         )}

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useState, useRef } from 'react';
 import Datetime from 'react-datetime';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -15,6 +16,7 @@ import moment from 'moment';
 import 'react-datetime/css/react-datetime.css';
 import s from './ModalAddTransaction.module.css';
 import { toast } from 'react-toastify';
+import { getCategories } from 'redux/transactions/transactionsOperations';
 
 const handleAmount = value => {
   if (!value || Number.isNaN(Number(value))) return value;
@@ -43,6 +45,11 @@ const ModalAddTransaction = () => {
   const [type, setType] = useState('EXPENSE');
   const startDate = new Date();
   const toastId = useRef('enterAmount');
+
+  useEffect(() => {
+    if (!categories) dispatch(getCategories());
+  }, [categories, dispatch]);
+
   const expenseCategories = categories?.filter(
     category => category.type === 'EXPENSE'
   );

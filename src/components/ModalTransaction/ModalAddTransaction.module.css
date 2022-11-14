@@ -19,11 +19,15 @@
   right: 20px;
   top: 20px;
 }
+.buttonClose:hover,
+.buttonClose:focus {
+  cursor: pointer;
+}
 
 .form__title {
   font-size: 24px;
-  font-family: 'Poppins';
-  font-weight: 400;
+  font-family: 'Poppins Regular';
+  /* font-weight: 400; */
   line-height: 1.5;
   text-align: center;
   margin-bottom: 40px;
@@ -72,7 +76,7 @@
   box-shadow: 0px 6px 15px rgba(255, 101, 150, 0.5);
   transition: transform 250ms ease;
   transform: translateX(40px);
-  background-image: url("../../images/ModalAddTransaction/minus.svg");
+  background-image: url('../../images/ModalAddTransaction/minus.svg');
 }
 
 .checkboxLabel input[type='checkbox']:checked + .checkboxSwitch::before {
@@ -82,7 +86,7 @@
   background-color: var(--income-color);
   box-shadow: 0px 6px 15px rgba(36, 204, 167, 0.5);
   transform: translateX(0);
-    background-image: url("../../images/ModalAddTransaction/plus.svg");
+  background-image: url('../../images/ModalAddTransaction/plus.svg');
 }
 
 .checkboxIncome {
@@ -95,7 +99,7 @@
 
 .checkboxIncome,
 .checkboxExpense {
-  font-family: 'Circe', sans-serif;
+  font-family: 'Circe Bold', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
@@ -131,8 +135,8 @@
   margin-bottom: 40px;
 }
 .money::placeholder {
-  font-family: 'Circe', sans-serif;
-  font-weight: 400;
+  font-family: 'Circe Regular', sans-serif;
+  /* font-weight: 400; */
   font-size: 18px;
   text-align: left;
   color: var(--secondary-text-color);
@@ -147,15 +151,16 @@
   color: var(--expense-color);
   position: absolute;
   top: 35px;
+  text-align: center;
 }
 
 .date input {
-  font-family: 'Circe';
+  font-family: 'Circe Regular';
   width: 280px;
   height: 32px;
   font-size: 18px;
   line-height: 1.5;
-  font-weight: 400;
+  /* font-weight: 400; */
   color: #000000;
   padding-left: 20px;
   border: none;
@@ -180,12 +185,11 @@
 }
 
 .comment {
-  padding-bottom: 40px;
   margin-bottom: 40px;
   min-width: 280px;
   height: 32px;
   color: var(--main-text-color);
-  font-family: 'Circe', sans-serif;
+  font-family: 'Circe Regular', sans-serif;
   font-size: 18px;
   line-height: 1.5;
   border: none;
@@ -210,7 +214,7 @@
 .commentError {
   color: var(--expense-color);
   position: absolute;
-  bottom: 180px;
+  bottom: 160px;
 }
 
 .btnWrapper {
@@ -219,9 +223,9 @@
   align-items: center;
 }
 .btnSubmit {
-  font-family: 'Circe';
+  font-family: 'Circe Regular';
   font-style: normal;
-  font-weight: 400;
+
   font-size: 18px;
   line-height: 27px;
   text-align: center;
@@ -237,16 +241,17 @@
 }
 .btnSubmit:hover,
 .btnSubmit:focus {
-  background-color: var(--main-bg-color);
+  background-color: var(--accent-active-color);
+  cursor: pointer;
 }
 .btnSubmit:first-child {
   margin-bottom: 20px;
 }
 
 .btnCancel {
-  font-family: 'Circe';
+  font-family: 'Circe Regular';
   font-style: normal;
-  font-weight: 400;
+  /* font-weight: 400; */
   font-size: 18px;
   line-height: 27px;
   text-align: center;
@@ -257,15 +262,16 @@
   width: 300px;
   border-radius: 20px;
   background-color: var(--main-bg-cl);
-  border: 1px solid #000000;
+  border: 1px solid var(--accent-active-color);
   color: var(--accent-active-color);
   transition: all 250ms ease;
 }
 .btnCancel:hover,
 .btnCancel:focus {
-  background-color: var(--main-bg-color);
+  background-color: var(--accent-active-color);
   color: var(--main-bg-cl);
   border: 1px solid transparent;
+  cursor: pointer;
 }
 .btnCancel:first-child {
   margin-bottom: 20px;
@@ -289,7 +295,7 @@
 }
 
 .categoryError {
-  top: 206px;
+  top: 225px;
   position: absolute;
   color: var(--expense-color);
 }

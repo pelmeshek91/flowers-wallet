@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 // import { selectToken } from 'redux/auth/authSelectors';
 import css from './Navigation.module.css';
-import home from '../../images/baseline-home-24px.png';
-import timeline from '../../images/baseline-timeline-24px.png';
+import home from 'images/exclude.svg';
+import timeline from 'images/currency.svg';
 
 const Navigation = () => {
   return (
@@ -14,13 +14,7 @@ const Navigation = () => {
             end
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           >
-            <img
-              className={css.navigation__img}
-              src={home}
-              alt="Home"
-              width="24px"
-              height='24px'
-            />
+            <img className={css.navigation__img} src={home} alt="Home" />
             Home
           </NavLink>
         </li>

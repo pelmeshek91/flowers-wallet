@@ -7,10 +7,12 @@ import {
 } from './StatisticsPage.styled';
 import { Dropdown } from 'components/Dropdown/Dropdown';
 import { Table } from './Table/Table';
-import data from 'pages/StatisticsPage/data.json';
 import { Dashboard } from 'components/Dashboard/Dashboard';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { allMonths } from 'services/const';
+
+import data from 'pages/StatisticsPage/data.json';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 

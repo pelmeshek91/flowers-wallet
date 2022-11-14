@@ -1,17 +1,8 @@
-:root {
-  --main-bg-color: #24cca7;
-  --expense-color: #ff6596;
-  --income-color: #24cca7;
-  --main-text-color: #000000;
-  --secondary-text-color: #bdbdbd;
-  --accent-active-color: #4a56e2;
-  --main-bg-cl: #ffffff;
-}
-
 .transaction {
   padding: 20px 0px;
   position: relative;
 }
+
 .buttonClose {
   background-color: transparent;
   border: none;
@@ -22,8 +13,8 @@
 
 .form__title {
   font-size: 24px;
-  font-family: 'Poppins';
-  font-weight: 400;
+  font-family: 'Poppins Regular';
+
   line-height: 1.5;
   text-align: center;
   margin-bottom: 40px;
@@ -35,12 +26,14 @@
   align-items: center;
   justify-content: center;
 }
+
 .checkboxLabel {
   position: relative;
   display: inline-block;
   width: 80px;
   height: 40px;
 }
+
 .checkboxLabel input[type='checkbox'] {
   display: none;
 }
@@ -48,7 +41,7 @@
 .checkboxLabel .checkboxSwitch {
   position: absolute;
   cursor: pointer;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--extra-text-color);
   border-radius: 30px;
   top: 0;
   right: 0;
@@ -75,14 +68,14 @@
   background-image: url("../../images/ModalAddTransaction/minus.svg");
 }
 
-.checkboxLabel input[type='checkbox']:checked + .checkboxSwitch::before {
+.checkboxLabel input[type='checkbox']:checked+.checkboxSwitch::before {
   content: '';
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--income-color);
   box-shadow: 0px 6px 15px rgba(36, 204, 167, 0.5);
   transform: translateX(0);
-    background-image: url("../../images/ModalAddTransaction/plus.svg");
+  background-image: url("../../images/ModalAddTransaction/plus.svg");
 }
 
 .checkboxIncome {
@@ -95,7 +88,7 @@
 
 .checkboxIncome,
 .checkboxExpense {
-  font-family: 'Circe', sans-serif;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
@@ -106,6 +99,7 @@
 .checkboxChecked.checkboxIncome {
   color: var(--income-color);
 }
+
 .checkboxChecked.checkboxExpense {
   color: var(--expense-color);
 }
@@ -117,6 +111,7 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
 .money {
   width: 280px;
   height: 32px;
@@ -127,12 +122,12 @@
   text-align: left;
   border: none;
   outline: none;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--extra-text-color);
   margin-bottom: 40px;
 }
+
 .money::placeholder {
-  font-family: 'Circe', sans-serif;
-  font-weight: 400;
+
   font-size: 18px;
   text-align: left;
   color: var(--secondary-text-color);
@@ -143,6 +138,7 @@
   display: flex;
   justify-content: center;
 }
+
 .moneyError {
   color: var(--expense-color);
   position: absolute;
@@ -150,7 +146,7 @@
 }
 
 .date input {
-  font-family: 'Circe';
+
   width: 280px;
   height: 32px;
   font-size: 18px;
@@ -160,7 +156,7 @@
   padding-left: 20px;
   border: none;
   outline: none;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--extra-text-color);
 }
 
 .dateWrapper {
@@ -169,6 +165,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .dateIcon {
   position: absolute;
   width: 24px;
@@ -185,7 +182,7 @@
   min-width: 280px;
   height: 32px;
   color: var(--main-text-color);
-  font-family: 'Circe', sans-serif;
+
   font-size: 18px;
   line-height: 1.5;
   border: none;
@@ -195,6 +192,7 @@
   resize: none;
   overflow: hidden;
 }
+
 .comment::placeholder {
   color: var(--secondary-text-color);
 }
@@ -218,10 +216,11 @@
   flex-direction: column;
   align-items: center;
 }
+
 .btnSubmit {
-  font-family: 'Circe';
+
   font-style: normal;
-  font-weight: 400;
+
   font-size: 18px;
   line-height: 27px;
   text-align: center;
@@ -235,18 +234,20 @@
   background-color: var(--income-color);
   transition: all 250ms ease;
 }
+
 .btnSubmit:hover,
 .btnSubmit:focus {
   background-color: var(--main-bg-color);
 }
+
 .btnSubmit:first-child {
   margin-bottom: 20px;
 }
 
 .btnCancel {
-  font-family: 'Circe';
+
   font-style: normal;
-  font-weight: 400;
+
   font-size: 18px;
   line-height: 27px;
   text-align: center;
@@ -261,12 +262,14 @@
   color: var(--accent-active-color);
   transition: all 250ms ease;
 }
+
 .btnCancel:hover,
 .btnCancel:focus {
   background-color: var(--main-bg-color);
   color: var(--main-bg-cl);
   border: 1px solid transparent;
 }
+
 .btnCancel:first-child {
   margin-bottom: 20px;
 }
@@ -283,6 +286,7 @@
   clip-path: inset(50%);
   margin: -1px;
 }
+
 .category {
   display: flex;
   justify-content: center;

@@ -4,15 +4,18 @@
   align-items: center;
   font-size: 18px;
   line-height: 1.15;
-  color: #bdbdbd;
+  color: var(-secondary-text-color);
 }
+
 .user_name {
   margin-right: 12px;
 }
+
 .authMenu_line {
   height: 30px;
-  border-right: 1px solid #bdbdbd;
+  border-right: 1px solid var(-secondary-text-color);
 }
+
 .logout_btn {
   display: flex;
   align-items: center;
@@ -25,6 +28,7 @@
   color: inherit;
   cursor: pointer;
 }
+
 .logout_btn-text {
   margin-left: 8px;
 }

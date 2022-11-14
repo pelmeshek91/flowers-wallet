@@ -50,11 +50,11 @@ const Currency = () => {
               );
             })}
         </tbody>
-        <img
+        {/*  <img
           className={css.table__image}
           src={decoration}
           alt="decoration line"
-        />
+        /> */}
       </table>
     </div>
   );

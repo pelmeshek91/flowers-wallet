@@ -1,0 +1,71 @@
+:root {
+    --main-bg-cl: #f1eded;
+    --main-text-color: #000000;
+    --secondary-text-color: #bdbdbd;
+    --expense-color: #ff6596;
+}
+
+.dropDownContainer {
+  display: flex;
+  justify-content: center;
+}
+.dropDownHeader {
+  min-width: 280px;
+  color: var(--main-text-cl);
+  font-family: 'Circe', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+.dropDownListContainer {
+  position: absolute;
+  z-index: 1;
+  top: 206px;
+}
+
+.dropDownList {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  min-width: 280px;
+  margin-top: 19px;
+}
+
+.dropDownListItem {
+  border-radius: 10px;
+  width: 300px;
+  list-style: none;
+  font-family: 'Circe', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 9px 0px 9px 20px;
+  display: flex;
+  color: var(--main-text-color);
+}
+.dropDownListItem:hover,
+.dropDownListItem:focus {
+  color: var(--expense-color);
+  background-color: #f1eded;
+}
+
+.chooseOption {
+  list-style: none;
+  font-family: 'Circe', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary-text-color);
+}

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import css from './Currency.module.css';
 import { useState, useEffect } from 'react';
-import decoration from "../../images/decoration-line.svg";
+import decoration from '../../images/decoration-line.svg';
 
 const Currency = () => {
   const [currency, setCurrency] = useState([]);
@@ -44,13 +44,17 @@ const Currency = () => {
               return (
                 <tr className={css.table__body__item} key={ccy}>
                   <td>{ccy}</td>
-                  <td>{Math.round(buy)}</td>
-                  <td>{Math.round(sale)}</td>
+                  <td>{Math.max(buy).toFixed(2)}</td>
+                  <td>{Math.max(sale).toFixed(2)}</td>
                 </tr>
               );
             })}
         </tbody>
-        <img className={css.table__image} src={decoration} alt="decoration line" />
+        <img
+          className={css.table__image}
+          src={decoration}
+          alt="decoration line"
+        />
       </table>
     </div>
   );

@@ -10,7 +10,6 @@ import { Table } from './Table/Table';
 import { Dashboard } from 'components/Dashboard/Dashboard';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { allMonths } from 'services/const';
 
 import data from 'pages/StatisticsPage/data.json';
 

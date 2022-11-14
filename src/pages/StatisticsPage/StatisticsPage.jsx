@@ -7,10 +7,11 @@ import {
 } from './StatisticsPage.styled';
 import { Dropdown } from 'components/Dropdown/Dropdown';
 import { Table } from './Table/Table';
-import data from 'pages/StatisticsPage/data.json';
 import { Dashboard } from 'components/Dashboard/Dashboard';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+
+import data from 'pages/StatisticsPage/data.json';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -22,7 +23,7 @@ export const StatisticsPage = () => {
   const color = [];
 
   const toGetData = (total, bgColor, dataTable) => {
-    if (dataTable >= sum.length) {
+    if (dataTable > sum.length) {
       sum.push(total);
       color.push(bgColor);
     }

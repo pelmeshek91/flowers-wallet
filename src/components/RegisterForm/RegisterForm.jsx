@@ -77,104 +77,106 @@ export const RegisterForm = () => {
     : (k = 0);
 
   return (
-    <div className={s.formBox}>
-      <h1 className={s.title}>
-        <LogoIcon className={s.logoIcon} />
-      </h1>
-      <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-        <div className={s.label}>
-          <Mail className={s.inputIcon} />
-          <input
-            className={s.input}
-            value={values.email}
-            onChange={handleChange}
-            id="email"
-            type="email"
-            placeholder="E-mail"
-          />
-        </div>
-        <div className={s.error}>
-          {errors.email || touched.email ? <div>{errors.email} </div> : null}
-        </div>
+    <div className={s.mainFormBox}>
+      <div className={s.formBox}>
+        <h1 className={s.title}>
+          <LogoIcon className={s.logoIcon} />
+        </h1>
+        <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
+          <div className={s.label}>
+            <Mail className={s.inputIcon} />
+            <input
+              className={s.input}
+              value={values.email}
+              onChange={handleChange}
+              id="email"
+              type="email"
+              placeholder="E-mail"
+            />
+          </div>
+          <div className={s.error}>
+            {errors.email || touched.email ? <div>{errors.email} </div> : null}
+          </div>
 
-        <div className={s.label}>
-          <Password className={s.inputIcon} />
-          <input
-            className={s.input}
-            value={values.password}
-            onChange={handleChange}
-            id="password"
-            type="password"
-            placeholder="Password"
-          />
-        </div>
-        <div className={s.error}>
-          {errors.password || touched.password ? (
-            <div>{errors.password}</div>
-          ) : null}
-        </div>
+          <div className={s.label}>
+            <Password className={s.inputIcon} />
+            <input
+              className={s.input}
+              value={values.password}
+              onChange={handleChange}
+              id="password"
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <div className={s.error}>
+            {errors.password || touched.password ? (
+              <div>{errors.password}</div>
+            ) : null}
+          </div>
 
-        <div className={s.label}>
-          <Password className={s.inputIcon} />
-          <input
-            className={s.input}
-            value={values.confirmPassword}
-            onChange={handleChange}
-            id="confirmPassword"
-            type="password"
-            placeholder="Confirm password"
-            onBlur={handleBlur}
-          />
-        </div>
-        <div className={s.error}>
-          {(errors.confirmPassword && touched.confirmPassword) ||
-          !confirmPasswordTrue ? (
-            <div>{errors.confirmPassword}</div>
-          ) : (
-            <div className={s.statusBar}>
-              <div
-                style={{
-                  borderTop: '4px solid #24CCA7',
-                  borderRadius: '2px',
-                  boxShadow: '0px 1px 8px rgba(36, 204, 167, 0.5)',
-                  width: `${k * w}px`,
-                }}
-              ></div>
-            </div>
-          )}
-        </div>
+          <div className={s.label}>
+            <Password className={s.inputIcon} />
+            <input
+              className={s.input}
+              value={values.confirmPassword}
+              onChange={handleChange}
+              id="confirmPassword"
+              type="password"
+              placeholder="Confirm password"
+              onBlur={handleBlur}
+            />
+          </div>
+          <div className={s.error}>
+            {(errors.confirmPassword && touched.confirmPassword) ||
+            !confirmPasswordTrue ? (
+              <div>{errors.confirmPassword}</div>
+            ) : (
+              <div className={s.statusBar}>
+                <div
+                  style={{
+                    borderTop: '4px solid #24CCA7',
+                    borderRadius: '2px',
+                    boxShadow: '0px 1px 8px rgba(36, 204, 167, 0.5)',
+                    width: `${k * w}px`,
+                  }}
+                ></div>
+              </div>
+            )}
+          </div>
 
-        <div className={s.label}>
-          <Name className={s.inputIcon} />
-          <input
-            className={s.input}
-            id="username"
-            type="text"
-            placeholder="First name"
-            value={values.username}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-        </div>
-        <div className={s.error}>
-          {errors.username && touched.username ? (
-            <div>{errors.username}</div>
-          ) : null}
-        </div>
+          <div className={s.label}>
+            <Name className={s.inputIcon} />
+            <input
+              className={s.input}
+              id="username"
+              type="text"
+              placeholder="First name"
+              value={values.username}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div className={s.error}>
+            {errors.username && touched.username ? (
+              <div>{errors.username}</div>
+            ) : null}
+          </div>
 
-        <AuthButton
-          type={'submit'}
-          text={'Register'}
-          className={sb.authSubmitButton}
-        />
-        <Link className={s.navLink} to="/login">
           <AuthButton
-            type={'button'}
-            text={'Log in'}
-            className={sb.authLinkButton}
+            type={'submit'}
+            text={'Register'}
+            className={sb.authSubmitButton}
           />
-        </Link>
-      </form>
+          <Link className={s.navLink} to="/login">
+            <AuthButton
+              type={'button'}
+              text={'Log in'}
+              className={sb.authLinkButton}
+            />
+          </Link>
+        </form>
+      </div>
     </div>
   );
 };

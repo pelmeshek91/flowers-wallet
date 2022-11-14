@@ -22,7 +22,7 @@ export const StatisticsPage = () => {
   const color = [];
 
   const toGetData = (total, bgColor, dataTable) => {
-    if (dataTable >= sum.length) {
+    if (dataTable > sum.length) {
       sum.push(total);
       color.push(bgColor);
     }

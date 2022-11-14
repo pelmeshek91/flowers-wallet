@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 // import { selectToken } from 'redux/auth/authSelectors';
 import css from './Navigation.module.css';
-import home from 'images/exclude.svg';
+import home from 'images/home.svg';
 import timeline from 'images/currency.svg';
 
 const Navigation = () => {

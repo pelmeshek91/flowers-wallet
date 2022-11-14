@@ -1,10 +1,17 @@
-/* .navigation {} */
+.navigation {
+    display: flex;
+    justify-content: center;
+}
 
 .navigation__item:not(:last-child) {
     margin-bottom: 12px;
 }
 
 .navigation__img {
-    box-shadow: (0px 3px 10px rgba(74, 86, 226, 0.5));
-    margin-right: 20px;
+    margin-right: 30px;
+}
+
+.navigation__img:hover, 
+.navigation__img:focus {
+    color: #4A56E2;
 }

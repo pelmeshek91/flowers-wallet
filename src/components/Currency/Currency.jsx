@@ -1,11 +1,15 @@
 import axios from 'axios';
 import css from './Currency.module.css';
 import { useState, useEffect } from 'react';
-import decoration from '../../images/decoration-line.svg';
+import decorationLine from '../../images/Currency/Line-currency-mobile.svg';
+import { useMediaQuery } from 'react-responsive';
 
 const Currency = () => {
   const [currency, setCurrency] = useState([]);
-  // const [error, setError] = useState(null);
+  
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  // const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  // const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
 
   useEffect(() => {
     const instance = axios.create({
@@ -22,7 +26,7 @@ const Currency = () => {
         const currencyInformation = data.filter(({ ccy }) => ccy !== 'RUR');
         setCurrency(currencyInformation);
       } catch (error) {
-        // setError(error.message);
+        return error.message;
       }
     }
     fetchApi();
@@ -50,11 +54,13 @@ const Currency = () => {
               );
             })}
         </tbody>
-        <img
-          className={css.table__image}
-          src={decoration}
-          alt="decoration line"
-        />
+        {isMobile && (
+          <img
+            className={css.table__image}
+            src={decorationLine}
+            alt="decoration line"
+          />
+        )}
       </table>
     </div>
   );

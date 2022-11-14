@@ -1,4 +1,4 @@
-.navigation {}
+/* .navigation {} */
 
 .navigation__item:not(:last-child) {
     margin-bottom: 12px;

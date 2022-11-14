@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/flowers-wallet/static/css/main.3cb813af.css",
-    "main.js": "/flowers-wallet/static/js/main.652bec35.js",
+    "main.css": "/flowers-wallet/static/css/main.f1ee8f69.css",
+    "main.js": "/flowers-wallet/static/js/main.552f9108.js",
     "static/media/Circe-Regular.ttf": "/flowers-wallet/static/media/Circe-Regular.4f184170d7403c914388.ttf",
     "static/media/Circe-Bold.ttf": "/flowers-wallet/static/media/Circe-Bold.78ec3e6d306010466f80.ttf",
     "static/media/Poppins-Regular.ttf": "/flowers-wallet/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -16,17 +16,17 @@
     "static/media/logout-icon.svg": "/flowers-wallet/static/media/logout-icon.33c354f5f8c2e090bb700b18a4c402c6.svg",
     "static/media/password-icon.svg": "/flowers-wallet/static/media/password-icon.8eaaa6fe30d4fe41fcc4d961656d7115.svg",
     "static/media/name-icon.svg": "/flowers-wallet/static/media/name-icon.11edd4b5d444e5868e2fd5dd3defd0a9.svg",
-    "static/media/exclude.svg": "/flowers-wallet/static/media/exclude.27bed7c3fdedc7441fc266a1eb756e4f.svg",
+    "static/media/home.svg": "/flowers-wallet/static/media/home.75ef80808c5ae38c2557bb7d86ae12dd.svg",
     "static/media/ellipse-violet.svg": "/flowers-wallet/static/media/ellipse-violet.f6c24d3e33e7e1253ac73f0578713248.svg",
     "static/media/ellipse-pink.svg": "/flowers-wallet/static/media/ellipse-pink.07ef13244b203e866dcdec6e7633ee44.svg",
     "static/media/mail-icon.svg": "/flowers-wallet/static/media/mail-icon.5a58fa9a7b1c77f266dc65e36b85b886.svg",
     "static/media/plus.svg": "/flowers-wallet/static/media/plus.6194a661e88e1e5113d2.svg",
     "static/media/minus.svg": "/flowers-wallet/static/media/minus.c1930871236002c803c7.svg",
-    "main.3cb813af.css.map": "/flowers-wallet/static/css/main.3cb813af.css.map",
-    "main.652bec35.js.map": "/flowers-wallet/static/js/main.652bec35.js.map"
+    "main.f1ee8f69.css.map": "/flowers-wallet/static/css/main.f1ee8f69.css.map",
+    "main.552f9108.js.map": "/flowers-wallet/static/js/main.552f9108.js.map"
   },
   "entrypoints": [
-    "static/css/main.3cb813af.css",
-    "static/js/main.652bec35.js"
+    "static/css/main.f1ee8f69.css",
+    "static/js/main.552f9108.js"
   ]
 }

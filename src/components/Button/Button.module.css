@@ -21,6 +21,12 @@
   color: #ffffff;
 }
 
+@media screen and (min-width: 768px) {
+  .authSubmitButton {
+    width: 300px;
+  }
+}
+
 .authSubmitButton:focus {
   cursor: pointer;
   background: #4a56e2;
@@ -49,6 +55,12 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #4a56e2;
+}
+
+@media screen and (min-width: 768px) {
+  .authLinkButton {
+    width: 300px;
+  }
 }
 
 .authLinkButton:focus {

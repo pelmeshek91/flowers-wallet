@@ -1,22 +1,33 @@
-.container {
-  padding: 107px 20px;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 100%;
-}
-
 .title {
   text-align: center;
   margin-top: 0;
   margin-bottom: 60px;
 }
 
+.logoIcon {
+  height: 30px;
+  width: 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .logoIcon {
+    height: 40px;
+    width: 181px;
+  }
+}
+
 .form {
-  display: block;
-  width: 280px;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 288px;
   margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    width: 410px;
+  }
 }
 
 .input {
@@ -53,6 +64,13 @@
   border-bottom: 1px solid #24cca7;
 }
 
+@media screen and (min-width: 768px) {
+  .input {
+    width: 410px;
+    height: 32px;
+  }
+}
+
 .error {
   display: block;
   width: auto;
@@ -71,4 +89,33 @@
   top: 50%;
   transform: translateY(-50%);
   left: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .formBox {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 616px;
+    padding: 40px 65px 0;
+    margin: 50px auto 0;
+
+    background: #ffffff;
+    border-radius: 20px;
+  }
+}
+
+.statusBar {
+  border: 'none';
+  background-color: #e5f1ef;
+  height: 4px;
+  width: 288px;
+}
+
+@media screen and (min-width: 768px) {
+  .statusBar {
+    width: 410px;
+  }
 }

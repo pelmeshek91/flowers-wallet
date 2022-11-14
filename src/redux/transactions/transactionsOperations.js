@@ -9,10 +9,12 @@ export const addTransaction = createAsyncThunk(
         'https://wallet.goit.ua/api/transactions',
         transaction
       );
+      console.log(data);
       const fixedData = {
         ...data,
         balanceAfter: Number(data.balanceAfter.toFixed(2)),
       };
+      console.log(fixedData);
       return fixedData;
     } catch (error) {
       return rejectWithValue(error.message);

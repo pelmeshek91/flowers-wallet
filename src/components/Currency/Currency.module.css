@@ -7,7 +7,7 @@
   height: 347px;
   width: 393px;
 
-  background: #4a56e2;
+  background: var(--accent-active-color);
   border-radius: 30px;
 }
 
@@ -29,7 +29,7 @@
   font-size: 18px;
   line-height: 1.6;
 
-  color: #ffffff;
+  color: var(--main-bg-cl);
 }
 
 .table__body {
@@ -49,11 +49,11 @@
   font-size: 16px;
   line-height: 1.4;
 
-  color: #ffffff;
+  color: var(--main-bg-cl);
 }
 
 .table__body__item:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.table__image {}
+/* .table__image {} */

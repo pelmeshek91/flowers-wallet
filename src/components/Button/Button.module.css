@@ -1,24 +1,23 @@
 .authSubmitButton {
-  /* display: block; */
+
   box-sizing: border-box;
   width: 280px;
   height: 50px;
 
   margin: 0 auto 20px;
 
-  background: #24cca7;
+  background: var(--main-bg-color);
   border: none;
   border-radius: 20px;
 
-  font-family: 'Circe';
   font-style: normal;
-  font-weight: 400;
+
   font-size: 18px;
   line-height: calc(27 / 18);
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--main-bg-cl);
 }
 
 @media screen and (min-width: 768px) {
@@ -29,12 +28,14 @@
 
 .authSubmitButton:focus {
   cursor: pointer;
-  background: #4a56e2;
+  background: var(--accent-active-color);
 }
+
 .authSubmitButton:hover {
   cursor: pointer;
-  background: #4a56e2;
+  background: var(--accent-active-color);
 }
+
 .authLinkButton {
   box-sizing: border-box;
   width: 280px;
@@ -43,18 +44,17 @@
   margin: 0 auto 20px;
 
   background: none;
-  border: 1px solid #4a56e2;
+  border: 1px solid var(--accent-active-color);
   border-radius: 20px;
 
-  font-family: 'Circe';
   font-style: normal;
-  font-weight: 400;
+
   font-size: 18px;
   line-height: calc(27 / 18);
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #4a56e2;
+  color: var(--accent-active-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -65,11 +65,12 @@
 
 .authLinkButton:focus {
   cursor: pointer;
-  background: #4a56e2;
-  color: #ffffff;
+  background: var(--accent-active-color);
+  color: var(--main-bg-cl);
 }
+
 .authLinkButton:hover {
   cursor: pointer;
-  background: #4a56e2;
-  color: #ffffff;
+  background: var(--accent-active-color);
+  color: var(--main-bg-cl);
 }

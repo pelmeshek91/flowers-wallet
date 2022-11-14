@@ -21,7 +21,7 @@
 .modal__content {
     padding: 20px;
     border-radius: 20px;
-    background-color: #fff;
+    background-color: var(--main-bg-cl);
     transform: scale(0.5);
     display: flex;
     flex-wrap: wrap;
@@ -52,6 +52,7 @@
     justify-content: center;
     margin-top: 25px;
 }
-.modalLogoutImage{
+
+.modalLogoutImage {
     display: flex;
 }

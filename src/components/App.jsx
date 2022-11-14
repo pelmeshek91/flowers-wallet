@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
-
+import { ToastContainer } from 'react-toastify';
 import { Layout } from './Layout/Layout';
 import { ProtectedRoute } from 'HOCs/ProtectedRoute';
 import { PublicRoute } from 'HOCs/PublicRoute';
@@ -75,7 +75,17 @@ export const App = () => {
           />
         </Route>
       </Routes>
-      )
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 };

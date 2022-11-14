@@ -29,70 +29,74 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className={s.formBox}>
-      <h1 className={s.title}>
-        <LogoIcon
-          style={{
-            height: '30px',
-            width: `120px`,
-          }}
-        />
-      </h1>
-      <Formik
-        initialValues={{
-          password: '',
+    <div className={s.mainFormBox}>
+      <div className={s.formBox}>
+        <h1 className={s.title}>
+          <LogoIcon
+            style={{
+              height: '30px',
+              width: `120px`,
+            }}
+          />
+        </h1>
+        <Formik
+          initialValues={{
+            password: '',
 
-          email: '',
-        }}
-        validationSchema={SignupSchema}
-        onSubmit={({ email, password }, { resetForm }) => {
-          dispatch(login({ email, password }));
-          resetForm();
-        }}
-      >
-        {({ errors, touched }) => (
-          <Form className={s.form}>
-            <div className={s.label}>
-              <Mail className={s.inputIcon} />
-              <Field
-                className={s.input}
-                name="email"
-                type="email"
-                placeholder="E-mail"
-              />
-            </div>
-            <div className={s.error}>
-              {errors.email && touched.email ? <div>{errors.email}</div> : null}
-            </div>
-            <div className={s.label}>
-              <Password className={s.inputIcon} />
-              <Field
-                className={s.input}
-                name="password"
-                type="password"
-                placeholder="Password"
-              />
-            </div>
-            <div className={s.error}>
-              {errors.password && touched.password ? (
-                <div>{errors.password}</div>
-              ) : null}
-            </div>
-            <AuthButton
-              type={'submit'}
-              text={'Log in'}
-              className={sb.authSubmitButton}
-            />
-            <Link className={s.navLink} to="/register">
+            email: '',
+          }}
+          validationSchema={SignupSchema}
+          onSubmit={({ email, password }, { resetForm }) => {
+            dispatch(login({ email, password }));
+            resetForm();
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form className={s.form}>
+              <div className={s.label}>
+                <Mail className={s.inputIcon} />
+                <Field
+                  className={s.input}
+                  name="email"
+                  type="email"
+                  placeholder="E-mail"
+                />
+              </div>
+              <div className={s.error}>
+                {errors.email && touched.email ? (
+                  <div>{errors.email}</div>
+                ) : null}
+              </div>
+              <div className={s.label}>
+                <Password className={s.inputIcon} />
+                <Field
+                  className={s.input}
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div className={s.error}>
+                {errors.password && touched.password ? (
+                  <div>{errors.password}</div>
+                ) : null}
+              </div>
               <AuthButton
-                type={'button'}
-                text={'Register'}
-                className={sb.authLinkButton}
+                type={'submit'}
+                text={'Log in'}
+                className={sb.authSubmitButton}
               />
-            </Link>
-          </Form>
-        )}
-      </Formik>
+              <Link className={s.navLink} to="/register">
+                <AuthButton
+                  type={'button'}
+                  text={'Register'}
+                  className={sb.authLinkButton}
+                />
+              </Link>
+            </Form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 };

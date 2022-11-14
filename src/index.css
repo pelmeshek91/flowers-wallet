@@ -4,25 +4,25 @@
 @font-face {
   font-family: 'Circe Bold';
   src: url('./fonts/Circe/Circe-Bold.ttf') format('truetype');
-  font-weight: bold;
+
 }
 
 @font-face {
   font-family: 'Circe Regular';
   src: url('./fonts/Circe/Circe-Regular.ttf') format('truetype');
-  font-weight: regular;
+
 }
 
 @font-face {
   font-family: 'Poppins Bold';
   src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
-  font-weight: bold;
+
 }
 
 @font-face {
   font-family: 'Poppins Regular';
   src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-  font-weight: regular;
+
 }
 
 body {
@@ -47,15 +47,16 @@ ul {
 
 a {
   text-decoration: none;
+
 }
 
 a.active {
   display: flex;
   align-items: center;
 
-  font-family: 'Poppins';
+  font-family: 'Poppins Bold';
   font-style: normal;
-  font-weight: 700;
+
   font-size: 18px;
   line-height: 1.5;
 
@@ -66,10 +67,10 @@ a.inactive {
   display: flex;
   align-items: center;
 
-  font-family: 'Poppins';
+  font-family: 'Poppins Regular';
   font-style: normal;
   font-size: 18px;
-  font-weight: 400;
+
   line-height: 1.5;
 
   color: #000000;

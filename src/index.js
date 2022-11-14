@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <PersistGate persistor={persistor}>
         <BrowserRouter>
           <App />
-        </BrowserRouter>
+        </BrowserRouter  basename="/flowers-wallet/">
       </PersistGate>
     </Provider>
   </React.StrictMode>

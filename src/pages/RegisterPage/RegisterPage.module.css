@@ -1,8 +1,6 @@
 .registerSection {
   padding: 107px 0;
   margin: 0 auto;
-
-  /* width: 100%; */
 }
 
 @media screen and (min-width: 768px) {
@@ -17,7 +15,6 @@
 
 @media screen and (min-width: 1280px) {
   .registerSection {
-    position: relative;
     padding: 0;
   }
 }
@@ -35,7 +32,6 @@
 
 @media screen and (min-width: 1280px) {
   .container {
-    /* position: relative; */
     display: flex;
     padding: 0;
 
@@ -53,14 +49,12 @@
 
 @media screen and (min-width: 1280px) {
   .pictureBox {
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 153px 0 0;
     margin-left: 76px;
-
-    /* background: #e5e5e5; */
+    margin-right: 31px;
   }
 }
 

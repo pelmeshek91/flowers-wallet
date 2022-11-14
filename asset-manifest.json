@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/flowers-wallet/static/css/main.a195eb14.css",
-    "main.js": "/flowers-wallet/static/js/main.885b8508.js",
+    "main.css": "/flowers-wallet/static/css/main.2965062b.css",
+    "main.js": "/flowers-wallet/static/js/main.fce9a23f.js",
     "static/media/Circe-Regular.ttf": "/flowers-wallet/static/media/Circe-Regular.4f184170d7403c914388.ttf",
     "static/media/Circe-Bold.ttf": "/flowers-wallet/static/media/Circe-Bold.78ec3e6d306010466f80.ttf",
     "static/media/Poppins-Regular.ttf": "/flowers-wallet/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -10,21 +10,23 @@
     "static/media/women-picture.svg": "/flowers-wallet/static/media/women-picture.f6b5602b4eecdffe94d1fb4c1c65a367.svg",
     "static/media/ModalLogOut.jpg": "/flowers-wallet/static/media/ModalLogOut.0e2e0f6ff8b1b99e4863.jpg",
     "static/media/logo-icon.svg": "/flowers-wallet/static/media/logo-icon.82ae2436f4ce8306bb929c5418bad3e5.svg",
+    "static/media/currency.svg": "/flowers-wallet/static/media/currency.18f666b858aec2cb7f01be3e35a69f20.svg",
     "static/media/decoration-line.svg": "/flowers-wallet/static/media/decoration-line.a369be88a9437c5cea33fc1f34866161.svg",
     "index.html": "/flowers-wallet/index.html",
     "static/media/logout-icon.svg": "/flowers-wallet/static/media/logout-icon.33c354f5f8c2e090bb700b18a4c402c6.svg",
     "static/media/password-icon.svg": "/flowers-wallet/static/media/password-icon.8eaaa6fe30d4fe41fcc4d961656d7115.svg",
     "static/media/name-icon.svg": "/flowers-wallet/static/media/name-icon.11edd4b5d444e5868e2fd5dd3defd0a9.svg",
+    "static/media/exclude.svg": "/flowers-wallet/static/media/exclude.27bed7c3fdedc7441fc266a1eb756e4f.svg",
     "static/media/ellipse-violet.svg": "/flowers-wallet/static/media/ellipse-violet.f6c24d3e33e7e1253ac73f0578713248.svg",
     "static/media/ellipse-pink.svg": "/flowers-wallet/static/media/ellipse-pink.07ef13244b203e866dcdec6e7633ee44.svg",
     "static/media/mail-icon.svg": "/flowers-wallet/static/media/mail-icon.5a58fa9a7b1c77f266dc65e36b85b886.svg",
     "static/media/plus.svg": "/flowers-wallet/static/media/plus.6194a661e88e1e5113d2.svg",
     "static/media/minus.svg": "/flowers-wallet/static/media/minus.c1930871236002c803c7.svg",
-    "main.a195eb14.css.map": "/flowers-wallet/static/css/main.a195eb14.css.map",
-    "main.885b8508.js.map": "/flowers-wallet/static/js/main.885b8508.js.map"
+    "main.2965062b.css.map": "/flowers-wallet/static/css/main.2965062b.css.map",
+    "main.fce9a23f.js.map": "/flowers-wallet/static/js/main.fce9a23f.js.map"
   },
   "entrypoints": [
-    "static/css/main.a195eb14.css",
-    "static/js/main.885b8508.js"
+    "static/css/main.2965062b.css",
+    "static/js/main.fce9a23f.js"
   ]
 }

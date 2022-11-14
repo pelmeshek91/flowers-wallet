@@ -3,10 +3,12 @@
   gap: 15px;
   list-style: none;
 }
+
 .navigation a {
-  color: #000;
+  color: var(--main-text-color);
   text-decoration: none;
 }
+
 .navigation.active {
   color: rgb(5, 25, 248);
 }

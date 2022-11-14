@@ -1,8 +1,8 @@
-.css-16h9ce-MuiFormControl-root {
-  font-family: 'Circe';
-  font-style: normal;
-  font-weight: 400;
-}
+// .css-16h9ce-MuiFormControl-root {
+//   // font-family: 'Circe';
+//   font-style: normal;
+//   font-weight: 400;
+// }
 
 .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
   overflow: hidden;
@@ -13,14 +13,14 @@
 }
 
 .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper ul {
-  border: 1px solid #a3abf7;
+  border: 1px solid var(--accent-inactive-color);
   border-radius: 20px;
   background-color: none;
   overflow: hidden;
 
   & :hover {
     font-weight: 600;
-    color: #ff6596;
-    background: #ffffff;
+    color: var(--expense-color);
+    background: var(--main-bg-cl);
   }
 }

@@ -39,27 +39,28 @@
 
   outline: transparent;
   border: none;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--extra-text-color);
   order: 1;
   align-self: stretch;
 
   font-style: normal;
-  font-weight: 400;
+
   font-size: 18px;
   line-height: calc(27 / 18);
 
-  color: #bdbdbd;
+  color: var(--secondary-text-color);
 }
 
 .input:focus {
   cursor: pointer;
-  color: #24cca7;
-  border-bottom: 1px solid #24cca7;
+  color: var(--main-bg-color);
+  border-bottom: 1px solid var(--main-bg-color);
 }
+
 .input:hover {
   cursor: pointer;
-  color: #24cca7;
-  border-bottom: 1px solid #24cca7;
+  color: var(--main-bg-color);
+  border-bottom: 1px solid var(--main-bg-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -75,7 +76,7 @@
   min-height: 34px;
   padding-top: 6px;
   text-align: center;
-  color: red;
+  color: var(--expense-color);
 }
 
 .label {
@@ -112,7 +113,7 @@
     padding: 40px 65px 0;
     margin: 50px auto 0;
 
-    background: #ffffff;
+    background: var(--main-bg-cl);
     border-radius: 20px;
   }
 }

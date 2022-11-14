@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { addTransaction, getCategories } from './transactionsOperations';
 import { toast } from 'react-toastify';
 import { colors } from '../../services/const';
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
   data: null,
@@ -47,19 +48,21 @@ const financeSlice = createSlice({
       state.error = null;
     },
     [addTransaction.fulfilled]: (state, { payload }) => {
+      console.dir(state);
+      console.log(payload);
       state.isLoading = false;
       if (payload) {
         toast.success('Add successfull');
       } else {
         toast.error('Try later');
       }
-      state.data = [...state.data, payload];
+      // state.data = [...state.data, payload];
+      state.data = payload;
       state.totalBalance = payload.balanceAfter;
     },
     [addTransaction.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.error = payload;
-      console.log('addTransaction', payload);
       if (payload === 'Request failed with status code 409') {
         toast.error('Error, try another one');
       } else {

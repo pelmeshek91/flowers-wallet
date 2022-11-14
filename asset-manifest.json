@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/flowers-wallet/static/css/main.f1ee8f69.css",
-    "main.js": "/flowers-wallet/static/js/main.552f9108.js",
+    "main.css": "/flowers-wallet/static/css/main.9c024eca.css",
+    "main.js": "/flowers-wallet/static/js/main.2e62f247.js",
     "static/media/Circe-Regular.ttf": "/flowers-wallet/static/media/Circe-Regular.4f184170d7403c914388.ttf",
     "static/media/Circe-Bold.ttf": "/flowers-wallet/static/media/Circe-Bold.78ec3e6d306010466f80.ttf",
     "static/media/Poppins-Regular.ttf": "/flowers-wallet/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -22,11 +22,11 @@
     "static/media/mail-icon.svg": "/flowers-wallet/static/media/mail-icon.5a58fa9a7b1c77f266dc65e36b85b886.svg",
     "static/media/plus.svg": "/flowers-wallet/static/media/plus.6194a661e88e1e5113d2.svg",
     "static/media/minus.svg": "/flowers-wallet/static/media/minus.c1930871236002c803c7.svg",
-    "main.f1ee8f69.css.map": "/flowers-wallet/static/css/main.f1ee8f69.css.map",
-    "main.552f9108.js.map": "/flowers-wallet/static/js/main.552f9108.js.map"
+    "main.9c024eca.css.map": "/flowers-wallet/static/css/main.9c024eca.css.map",
+    "main.2e62f247.js.map": "/flowers-wallet/static/js/main.2e62f247.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1ee8f69.css",
-    "static/js/main.552f9108.js"
+    "static/css/main.9c024eca.css",
+    "static/js/main.2e62f247.js"
   ]
 }

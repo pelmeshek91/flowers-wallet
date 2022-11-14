@@ -32,7 +32,8 @@
   order: 1;
   align-self: stretch;
 
-  font-family: 'Circe';
+  /* font-family: 'Circe Re'; */
+
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -47,6 +48,7 @@
   border-bottom: 1px solid #24cca7;
   /* border-radius: 15px; */
 }
+
 .input:hover {
   cursor: pointer;
   color: #24cca7;

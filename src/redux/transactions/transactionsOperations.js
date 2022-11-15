@@ -9,10 +9,12 @@ export const addTransaction = createAsyncThunk(
         'https://wallet.goit.ua/api/transactions',
         transaction
       );
+
       const fixedData = {
         ...data,
         balanceAfter: Number(data.balanceAfter.toFixed(2)),
       };
+
       return fixedData;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -27,6 +29,22 @@ export const getCategories = createAsyncThunk(
       const { data } = await axios.get(
         'https://wallet.goit.ua/api/transaction-categories'
       );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+export const transactionsSummary = createAsyncThunk(
+  'transactionsSummary',
+  async ({ month, year }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        month > 0 && year > 0
+          ? `https://wallet.goit.ua/api/transactions-summary?month=${month}&year=${year}`
+          : 'https://wallet.goit.ua/api/transactions-summary'
+      );
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

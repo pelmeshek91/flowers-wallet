@@ -3,6 +3,7 @@ import css from './Currency.module.css';
 import { useState, useEffect } from 'react';
 import decorationLine from '../../images/Currency/Line-currency-mobile.svg';
 import { useMediaQuery } from 'react-responsive';
+// import decoration from '../../images/decoration-line.svg';
 
 const Currency = () => {
   const [currency, setCurrency] = useState([]);
@@ -61,6 +62,11 @@ const Currency = () => {
             alt="decoration line"
           />
         )}
+        {/*  <img
+          className={css.table__image}
+          src={decoration}
+          alt="decoration line"
+        /> */}
       </table>
     </div>
   );

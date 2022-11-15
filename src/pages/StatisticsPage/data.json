@@ -22,15 +22,5 @@
     { "id": 10, "label": "2021" },
     { "id": 11, "label": "2022" }
   ],
-  "dataTable": [
-    { "id": 7, "Category": "Basic expenses", "Sum": "8700.00" },
-    { "id": 8, "Category": "Products", "Sum": "3800.74" },
-    { "id": 9, "Category": "Car", "Sum": "1500.00" },
-    { "id": 10, "Category": "Self care", "Sum": "800.00" },
-    { "id": 11, "Category": "Херсон наш", "Sum": "5000.50" },
-    { "id": 12, "Category": "Child care", "Sum": "2208.50" },
-    { "id": 13, "Category": "Child care", "Sum": "2208.50" },
-    { "id": 14, "Category": "Child care", "Sum": "308.50" },
-    { "id": 15, "Category": "За арбузами", "Sum": "9200.50" }
-  ]
+  "dataTable": []
 }

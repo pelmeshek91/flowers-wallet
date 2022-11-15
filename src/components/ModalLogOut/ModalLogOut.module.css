@@ -1,50 +1,50 @@
 .modal {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.4);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
 }
 .modal.active {
-    opacity: 1;
-    pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
 }
 .modal__content {
-    padding: 20px;
-    border-radius: 20px;
-    background-color: var(--main-bg-cl);
-    transform: scale(0.5);
-    display: flex;
-    flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--main-bg-cl);
+  transform: scale(0.5);
+  display: flex;
+  flex-wrap: wrap;
 }
 .modal__content.active {
-    transform: scale(1);
+  transform: scale(1);
 }
 .pretitle {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 140.5%;
-    width: 300px;
-    margin-right: 20px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    text-align: center;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 140.5%;
+  width: 300px;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 .contained {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 .container__button {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    margin-top: 25px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 25px;
 }
 .modalLogoutImage {
     display: flex;

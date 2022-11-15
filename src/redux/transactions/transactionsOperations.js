@@ -35,13 +35,16 @@ export const getCategories = createAsyncThunk(
     }
   }
 );
-export const getTransactions = createAsyncThunk(
-  'getTransaction',
-  async (_, { rejectWithValue }) => {
+export const transactionsSummary = createAsyncThunk(
+  'transactionsSummary',
+  async ({ month, year }, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        'https://wallet.goit.ua/api/transactions'
+        month > 0 && year > 0
+          ? `https://wallet.goit.ua/api/transactions-summary?month=${month}&year=${year}`
+          : 'https://wallet.goit.ua/api/transactions-summary'
       );
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

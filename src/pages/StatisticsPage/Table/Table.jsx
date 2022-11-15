@@ -11,37 +11,43 @@ import { setBg } from 'components/RandomHexColor/RandomHexColor';
 
 export const Table = ({ dataTable, toGetData, sumIncome }) => {
   let sum = 0;
+
   return (
     <List>
       <Header>
         <div>Category</div> <div>Sum</div>
       </Header>
-      {dataTable.map(({ id, Category, Sum }) => {
-        const total = Number(Sum);
-        let setBgColor = setBg();
-        sum += total;
-        toGetData(total, setBgColor, dataTable.length);
-        return (
-          <Item key={id} style={{}}>
-            <div
-              style={{
-                position: 'absolute',
-                width: '24px',
-                height: '24px',
-                left: '28px',
-                top: '50%',
-                transform: `translateY(-50%)`,
-                backgroundColor: `${setBgColor}`,
-                borderRadius: `2px`,
-              }}
-            ></div>
-            <Decription>
-              <p>{Category}</p>
-              <p>{Sum}</p>
-            </Decription>
-          </Item>
-        );
-      })}
+      {dataTable?.categoriesSummary &&
+        dataTable.categoriesSummary.map(({ name, total }) => {
+          const total1 = Number(total);
+          let setBgColor = setBg();
+          sum += total1;
+          toGetData(total1, setBgColor, dataTable.length);
+          if (name.toLowerCase() === 'income') {
+            return;
+          } else {
+            return (
+              <Item key={name} style={{}}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: '24px',
+                    height: '24px',
+                    left: '28px',
+                    top: '50%',
+                    transform: `translateY(-50%)`,
+                    backgroundColor: `${setBgColor}`,
+                    borderRadius: `2px`,
+                  }}
+                ></div>
+                <Decription>
+                  <p>{name}</p>
+                  <p>{total}</p>
+                </Decription>
+              </Item>
+            );
+          }
+        })}
 
       <Total>
         <Expenses>

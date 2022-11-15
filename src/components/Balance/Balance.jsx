@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 const Balance = () => {
   const balance = useSelector(selectUserBalance);
   const balanceAfter = useSelector(financeSelectors.selectTotalBalance);
-  console.log(balanceAfter);
 
   return (
     <div className={css.balance}>

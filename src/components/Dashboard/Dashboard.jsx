@@ -2,13 +2,17 @@ import Navigation from 'components/Navigation';
 import Balance from 'components/Balance';
 import Currency from 'components/Currency';
 import s from './Dashboard.module.css';
+import { useMediaQuery } from 'react-responsive';
 
 export const Dashboard = () => {
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+
   return (
     <div className={s.box}>
       <Navigation />
       <Balance />
-      <Currency />
+      {(isTablet || isDesktop) && <Currency />}
     </div>
   );
 };

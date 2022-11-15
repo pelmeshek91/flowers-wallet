@@ -1,10 +1,28 @@
-/* .navigation {} */
+.navigation {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    display: block;
+  }
+}
+
+.navigation__item {
+  height: 27px;
+}
 
 .navigation__item:not(:last-child) {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .navigation__img {
-    box-shadow: (0px 3px 10px rgba(74, 86, 226, 0.5));
+  margin-right: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation__img {
     margin-right: 20px;
+  }
 }

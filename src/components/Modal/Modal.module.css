@@ -9,13 +9,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1200;
+  /* z-index: 1200; */
+}
+
+@media screen and (max-width: 480px) {
+  .overlay {
+    top: 60px;
+  }
 }
 
 .modal {
-  border-radius: 20px;
-  width: 540px;
-  max-width: calc(100vw - 48px);
-  max-height: calc(100vh - 24px);
   background-color: var(--main-bg-cl);
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .modal {
+    border-radius: 20px;
+    width: 480px;
+    max-width: calc(100vw - 48px);
+    max-height: calc(100vh - 24px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    border-radius: 20px;
+    width: 540px;
+    max-width: calc(100vw - 48px);
+    max-height: calc(100vh - 24px);
+  }
 }

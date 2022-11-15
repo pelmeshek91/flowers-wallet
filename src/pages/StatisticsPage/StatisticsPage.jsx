@@ -5,7 +5,6 @@ import { Table } from './Table/Table';
 import { Dashboard } from 'components/Dashboard/Dashboard';
 import React, { useEffect, useState } from 'react';
 import { allMonths, allYear } from 'services/const';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { transactionsSummary } from 'redux/transactions/transactionsOperations';
 import financeSelectors from 'redux/transactions/transactionsSelector';

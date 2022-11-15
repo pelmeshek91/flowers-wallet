@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const Currency = () => {
   const [currency, setCurrency] = useState([]);
-  
+
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
   const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
@@ -35,41 +35,43 @@ const Currency = () => {
 
   return (
     <>
-   {(isTablet || isDesktop ) && <div className={css.div}>
-      <table className={css.table}>
-        <thead className={css.table__header}>
-          <tr className={css.table__header__item}>
-            <th>Currency</th>
-            <th>Purchase</th>
-            <th>Sale</th>
-          </tr>
-        </thead>
-        <tbody className={css.table__body}>
-          {currency.length > 0 &&
-            currency.map(({ ccy, buy, sale }) => {
-              return (
-                <tr className={css.table__body__item} key={ccy}>
-                  <td>{ccy}</td>
-                  <td>{Math.max(buy).toFixed(2)}</td>
-                  <td>{Math.max(sale).toFixed(2)}</td>
-                </tr>
-              );
-            })}
-        </tbody>
-        {isMobile && (
-          <img
-            className={css.table__image}
-            src={decorationLine}
-            alt="decoration line"
-          />
-        )}
-        {/*  <img
+      {(isTablet || isDesktop) && (
+        <div className={css.div}>
+          <table className={css.table}>
+            <thead className={css.table__header}>
+              <tr className={css.table__header__item}>
+                <th>Currency</th>
+                <th>Purchase</th>
+                <th>Sale</th>
+              </tr>
+            </thead>
+            <tbody className={css.table__body}>
+              {currency.length > 0 &&
+                currency.map(({ ccy, buy, sale }) => {
+                  return (
+                    <tr className={css.table__body__item} key={ccy}>
+                      <td>{ccy}</td>
+                      <td>{Math.max(buy).toFixed(2)}</td>
+                      <td>{Math.max(sale).toFixed(2)}</td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+            {isMobile && (
+              <img
+                className={css.table__image}
+                src={decorationLine}
+                alt="decoration line"
+              />
+            )}
+            {/*  <img
           className={css.table__image}
           src={decoration}
           alt="decoration line"
         /> */}
-      </table>
-    </div>}
+          </table>
+        </div>
+      )}
     </>
   );
 };

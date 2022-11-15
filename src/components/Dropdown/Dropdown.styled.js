@@ -32,7 +32,10 @@ export const SelectBox = styled('div')(
 	position:relative;
   & div{
 	width: 100%;
+	height: 400px;
+	overflow-y: scroll
   }
+ 
   `
 );
 
@@ -45,7 +48,6 @@ export const StyledButton = styled('button')(
   line-height: 1.5;
   
   position: relative;
-  min-width: 160px;
   padding: 13px 16px;
 
 
@@ -85,7 +87,8 @@ export const StyledButton = styled('button')(
     float: right;
   }
   & div{
-	width:100%;
+	width:100px;
+	
   }
   `
 );
@@ -96,14 +99,15 @@ export const StyledListbox = styled('ul')(
   box-sizing: border-box;
   border-radius: 20px;
   width: 100%;
+  height:300px
   overflow: hidden;
   outline: 0px;
   
   font-size: 16px;
   color: #000000;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 6px 15px rgb(0 0 0 / 10%);
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(100px);
   `
 );
 

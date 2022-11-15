@@ -50,6 +50,8 @@ a.active {
   display: flex;
   align-items: center;
 
+  height: 27px;
+
   font-family: 'Poppins Bold';
   font-style: normal;
 
@@ -59,23 +61,27 @@ a.active {
   color: #000000;
 
   &:hover {
-    color: #4a56e2;
+    color: var(--accent-active-color);
     filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
     scale: 1.1;
     transition: 1s;
   }
 
-  &:focus {
-    color: #4a56e2;
-    filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
+  color: var(--accent-active-color);
+  filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
+  transition: 1s;
+}
+
+@media screen and (max-width: 767px) {
+  a.active {
     scale: 1.1;
-    transition: 1s;
   }
 }
 
 a.inactive {
   display: flex;
   align-items: center;
+  height: 27px;
 
   font-family: 'Poppins Regular';
   font-style: normal;
@@ -86,7 +92,7 @@ a.inactive {
   color: #000000;
 
   &:hover {
-    color: #4a56e2;
+    color: var(--accent-active-color);
     filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
     scale: 1.1;
     transition: 1s;

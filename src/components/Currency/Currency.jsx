@@ -9,8 +9,8 @@ const Currency = () => {
   const [currency, setCurrency] = useState([]);
   
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-  // const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
-  // const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
 
   useEffect(() => {
     const instance = axios.create({
@@ -34,7 +34,8 @@ const Currency = () => {
   }, []);
 
   return (
-    <div className={css.div}>
+    <>
+   {(isTablet || isDesktop ) && <div className={css.div}>
       <table className={css.table}>
         <thead className={css.table__header}>
           <tr className={css.table__header__item}>
@@ -68,7 +69,8 @@ const Currency = () => {
           alt="decoration line"
         /> */}
       </table>
-    </div>
+    </div>}
+    </>
   );
 };
 

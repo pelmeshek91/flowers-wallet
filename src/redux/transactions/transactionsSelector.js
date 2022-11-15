@@ -12,6 +12,7 @@ const selectIsModalAddTransaction = state =>
 
 const selectBalance = state => normalizeAmount(selectTotalBalance(state));
 
+const selectTransactionsSummary = state => state.transactionsSummary.categories;
 const financeSelectors = {
   selectTotalBalance,
   selectIsModalAddTransaction,
@@ -21,6 +22,7 @@ const financeSelectors = {
   selectSummary,
   selectError,
   selectLoading,
+  selectTransactionsSummary,
 };
 
 export default financeSelectors;

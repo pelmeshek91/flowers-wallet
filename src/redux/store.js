@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 // import { contactsReducer } from './contacts/contactsSlice';
 import { financeReducer } from './transactions/transactionsSlice';
 import { authReducer } from './auth/authSlice';
+import { transactionsSummaryReducer } from './transactions/transactionsSummarySlice';
 import {
   persistStore,
   persistReducer,
@@ -23,6 +24,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
+    transactionsSummary: transactionsSummaryReducer,
     finance: financeReducer,
     auth: persistReducer(authPersistConfig, authReducer),
   },

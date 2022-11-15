@@ -32,18 +32,34 @@
   min-width: 280px;
   margin-top: 19px;
 }
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .dropDownList {
+  margin-top: 0px;
+  }
+}
 
 .dropDownListItem {
   border-radius: 10px;
-  width: 300px;
+  width: 394px;
   list-style: none;
   font-size: 16px;
   line-height: 1.5;
-  padding: 9px 0px 9px 20px;
+  padding: 6px 0px 9px 20px;
   display: flex;
   color: var(--main-text-color);
 }
-
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .dropDownListItem {
+      width: 300px;
+      padding: 9px 0px 5px 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .dropDownListItem {
+    width: 280px;
+    padding: 9px 0px 5px 20px;
+  }
+}
 .dropDownListItem:hover,
 .dropDownListItem:focus {
   color: var(--expense-color);

@@ -9,7 +9,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* z-index: 1200; */
 }
 
 @media screen and (max-width: 480px) {
@@ -44,5 +43,6 @@
     width: 540px;
     max-width: calc(100vw - 48px);
     max-height: calc(100vh - 24px);
+    min-height: 630px;
   }
 }

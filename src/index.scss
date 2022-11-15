@@ -23,14 +23,47 @@
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #ffffff;
   backdrop-filter: blur(25px);
+  & #root {
+    padding-bottom: 20px;
+  }
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url('images/Body/peach.svg'),
+      url('images/Body/purple.svg');
+    background-repeat: no-repeat;
+    background-position: 260% -40%, -160% 140%;
+    background-size: 638 499, 638 499;
+  }
+}
+@media screen and (min-width: 1000px) {
+  body {
+    background-position: 140% -40%, -40% 150%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    background-position: 140% -40%, -40% 160%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body {
+    background-position: 130% -40%, -20% 160%;
+  }
+}
+@media screen and (min-width: 1480px) {
+  body {
+    background-position: 120% -30%, -20% 160%;
+  }
+}
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

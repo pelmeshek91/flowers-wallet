@@ -9,7 +9,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* z-index: 1200; */
 }
 
 @media screen and (max-width: 480px) {

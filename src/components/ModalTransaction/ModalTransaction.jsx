@@ -128,7 +128,7 @@ const ModalAddTransaction = () => {
           }) => (
             <Form className={s.form}>
               <h1 className={s.form__title}>Add transaction</h1>
-              <div className={s.checkbox}>
+              <div className={chooseType ? s.withoutSelect : s.checkbox}>
                 <span
                   className={`${s.checkboxIncome} ${
                     chooseType && s.checkboxChecked

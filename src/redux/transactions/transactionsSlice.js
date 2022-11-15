@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
   data: null,
-  totalBalance: null,
+  totalBalance: 0,
   summary: null,
   error: null,
   categories: null,

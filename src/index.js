@@ -5,7 +5,7 @@ import { store, persistor } from 'redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
-import './index.css';
+import './index.scss';
 import './fonts/Circe/Circe-Bold.ttf';
 import './fonts/Circe/Circe-Regular.ttf';
 import './fonts/Poppins/Poppins-Bold.ttf';
@@ -22,5 +22,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
-
-//  basename = '/flowers-wallet/'

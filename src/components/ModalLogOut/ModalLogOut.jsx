@@ -44,7 +44,7 @@ export const ModalLogout = ({ active, setActive }) => {
           className={active ? `${s.modal__content} ${s.active}` : `${s.modal}`}
           onClick={e => e.stopPropagation()}
         >
-          <p className={s.pretitle}>
+          <div className={s.pretitle}>
             Are you sure you want to log out of your account?
             <div className={s.container__button}>
               <ThemeProvider theme={theme}>
@@ -64,7 +64,7 @@ export const ModalLogout = ({ active, setActive }) => {
                 </Button>
               </ThemeProvider>
             </div>
-          </p>
+          </div>
 
           <div className={s.modalLogoutImage}>
             <img src={modalLogoutImage} alt="modalLogoutImage" width={300} />

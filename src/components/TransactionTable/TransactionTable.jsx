@@ -4,12 +4,14 @@ export const TransactionTable = () => {
     <>
       <table className={css.table}>
         <thead>
-          <th>Date</th>
-          <th>Type</th>
-          <th>Category</th>
-          <th>Comment</th>
-          <th>Sum</th>
-          <th>Balance</th>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Comment</th>
+            <th>Sum</th>
+            <th>Balance</th>
+          </tr>
         </thead>
         <tbody>
           <tr>

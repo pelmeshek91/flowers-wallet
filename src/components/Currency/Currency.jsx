@@ -1,7 +1,7 @@
 import axios from 'axios';
 import css from './Currency.module.css';
 import { useState, useEffect } from 'react';
-import decoration from '../../images/decoration-line.svg';
+// import decoration from '../../images/decoration-line.svg';
 
 const Currency = () => {
   const [currency, setCurrency] = useState([]);
@@ -50,11 +50,11 @@ const Currency = () => {
               );
             })}
         </tbody>
-        <img
+        {/*  <img
           className={css.table__image}
           src={decoration}
           alt="decoration line"
-        />
+        /> */}
       </table>
     </div>
   );

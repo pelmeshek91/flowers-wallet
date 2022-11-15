@@ -24,7 +24,7 @@ export const Table = ({ dataTable, toGetData, sumIncome }) => {
           sum += total1;
           toGetData(total1, setBgColor, dataTable.length);
           if (name.toLowerCase() === 'income') {
-            return;
+            return '';
           } else {
             return (
               <Item key={name} style={{}}>

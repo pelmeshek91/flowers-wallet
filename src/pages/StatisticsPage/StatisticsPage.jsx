@@ -30,11 +30,10 @@ export const StatisticsPage = () => {
   const token = useSelector(selectToken);
 
   useEffect(() => {
-    if (!token) {
-      return;
+    if (token) {
+      dispatch(transactionsSummary({ month: 0, year: 0 }));
     }
-    dispatch(transactionsSummary({ month: 0, year: 0 }));
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   const toGetData = (total, bgColor, categoriesSummary) => {
     if (categoriesSummary > sum.length) {

@@ -23,6 +23,7 @@
   transform: scale(0.5);
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .modal__content.active {
   transform: scale(1);
@@ -36,6 +37,11 @@
   margin-top: 30px;
   margin-bottom: 10px;
   text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .pretitle {
+    margin-right: 0px;
+  }
 }
 .contained {
   margin-right: 5px;
@@ -54,11 +60,11 @@
     font-family: 'Poppins';
     font-size: 18px;
     font-weight: 500;
-   /* color:#d2fff0; */
+   color: var(--income-color);
     border-radius: 20px;
     height: 43px;
     width: 116px;
-    background-color: #e7f8fb;
+    background-color: #6fe99c26;
     border: 2px solid var(--income-color);
 }
 .modalButton:hover,

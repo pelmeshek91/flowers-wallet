@@ -1,16 +1,25 @@
 export const allMonths = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
+  { id: 0, label: 'All' },
+  { id: 1, label: 'January' },
+  { id: 2, label: 'February' },
+  { id: 3, label: 'March' },
+  { id: 4, label: 'April' },
+  { id: 5, label: 'May' },
+  { id: 6, label: 'June' },
+  { id: 7, label: 'July' },
+  { id: 8, label: 'August' },
+  { id: 9, label: 'September' },
+  { id: 10, label: 'October' },
+  { id: 11, label: 'November' },
+  { id: 12, label: 'December' },
+];
+export const allYear = [
+  { id: 0, label: 'All' },
+  { id: 2022, label: '2022' },
+  { id: 2021, label: '2021' },
+  { id: 2019, label: '2019' },
+  { id: 2018, label: '2018' },
+  { id: 2017, label: '2017' },
 ];
 
 export const allCategoriesWithColors = [

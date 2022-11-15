@@ -27,10 +27,19 @@ const grey = {
   800: '#32383f',
   900: '#24292f',
 };
+export const SelectBox = styled('div')(
+  ({ theme }) => `
+	position:relative;
+  & div{
+	width: 100%;
+  }
+  `
+);
 
 export const StyledButton = styled('button')(
   ({ theme }) => `
   font-size: 16px;
+  width:100%;
   box-sizing: border-box;
   text-align: left;
   line-height: 1.5;
@@ -75,16 +84,19 @@ export const StyledButton = styled('button')(
 	height: 24px;
     float: right;
   }
+  & div{
+	width:100%;
+  }
   `
 );
 export const StyledListbox = styled('ul')(
   ({ theme }) => `
-   min-width: 160px;
 
   margin: 12px 0;
   box-sizing: border-box;
   border-radius: 20px;
-  overflow: auto;
+  width: 100%;
+  overflow: hidden;
   outline: 0px;
   
   font-size: 16px;
@@ -99,19 +111,18 @@ export const StyledOption = styled(OptionUnstyled)(
   ({ theme }) => `
   list-style: none;
   padding: 14px 20px;
-  min-width: 160px;
-  border-radius: 8px;
   cursor: default;
-
+  
   &:last-of-type {
-    border-bottom: none;
-  }
-
- 
-//! selected
-  &.${optionUnstyledClasses.highlighted}.${optionUnstyledClasses.selected} {
-    background-color: #FFF6F9;
-    color: #FF6596;
+	  border-bottom: none;
+	}
+	
+	
+	//! selected
+	&.${optionUnstyledClasses.highlighted}.${optionUnstyledClasses.selected} {
+	border-radius: 20px;
+    background-color: #FF6596;
+    color: #fff;
   }
 
  

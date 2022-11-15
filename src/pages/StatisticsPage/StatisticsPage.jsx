@@ -1,84 +1,53 @@
-import {
-  Box,
-  FilterBox,
-  StatistBox,
-  Div,
-  Diagram,
-} from './StatisticsPage.styled';
+import { Box, FilterBox, StatistBox, Div } from './StatisticsPage.styled';
+import { Chart } from 'components/Chart/Chart';
 import { Dropdown } from 'components/Dropdown/Dropdown';
 import { Table } from './Table/Table';
 import { Dashboard } from 'components/Dashboard/Dashboard';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { allMonths, allYear } from 'services/const';
 
-import data from 'pages/StatisticsPage/data.json';
 import { useDispatch, useSelector } from 'react-redux';
 import { transactionsSummary } from 'redux/transactions/transactionsOperations';
 import financeSelectors from 'redux/transactions/transactionsSelector';
 import { selectToken } from 'redux/auth/authSelectors';
-ChartJS.register(ArcElement, Tooltip, Legend);
-
-const { Month, Year } = data;
 
 export const StatisticsPage = () => {
-  const sumIncome = 24000;
-  const sum = [];
-  const color = [];
-  const dispatch = useDispatch();
   const summaryData = useSelector(financeSelectors.selectTransactionsSummary);
   const token = useSelector(selectToken);
+  const dispatch = useDispatch();
+  const [month, setMonth] = useState(0);
+  const [year, setYear] = useState(0);
 
   useEffect(() => {
     if (token) {
-      dispatch(transactionsSummary({ month: 0, year: 0 }));
+      dispatch(transactionsSummary({ month: month, year: year }));
     }
-  }, [dispatch, token]);
+  }, [dispatch, token, year, month]);
 
-  const toGetData = (total, bgColor, categoriesSummary) => {
-    if (categoriesSummary > sum.length) {
-      sum.push(total);
-      color.push(bgColor);
-    }
-  };
-  const dataPie = {
-    datasets: [
-      {
-        label: '# of Votes',
-        data: sum,
-        backgroundColor: color,
-        borderWidth: 0,
-      },
-    ],
+  const onOptionClicked = (name, value) => {
+    name === 'month' ? setMonth(value) : setYear(value);
   };
 
   return (
     <Div>
       <Dashboard />
       <Box>
-        <Diagram>
-          <h2>Statistics</h2>
-
-          <div>
-            <Doughnut
-              data={dataPie}
-              strokeWidth={20}
-              style={{ position: ' relative' }}
-            />
-            <p>${sumIncome}</p>
-          </div>
-        </Diagram>
+        {summaryData !== undefined && <Chart summaryData={summaryData} />}
 
         <StatistBox>
           <FilterBox>
-            <Dropdown data={Month} name="Month" />
-            <Dropdown data={Year} name="Year" />
+            <Dropdown
+              data={allMonths}
+              name="month"
+              onOptionClicked={onOptionClicked}
+            />
+            <Dropdown
+              data={allYear}
+              name="year"
+              onOptionClicked={onOptionClicked}
+            />
           </FilterBox>
-          <Table
-            dataTable={summaryData}
-            toGetData={toGetData}
-            sumIncome={sumIncome}
-          />
+          {summaryData !== undefined && <Table summaryData={summaryData} />}
         </StatistBox>
       </Box>
     </Div>

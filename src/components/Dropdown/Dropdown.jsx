@@ -5,6 +5,7 @@ import {
   StyledListbox,
   StyledOption,
   StyledPopper,
+  SelectBox,
 } from './Dropdown.styled';
 
 const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
@@ -18,14 +19,19 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
   return <SelectUnstyled {...props} ref={ref} slots={slots} />;
 });
 
-export const Dropdown = ({ data, name }) => {
+export const Dropdown = ({ data, name, onOptionClicked }) => {
   return (
-    <CustomSelect defaultValue={10}>
-      {data.map(item => (
-        <StyledOption key={item.id} value={item.id}>
-          {item.label}
-        </StyledOption>
-      ))}
-    </CustomSelect>
+    <SelectBox>
+      <CustomSelect
+        defaultValue={0}
+        onChange={e => onOptionClicked(name, e.target.id)}
+      >
+        {data.map(item => (
+          <StyledOption key={item.id} id={item.id} value={item.id}>
+            {item.label}
+          </StyledOption>
+        ))}
+      </CustomSelect>
+    </SelectBox>
   );
 };

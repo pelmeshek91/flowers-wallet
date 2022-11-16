@@ -2,7 +2,6 @@
   margin-top: 46px;
   display: flex;
   flex-direction: column;
-
 }
 
 .table {
@@ -18,16 +17,13 @@
 }
 
 .tableWrap div {
-  height: 500px;
+  height: calc(100% - 250px);
   overflow-y: scroll;
 }
 
 .table__body {
   width: 100%;
-
 }
-
-
 
 .table thead {
   position: sticky;

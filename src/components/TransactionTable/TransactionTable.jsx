@@ -23,7 +23,7 @@ export const TransactionTable = () => {
   // console.log(data);
 
   return (
-    <>
+    <div className={css.tableWrap}>
       <table className={css.table}>
         <thead>
           <tr>
@@ -68,6 +68,6 @@ export const TransactionTable = () => {
             )}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };

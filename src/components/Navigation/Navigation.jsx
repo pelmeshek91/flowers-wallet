@@ -25,7 +25,7 @@ const Navigation = () => {
               className={css.navigation__img}
               src={isMobile ? homeMobile : homeTablet}
               alt="Home"
-              width={isTablet && '24px'}
+              // width={isTablet && '24px'}
             />
             {(isTablet || isDesktop) && <p>Home</p>}
           </NavLink>
@@ -40,7 +40,7 @@ const Navigation = () => {
               className={css.navigation__img}
               src={isMobile ? timelineMobile : timelineTablet}
               alt="Statistics"
-            width={isTablet && '24px'}
+              /*   width={isTablet && '24px'} */
             />
 
             {(isTablet || isDesktop) && <p>Statistics</p>}

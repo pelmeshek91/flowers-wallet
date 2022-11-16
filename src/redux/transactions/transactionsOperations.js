@@ -51,3 +51,16 @@ export const transactionsSummary = createAsyncThunk(
     }
   }
 );
+export const getTransactions = createAsyncThunk(
+  'getTransactions',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        'https://wallet.goit.ua/api/transactions'
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

@@ -125,20 +125,16 @@ a.active {
   &:hover {
     color: var(--accent-active-color);
     filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
-    scale: 1.1;
-    transition: 1s;
+    transform: translateX(15px);
+    transition: transform 1.5s;
   }
 
   color: var(--accent-active-color);
   filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
-  transition: 1s;
+  transform: translateX(15px);
+  transition: transform 1.5s;
 }
 
-@media screen and (max-width: 767px) {
-  a.active {
-    scale: 1.1;
-  }
-}
 
 a.inactive {
   display: flex;
@@ -152,12 +148,13 @@ a.inactive {
   line-height: 1.5;
 
   color: #000000;
+  transition: transform 1.5s;
 
   &:hover {
     color: var(--accent-active-color);
     filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
-    scale: 1.1;
-    transition: 1s;
+    transform: translateX(15px);
+    transition: transform 1.5s;
   }
 }
 

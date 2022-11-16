@@ -1,13 +1,14 @@
-.div {
-  height: 500px;
-  width: 100%;
-  overflow-y: scroll;
+.tableWrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 80vh;
 }
+
 .table {
   width: 100%;
   max-width: 715px;
   border-collapse: collapse;
-  margin: 0 auto;
   margin-top: 46px;
   height: min-content;
 }
@@ -47,7 +48,7 @@
 
 /*responsive*/
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .table thead {
     display: none;
   }
@@ -79,5 +80,13 @@
     font-size: 15px;
     font-weight: bold;
     text-align: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tableWrap {
+    flex-wrap: wrap;
+    margin: 0 auto;
+
   }
 }

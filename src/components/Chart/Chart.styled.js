@@ -7,13 +7,11 @@ export const Diagram = styled.div`
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -30%);
+      transform: translate(-50%, -50%);
       margin: 0;
 
-      font-family: 'Circe';
-      font-style: normal;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 30px;
       line-height: 27px;
       text-align: center;
 

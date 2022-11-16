@@ -1,20 +1,12 @@
-import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
 import { Diagram } from './Chart.styled';
 import { allCategoriesWithColors } from 'services/const';
 
 ChartJS.register(ArcElement, Tooltip);
 
 export const Chart = ({ summaryData }) => {
-  const options = {
-    cutout: '75%',
-    hoverOffset: 10,
-    plugins: {
-      tooltip: {
-        callbacks: {},
-      },
-    },
-  };
+  let expense = 0;
   const dataPie = {
     labels: [],
     datasets: [
@@ -25,9 +17,11 @@ export const Chart = ({ summaryData }) => {
         borderWidth: 0,
       },
     ],
+    cutout: '65%',
   };
 
   if (summaryData.categoriesSummary.length > 0) {
+    expense = summaryData.expenseSummary;
     summaryData.categoriesSummary.forEach(({ name, type, total }) => {
       if (type === 'INCOME') return;
       let setBgColor = '';
@@ -50,13 +44,8 @@ export const Chart = ({ summaryData }) => {
       <h2>Statistics</h2>
 
       <div>
-        <Doughnut
-          data={dataPie}
-          options={options}
-          strokeWidth={20}
-          style={{ position: ' relative' }}
-        />
-        <p>$sum dash</p>
+        <Doughnut data={dataPie} style={{ position: ' relative' }} />
+        <p>{expense}</p>
       </div>
     </Diagram>
   );

@@ -4,18 +4,21 @@ import { selectName } from 'redux/auth/authSelectors';
 import { ModalLogout } from '../ModalLogOut/ModalLogOut';
 import logout from '../../images/logout-icon.svg';
 import css from './UserAuthMenu.module.css';
+import { useMediaQuery } from 'react-responsive';
 
 export const UserAuthMenu = () => {
   const name = useSelector(selectName);
   const [modalActive, setModalActive] = useState(false);
   const [closeModal] = useState(true);
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+
   return (
     <div className={css.authMenu}>
       <p className={css.user_name}>{name}</p>
       <span className={css.authMenu_line}></span>
       <button onClick={() => setModalActive(true)} className={css.logout_btn}>
         <img src={logout} alt="" />
-        <span className={css['logout_btn-text']}>Exit</span>
+        {isTablet && <span className={css['logout_btn-text']}>Exit</span>}
       </button>
       <ModalLogout
         active={modalActive}

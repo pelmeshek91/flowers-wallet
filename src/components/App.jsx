@@ -77,16 +77,75 @@ export const App = () => {
               </PublicRoute>
             }
           />
-         {isMobile &&  <Route
-            path="currency"
-            element={
-              <ProtectedRoute>
-                <CurrencyPage />
-              </ProtectedRoute>
-            }
-          />}
+          {isMobile && (
+            <Route
+              path="currency"
+              element={
+                <ProtectedRoute>
+                  <CurrencyPage />
+                </ProtectedRoute>
+              }
+            />
+          )}
         </Route>
       </Routes>
+      {/*     <Routes>
+        <Route path="/">
+          <Route
+            path="register"
+            element={
+              <PublicRoute restricted>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute restricted>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+        </Route>
+        <Route path="/auth" element={<Layout />}>
+          <Route
+            path="statistics"
+            element={
+              <ProtectedRoute>
+                <StatisticsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            index
+            element={
+              <ProtectedRoute>
+                <Navigate to="home" />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="home"
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
+
+          {isMobile && (
+            <Route
+              path="currency"
+              element={
+                <ProtectedRoute>
+                  <CurrencyPage />
+                </ProtectedRoute>
+              }
+            />
+          )}
+        </Route>
+      </Routes> */}
       <ToastContainer
         position="top-right"
         autoClose={3000}

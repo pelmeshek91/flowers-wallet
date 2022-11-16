@@ -29,40 +29,41 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #e7eaf2;
+  background-color: #e7eaf2;
   backdrop-filter: blur(25px);
+  overflow: hidden;
   & #root {
     padding-bottom: 20px;
   }
 }
-@media screen and (min-width: 768px) {
-  body::before {
-    content: '';
-    position: absolute;
-    top: 0px;
-    right: -20%;
-    z-index: -40;
-    display: block;
-    width: 634.41px;
-    height: 501.37px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url('images/Body/peach.svg');
-  }
-  body::after {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    left: -5%;
-    z-index: -40;
-    display: block;
-    width: 634.41px;
-    height: 501.37px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url('images/Body/purple.svg');
-  }
-}
+// @media screen and (min-width: 768px) {
+//   body::before {
+//     content: '';
+//     position: absolute;
+//     top: 0px;
+//     right: -20%;
+//     z-index: -40;
+//     display: block;
+//     width: 634.41px;
+//     height: 501.37px;
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     background-image: url('images/Body/peach.svg');
+//   }
+//   body::after {
+//     content: '';
+//     position: absolute;
+//     bottom: 0px;
+//     left: -5%;
+//     z-index: -40;
+//     display: block;
+//     width: 634.41px;
+//     height: 501.37px;
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     background-image: url('images/Body/purple.svg');
+//   }
+// }
 
 // @media screen and (min-width: 768px) {
 //   body {
@@ -134,7 +135,6 @@ a.active {
   transform: translateX(15px);
   transition: transform 1.5s;
 }
-
 
 a.inactive {
   display: flex;

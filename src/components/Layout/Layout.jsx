@@ -12,10 +12,12 @@ export const Layout = () => {
     <>
       {token && (
         <header className={css.header}>
-          <Link href="/" className={css.headerLogo}>
-            <img src={logoImage} alt="logo-icon" />
-          </Link>
-          <UserAuthMenu />
+          <div className={css.headerContainer}>
+            <Link href="/" className={css.headerLogo}>
+              <img src={logoImage} alt="logo-icon" />
+            </Link>
+            <UserAuthMenu />
+          </div>
         </header>
       )}
 

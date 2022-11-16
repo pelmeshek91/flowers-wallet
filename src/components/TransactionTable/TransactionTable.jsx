@@ -1,5 +1,27 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import css from './TransactionTable.module.css';
+import { selectAllTransactions } from 'redux/transactions/transactionsSelector';
+import { getTransactions } from 'redux/transactions/transactionsOperations';
+
 export const TransactionTable = () => {
+  const data = useSelector(selectAllTransactions);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTransactions());
+  }, [dispatch]);
+  let sortedData = data
+    ? data.sort((a, b) => {
+        console.log(b.transactionDate.split('-').join(''));
+        return (
+          Number(b.transactionDate.split('-').join('')) -
+          Number(a.transactionDate.split('-').join(''))
+        );
+        // return b.transactionDate.localeCompare(a.transactionDate);
+      })
+    : '';
+  // console.log(data);
+
   return (
     <>
       <table className={css.table}>
@@ -14,46 +36,36 @@ export const TransactionTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td data-label="Date">04.01.19</td>
-            <td data-label="Type">+</td>
-            <td data-label="Category">Regular Income</td>
-            <td data-label="Comment">Sallary</td>
-            <td data-label="Sum">10000</td>
-            <td data-label="Balance">10000</td>
-          </tr>
-          <tr>
-            <td data-label="Date">08.01.19</td>
-            <td data-label="Type">-</td>
-            <td data-label="Category">Other</td>
-            <td data-label="Comment">Gift for your wife</td>
-            <td data-label="Sum">300</td>
-            <td data-label="Balance">9700</td>
-          </tr>
-          <tr>
-            <td data-label="Date">04.01.19</td>
-            <td data-label="Type">-</td>
-            <td data-label="Category">Other</td>
-            <td data-label="Comment">Gift for your wife</td>
-            <td data-label="Sum">300</td>
-            <td data-label="Balance">9400</td>
-          </tr>
-          <tr>
-            <td data-label="Date">04.01.19</td>
-            <td data-label="Type">-</td>
-            <td data-label="Category">Other</td>
-            <td data-label="Comment">Gift for your wife</td>
-            <td data-label="Sum">300</td>
-            <td data-label="Balance">9100</td>
-          </tr>
-          <tr>
-            <td data-label="Date">04.01.19</td>
-            <td data-label="Type">-</td>
-            <td data-label="Category">Other</td>
-            <td data-label="Comment">Gift for your wife</td>
-            <td data-label="Sum">300</td>
-            <td data-label="Balance">9100</td>
-          </tr>
+          {sortedData &&
+            sortedData.map(
+              ({
+                id,
+                type,
+                comment,
+                amount,
+                balanceAfter,
+                transactionDate,
+              }) => {
+                // console.log(transactionDate);
+                // const date = new Date(transactionDate).getFullYear();
+                // console.log(date);
+                const color = type === 'INCOME' ? '#24CCA7' : '#FF6596';
+                return (
+                  <>
+                    <tr key={id}>
+                      <td data-label="Date">{transactionDate}</td>
+                      <td data-label="Type">{type === 'INCOME' ? '+' : '-'}</td>
+                      <td data-label="Category">Regular Income</td>
+                      <td data-label="Comment">{comment}</td>
+                      <td data-label="Sum" style={{ color: `${color}` }}>
+                        {amount}
+                      </td>
+                      <td data-label="Balance">{balanceAfter}</td>
+                    </tr>
+                  </>
+                );
+              }
+            )}
         </tbody>
       </table>
     </>

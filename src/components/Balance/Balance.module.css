@@ -77,11 +77,3 @@
 
   color: var(--main-text-color);
 }
-
-.span {
-  display: inline-block;
-  font-family: 'Poppins Bold';
-
-  font-size: 30px;
-  line-height: 1.5;
-}

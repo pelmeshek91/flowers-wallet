@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-export const Div = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 20px;
+// export const Div = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   padding: 0 20px;
 
-  @media screen and (min-width: 1200px) {
-    padding: 0 16px;
-    flex-direction: row;
-  }
-`;
+//   @media screen and (min-width: 1200px) {
+//     padding: 0 16px;
+//     flex-direction: row;
+//   }
+// `;
 
 export const Box = styled.div`
   display: flex;

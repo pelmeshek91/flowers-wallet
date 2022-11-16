@@ -1,3 +1,8 @@
+.div {
+  height: 500px;
+  width: 100%;
+  overflow-y: scroll;
+}
 .table {
   width: 100%;
   max-width: 715px;

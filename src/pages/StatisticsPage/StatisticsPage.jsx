@@ -1,4 +1,4 @@
-import { Box, FilterBox, StatistBox, Div } from './StatisticsPage.styled';
+import { Box, FilterBox, StatistBox } from './StatisticsPage.styled';
 import { Chart } from 'components/Chart/Chart';
 import { Dropdown } from 'components/Dropdown/Dropdown';
 import { Table } from './Table/Table';
@@ -28,7 +28,7 @@ export const StatisticsPage = () => {
   };
 
   return (
-    <Div>
+    <>
       <Dashboard />
       <Box>
         {summaryData !== undefined && <Chart summaryData={summaryData} />}
@@ -49,6 +49,6 @@ export const StatisticsPage = () => {
           {summaryData !== undefined && <Table summaryData={summaryData} />}
         </StatistBox>
       </Box>
-    </Div>
+    </>
   );
 };

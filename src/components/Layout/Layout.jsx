@@ -19,7 +19,9 @@ export const Layout = () => {
         </header>
       )}
 
-      <Outlet />
+      <section className={css.box}>
+        <Outlet />
+      </section>
     </>
   );
 };

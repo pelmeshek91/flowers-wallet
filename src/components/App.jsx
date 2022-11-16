@@ -18,12 +18,14 @@ import { StatisticsPage } from 'pages/StatisticsPage/StatisticsPage';
 
 import { Loader } from '../components/Loader/Loader';
 
-
+import { useMediaQuery } from 'react-responsive';
+import { CurrencyPage } from 'pages/CurrencyPage/CurrencyPage';
 
 export const App = () => {
   const dispatch = useDispatch();
   const isFetchingCurrentUser = useSelector(selectIsFetchingCurrentUser);
   const isLoading = useSelector(selectIsLoading);
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
@@ -75,6 +77,14 @@ export const App = () => {
               </PublicRoute>
             }
           />
+         {isMobile &&  <Route
+            path="currency"
+            element={
+              <ProtectedRoute>
+                <CurrencyPage />
+              </ProtectedRoute>
+            }
+          />}
         </Route>
       </Routes>
       <ToastContainer

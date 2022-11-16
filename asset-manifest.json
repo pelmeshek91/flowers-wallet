@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/flowers-wallet/static/css/main.287c56fd.css",
-    "main.js": "/flowers-wallet/static/js/main.add23a66.js",
+    "main.css": "/flowers-wallet/static/css/main.8244ff1b.css",
+    "main.js": "/flowers-wallet/static/js/main.382cef3e.js",
     "static/media/Circe-Regular.ttf": "/flowers-wallet/static/media/Circe-Regular.4f184170d7403c914388.ttf",
     "static/media/Circe-Bold.ttf": "/flowers-wallet/static/media/Circe-Bold.78ec3e6d306010466f80.ttf",
     "static/media/Poppins-Regular.ttf": "/flowers-wallet/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -22,15 +22,17 @@
     "static/media/home-tablet.svg": "/flowers-wallet/static/media/home-tablet.75ef80808c5ae38c2557bb7d86ae12dd.svg",
     "static/media/ellipse-violet.svg": "/flowers-wallet/static/media/ellipse-violet.f6c24d3e33e7e1253ac73f0578713248.svg",
     "static/media/ellipse-pink.svg": "/flowers-wallet/static/media/ellipse-pink.07ef13244b203e866dcdec6e7633ee44.svg",
+    "static/media/peach.svg": "/flowers-wallet/static/media/peach.56dae54d1f42db312c34.svg",
+    "static/media/purple.svg": "/flowers-wallet/static/media/purple.8c677f92d5558906b616.svg",
     "static/media/mail-icon.svg": "/flowers-wallet/static/media/mail-icon.5a58fa9a7b1c77f266dc65e36b85b886.svg",
     "static/media/plus.svg": "/flowers-wallet/static/media/plus.6194a661e88e1e5113d2.svg",
     "static/media/minus.svg": "/flowers-wallet/static/media/minus.c1930871236002c803c7.svg",
     "static/media/arrowDown.svg": "/flowers-wallet/static/media/arrowDown.4cb3c592ef08d66ec113b6976f8a5d04.svg",
-    "main.287c56fd.css.map": "/flowers-wallet/static/css/main.287c56fd.css.map",
-    "main.add23a66.js.map": "/flowers-wallet/static/js/main.add23a66.js.map"
+    "main.8244ff1b.css.map": "/flowers-wallet/static/css/main.8244ff1b.css.map",
+    "main.382cef3e.js.map": "/flowers-wallet/static/js/main.382cef3e.js.map"
   },
   "entrypoints": [
-    "static/css/main.287c56fd.css",
-    "static/js/main.add23a66.js"
+    "static/css/main.8244ff1b.css",
+    "static/js/main.382cef3e.js"
   ]
 }

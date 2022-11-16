@@ -42,7 +42,7 @@ export const ModalLogout = ({ active, setActive }) => {
                 onClick={() => setActive(false)}
               >
                 {' '}
-                Cancel
+                сancel
               </button>
               <button
                 type="submit"

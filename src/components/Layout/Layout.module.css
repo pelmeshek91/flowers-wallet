@@ -55,11 +55,14 @@ p {
       1px 0px 0px rgba(255, 255, 255, 0.6);
   }
 }
+
 .test {
   position: relative;
-  background: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 1);
   backdrop-filter: blur(25px);
+  overflow: hidden;
 }
+
 @media screen and (min-width: 768px) {
   .test::before {
     content: '';
@@ -70,10 +73,12 @@ p {
     display: block;
     width: 634.41px;
     height: 501.37px;
+    background-color: rgba(255, 255, 255, 1);
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url('images/Body/peach.svg');
   }
+
   .test::after {
     content: '';
     position: absolute;
@@ -83,6 +88,7 @@ p {
     display: block;
     width: 634.41px;
     height: 501.37px;
+    background-color: rgba(255, 255, 255, 1);
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url('images/Body/purple.svg');

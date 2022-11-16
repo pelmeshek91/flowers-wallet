@@ -2,9 +2,7 @@
   display: flex;
   padding-top: 40px;
 }
-.navigation {
-  display: flex;
-}
+
 
 @media screen and (min-width: 768px) {
   .box {
@@ -14,16 +12,19 @@
     /* height: 100vh; */
     padding: 32px 0 40px 16px;
   }
+
   .navigation {
     display: flex;
     flex-direction: column;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .box {
     flex-direction: column;
     padding-top: 40px;
   }
+
   .navigation {
     display: flex;
   }

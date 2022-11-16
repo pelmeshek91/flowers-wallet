@@ -70,10 +70,18 @@
 
 .balance__total {
   margin-bottom: 0;
+  font-family: 'Poppins Bold';
 
-  font-weight: 700;
   font-size: 30px;
   line-height: 1.5;
 
   color: var(--main-text-color);
+}
+
+.span {
+  display: inline-block;
+  font-family: 'Poppins Bold';
+
+  font-size: 30px;
+  line-height: 1.5;
 }

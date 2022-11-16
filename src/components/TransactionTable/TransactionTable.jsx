@@ -25,7 +25,7 @@ export const TransactionTable = () => {
   return (
     <div className={css.tableWrap}>
       <table className={css.table}>
-        <thead>
+        <thead className={css.table__header}>
           <tr>
             <th>Date</th>
             <th>Type</th>
@@ -35,7 +35,7 @@ export const TransactionTable = () => {
             <th>Balance</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={css.table__body}>
           {data &&
             data.map(
               ({

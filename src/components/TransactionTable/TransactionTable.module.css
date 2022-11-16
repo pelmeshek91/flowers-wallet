@@ -1,19 +1,31 @@
 .tableWrap {
+  margin-top: 46px;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  height: 80vh;
+  height: 500px;
+  overflow-y: scroll;
 }
 
 .table {
+  position: relative;
+
   width: 100%;
   max-width: 715px;
+  table-layout: fixed;
+
   border-collapse: collapse;
-  margin-top: 46px;
+
   height: min-content;
 }
-
+.table__body {
+  width: 100%;
+  height: 400px;
+  overflow-y: scroll;
+}
 .table thead {
+  position: sticky;
+  top: 0;
+  width: 100%;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.5;
@@ -86,7 +98,6 @@
 @media screen and (min-width: 768px) {
   .tableWrap {
     flex-wrap: wrap;
-    margin: 0 auto;
-
+    margin: 46px auto;
   }
 }

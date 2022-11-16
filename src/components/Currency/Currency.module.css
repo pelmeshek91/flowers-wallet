@@ -9,13 +9,18 @@
     margin-top: 28px;
   }
 }
-
+.table {
+  background-image: url('images/bgTable.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
 @media screen and (min-width: 1280px) {
   .table {
     height: 347px;
     width: 393px;
 
-    background: var(--accent-active-color);
+    background-color: var(--accent-active-color);
     border-radius: 30px;
   }
 }
@@ -25,7 +30,7 @@
     height: 182px;
     width: 336px;
 
-    background: var(--accent-active-color);
+    background-color: var(--accent-active-color);
     border-radius: 30px;
   }
 }

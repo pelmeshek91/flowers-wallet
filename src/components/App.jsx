@@ -18,6 +18,8 @@ import { StatisticsPage } from 'pages/StatisticsPage/StatisticsPage';
 
 import { Loader } from '../components/Loader/Loader';
 
+
+
 export const App = () => {
   const dispatch = useDispatch();
   const isFetchingCurrentUser = useSelector(selectIsFetchingCurrentUser);

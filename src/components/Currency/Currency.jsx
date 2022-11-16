@@ -70,7 +70,6 @@ const Currency = () => {
                 })
               )}
             </tbody>
-            <div className={css.table__image}></div>
           </table>
         </div>
       )}

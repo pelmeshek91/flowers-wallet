@@ -10,16 +10,16 @@ export const TransactionTable = () => {
   useEffect(() => {
     dispatch(getTransactions());
   }, [dispatch]);
-  let sortedData = data
-    ? data.sort((a, b) => {
-        console.log(b.transactionDate.split('-').join(''));
-        return (
-          Number(b.transactionDate.split('-').join('')) -
-          Number(a.transactionDate.split('-').join(''))
-        );
-        // return b.transactionDate.localeCompare(a.transactionDate);
-      })
-    : '';
+  // let sortedData = data
+  //   ? data.sort((a, b) => {
+  //       console.log(newDate(b.transactionDate.split('-').join(''));
+  //       return (
+  //         Number(b.transactionDate.split('-').join('')) -
+  //         Number(a.transactionDate.split('-').join(''))
+  //       );
+  //       // return b.transactionDate.localeCompare(a.transactionDate);
+  //     })
+  // :
   // console.log(data);
 
   return (
@@ -36,8 +36,8 @@ export const TransactionTable = () => {
           </tr>
         </thead>
         <tbody>
-          {sortedData &&
-            sortedData.map(
+          {data &&
+            data.map(
               ({
                 id,
                 type,

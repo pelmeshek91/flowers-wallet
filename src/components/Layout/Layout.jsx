@@ -10,20 +10,22 @@ export const Layout = () => {
   const token = useSelector(selectToken);
   return (
     <>
-      {token && (
-        <header className={css.header}>
-          <div className={css.headerContainer}>
-            <Link href="/" className={css.headerLogo}>
-              <img src={logoImage} alt="logo-icon" />
-            </Link>
-            <UserAuthMenu />
-          </div>
-        </header>
-      )}
+      <div className={css.test}>
+        {token && (
+          <header className={css.header}>
+            <div className={css.headerContainer}>
+              <Link href="/" className={css.headerLogo}>
+                <img src={logoImage} alt="logo-icon" />
+              </Link>
+              <UserAuthMenu />
+            </div>
+          </header>
+        )}
 
-      <section className={css.box}>
-        <Outlet />
-      </section>
+        <section className={css.box}>
+          <Outlet />
+        </section>
+      </div>
     </>
   );
 };

@@ -20,6 +20,7 @@
 }
 
 .container {
+  height: 100vh;
   padding: 0 20px;
   margin: 0 auto;
 }

@@ -23,7 +23,6 @@
 }
 
 body {
-  position: relative;
   min-height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
@@ -32,9 +31,6 @@ body {
   background-color: #e7eaf2;
   backdrop-filter: blur(25px);
   overflow: hidden;
-  & #root {
-    padding-bottom: 20px;
-  }
 }
 // @media screen and (min-width: 768px) {
 //   body::before {

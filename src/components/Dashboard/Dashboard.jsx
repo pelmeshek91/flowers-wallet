@@ -10,8 +10,10 @@ export const Dashboard = () => {
 
   return (
     <div className={s.box}>
-      <Navigation />
-      <Balance />
+      <div className={s.navigation}>
+        <Navigation />
+        <Balance />
+      </div>
       {(isTablet || isDesktop) && <Currency />}
     </div>
   );

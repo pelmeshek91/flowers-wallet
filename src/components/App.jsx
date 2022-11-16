@@ -36,6 +36,26 @@ export const App = () => {
   ) : (
     <>
       <Routes>
+        <Route path="/">
+          <Route
+            index
+            path="login"
+            element={
+              <PublicRoute restricted>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <PublicRoute restricted>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+        </Route>
+
         <Route path="/" element={<Layout />}>
           <Route
             index
@@ -61,22 +81,7 @@ export const App = () => {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="register"
-            element={
-              <PublicRoute restricted>
-                <RegisterPage />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="login"
-            element={
-              <PublicRoute restricted>
-                <LoginPage />
-              </PublicRoute>
-            }
-          />
+
           {isMobile && (
             <Route
               path="currency"

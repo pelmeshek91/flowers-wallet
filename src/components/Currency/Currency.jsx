@@ -1,12 +1,11 @@
 import axios from 'axios';
 import css from './Currency.module.css';
 import { useState, useEffect } from 'react';
-import decorationLine from '../../images/Currency/Line-currency-mobile.svg';
 import { useMediaQuery } from 'react-responsive';
-// import decoration from '../../images/decoration-line.svg';
 
 const Currency = () => {
   const [currency, setCurrency] = useState([]);
+  const [error, setError] = useState(null);
 
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
@@ -27,7 +26,7 @@ const Currency = () => {
         const currencyInformation = data.filter(({ ccy }) => ccy !== 'RUR');
         setCurrency(currencyInformation);
       } catch (error) {
-        return error.message;
+        setError(error.message);
       }
     }
     fetchApi();
@@ -46,7 +45,20 @@ const Currency = () => {
               </tr>
             </thead>
             <tbody className={css.table__body}>
-              {currency.length > 0 &&
+              {error ? (
+                <>
+                  <tr className={css.table__body__item}>
+                    <td>USD</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                  </tr>
+                  <tr className={css.table__body__item}>
+                    <td>EUR</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                  </tr>
+                </>
+              ) : (
                 currency.map(({ ccy, buy, sale }) => {
                   return (
                     <tr className={css.table__body__item} key={ccy}>
@@ -55,20 +67,10 @@ const Currency = () => {
                       <td>{Math.max(sale).toFixed(2)}</td>
                     </tr>
                   );
-                })}
+                })
+              )}
             </tbody>
-            {isMobile && (
-              <img
-                className={css.table__image}
-                src={decorationLine}
-                alt="decoration line"
-              />
-            )}
-            {/*  <img
-          className={css.table__image}
-          src={decoration}
-          alt="decoration line"
-        /> */}
+            <div className={css.table__image}></div>
           </table>
         </div>
       )}

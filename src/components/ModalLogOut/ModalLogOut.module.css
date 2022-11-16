@@ -12,12 +12,10 @@
   pointer-events: none;
   z-index: 2;
 }
-
 .modal.active {
   opacity: 1;
   pointer-events: all;
 }
-
 .modal__content {
   padding: 20px;
   border-radius: 20px;
@@ -25,12 +23,11 @@
   transform: scale(0.5);
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
-
 .modal__content.active {
   transform: scale(1);
 }
-
 .pretitle {
   font-weight: 500;
   font-size: 32px;
@@ -41,18 +38,37 @@
   margin-bottom: 10px;
   text-align: center;
 }
-
+@media screen and (max-width: 480px) {
+  .pretitle {
+    margin-right: 0px;
+  }
+}
 .contained {
   margin-right: 5px;
 }
-
 .container__button {
   display: flex;
   gap: 25px;
   justify-content: center;
   margin-top: 25px;
 }
-
 .modalLogoutImage {
-  display: flex;
+    display: flex;
+}
+
+.modalButton{
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 500;
+   color: var(--income-color);
+    border-radius: 20px;
+    height: 43px;
+    width: 116px;
+    background-color: #6fe99c26;
+    border: 2px solid var(--income-color);
+}
+.modalButton:hover,
+.modalButton:focus{
+    background-color: var(--income-color);
+    color: var(--main-bg-cl);
 }

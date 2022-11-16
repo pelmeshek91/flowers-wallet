@@ -7,56 +7,57 @@ import {
   Income,
   Item,
 } from './Table.styled';
-import { setBg } from 'components/RandomHexColor/RandomHexColor';
+import { allCategoriesWithColors } from 'services/const';
 
-export const Table = ({ dataTable, toGetData, sumIncome }) => {
-  let sum = 0;
-
+export const Table = ({ summaryData, toGetData }) => {
   return (
     <List>
       <Header>
         <div>Category</div> <div>Sum</div>
       </Header>
-      {dataTable?.categoriesSummary &&
-        dataTable.categoriesSummary.map(({ name, total }) => {
-          const total1 = Number(total);
-          let setBgColor = setBg();
-          sum += total1;
-          toGetData(total1, setBgColor, dataTable.length);
-          if (name.toLowerCase() === 'income') {
-            return '';
-          } else {
-            return (
-              <Item key={name} style={{}}>
-                <div
-                  style={{
-                    position: 'absolute',
-                    width: '24px',
-                    height: '24px',
-                    left: '28px',
-                    top: '50%',
-                    transform: `translateY(-50%)`,
-                    backgroundColor: `${setBgColor}`,
-                    borderRadius: `2px`,
-                  }}
-                ></div>
-                <Decription>
-                  <p>{name}</p>
-                  <p>{total}</p>
-                </Decription>
-              </Item>
-            );
+      {summaryData.categoriesSummary.map(({ name, total }) => {
+        if (name.toLowerCase() === 'income') {
+          return '';
+        }
+        let setBgColor = '';
+
+        allCategoriesWithColors.map(item => {
+          if (item.name === name) {
+            return (setBgColor = item.backgroundColor);
           }
-        })}
+          return setBgColor;
+        });
+
+        return (
+          <Item key={name} style={{}}>
+            <div
+              style={{
+                position: 'absolute',
+                width: '24px',
+                height: '24px',
+                left: '28px',
+                top: '50%',
+                transform: `translateY(-50%)`,
+                backgroundColor: `${setBgColor}`,
+                borderRadius: `2px`,
+              }}
+            ></div>
+            <Decription>
+              <p>{name}</p>
+              <p>{total}</p>
+            </Decription>
+          </Item>
+        );
+      })}
 
       <Total>
         <Expenses>
-          Expenses: <span>{sum.toFixed(2)}</span>
+          Expenses: <span>{summaryData.expenseSummary}</span>
         </Expenses>
       </Total>
       <Total>
         <Income>
-          Income: <span>{sumIncome}</span>
+          Income: <span>{summaryData.incomeSummary}</span>
         </Income>
       </Total>
     </List>

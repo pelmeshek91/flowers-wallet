@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { financeReducer } from './transactions/transactionsSlice';
 import { authReducer } from './auth/authSlice';
 import { transactionsSummaryReducer } from './transactions/transactionsSummarySlice';
+import { getTransactionsReducer } from './transactions/getTransactionsSlice';
 import {
   persistStore,
   persistReducer,
@@ -24,6 +25,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
+    allTransactions: getTransactionsReducer,
     transactionsSummary: transactionsSummaryReducer,
     finance: financeReducer,
     auth: persistReducer(authPersistConfig, authReducer),

@@ -11,6 +11,10 @@ const selectIsModalAddTransaction = state =>
   state.finance.isModalAddTransactionOpen;
 
 const selectBalance = state => normalizeAmount(selectTotalBalance(state));
+export const selectAllTransactions = state => {
+  // console.log(state);
+  return state.allTransactions.allTransactions;
+};
 
 const selectTransactionsSummary = state => state.transactionsSummary.categories;
 const financeSelectors = {

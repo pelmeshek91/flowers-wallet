@@ -35,7 +35,7 @@ const Currency = () => {
 
   return (
     <>
-      {(isTablet || isDesktop) && (
+      {(isTablet || isDesktop || isMobile) && (
         <div className={css.div}>
           <table className={css.table}>
             <thead className={css.table__header}>

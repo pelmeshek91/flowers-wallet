@@ -16,6 +16,20 @@ export const Chart = ({ summaryData }) => {
     setLabelName(label);
   };
 
+  const options = {
+    cutout: '65%',
+    plugins: {
+      tooltip: {
+        enabled: true,
+        labelColor: false,
+        callbacks: {
+          label: function ({ label, raw }) {
+            getLable(label, raw);
+          },
+        },
+      },
+    },
+  };
   const dataPie = {
     labels: [],
     datasets: [
@@ -30,21 +44,6 @@ export const Chart = ({ summaryData }) => {
         borderWidth: 0,
       },
     ],
-    cutout: '65%',
-  };
-  const options = {
-    plugins: {
-      tooltip: {
-        enabled: true,
-        labelColor: false,
-        callbacks: {
-          label: function ({ label, raw }) {
-            getLable(label, raw);
-            return;
-          },
-        },
-      },
-    },
   };
 
   if (summaryData.categoriesSummary.length > 0) {
@@ -80,9 +79,7 @@ export const Chart = ({ summaryData }) => {
           style={{ position: ' relative' }}
         />
         {labelNumber === '' ? (
-          <Description>
-            <h4>{Math.abs(expense)}</h4>
-          </Description>
+          <Description></Description>
         ) : (
           <Description>
             <h4>{labelNumber}%</h4>

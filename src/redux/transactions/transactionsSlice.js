@@ -5,7 +5,7 @@ import { colors } from '../../services/const';
 import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
-  data: null,
+  data: [],
   totalBalance: 0,
   summary: null,
   error: null,
@@ -62,8 +62,9 @@ const financeSlice = createSlice({
         } else {
           toast.error('Try later');
         }
-        // state.data = [...state.data, payload];
-        state.data = payload;
+        state.data = [...state.data, payload];
+        // state.data.push(payload);
+        console.log(state.data);
         state.totalBalance = payload.balanceAfter;
       }
     },

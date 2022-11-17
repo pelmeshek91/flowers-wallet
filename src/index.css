@@ -16,20 +16,20 @@
 }
 
 @font-face {
-  font-family: "Circe Bold";
-  src: url("./fonts/Circe/Circe-Bold.ttf") format("truetype");
+  font-family: 'Circe Bold';
+  src: url('./fonts/Circe/Circe-Bold.ttf') format('truetype');
 }
 @font-face {
-  font-family: "Circe Regular";
-  src: url("./fonts/Circe/Circe-Regular.ttf") format("truetype");
+  font-family: 'Circe Regular';
+  src: url('./fonts/Circe/Circe-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: "Poppins Bold";
-  src: url("./fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-family: 'Poppins Bold';
+  src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
 }
 @font-face {
-  font-family: "Poppins Regular";
-  src: url("./fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-family: 'Poppins Regular';
+  src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
 }
 html,
 body {
@@ -45,12 +45,12 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Circe Regular", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7eaf2;
   -webkit-backdrop-filter: blur(25px);
-          backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
 }
 
 /* code {
@@ -71,7 +71,7 @@ a.active {
   display: flex;
   align-items: center;
   height: 27px;
-  font-family: "Poppins Bold";
+  font-family: 'Poppins Bold';
   font-style: normal;
   font-size: 18px;
   line-height: 1.5;
@@ -92,7 +92,7 @@ a.inactive {
   display: flex;
   align-items: center;
   height: 27px;
-  font-family: "Poppins Regular";
+  font-family: 'Poppins Regular';
   font-style: normal;
   font-size: 18px;
   line-height: 1.5;

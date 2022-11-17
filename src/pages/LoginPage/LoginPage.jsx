@@ -1,5 +1,7 @@
 import { LoginForm } from 'components/LoginForm/LoginForm';
 import { useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { selectToken } from 'redux/auth/authSelectors';
 
 import { ReactComponent as Picture } from '../../images/AuthForm/man-picture.svg';
@@ -15,6 +17,7 @@ export const LoginPage = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
   return (
     <section className={s.loginSection}>
+      <ToastContainer position="top-center" autoClose={2000} />
       {isTablet && <EllipsPink className={s.ellipsPink} />}
       {isTablet && <EllipsViolet className={s.ellipsViolet} />}
       <div className={s.container}>

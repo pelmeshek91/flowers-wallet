@@ -20,11 +20,13 @@ export const UserAuthMenu = () => {
         <img src={logout} alt="" />
         {isTablet && <span className={css['logout_btn-text']}>Exit</span>}
       </button>
-      <ModalLogout
-        active={modalActive}
-        setActive={setModalActive}
-        closeModal={closeModal}
-      />
+      {modalActive && (
+        <ModalLogout
+          active={modalActive}
+          setActive={setModalActive}
+          closeModal={closeModal}
+        />
+      )}
     </div>
   );
 };

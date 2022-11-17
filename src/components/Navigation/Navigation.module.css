@@ -1,25 +1,32 @@
 .navigation {
   display: flex;
+  gap: 32px;
   justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
   .navigation {
-    display: block;
-    margin-left: 10px;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
   }
 }
 
 .navigation__item {
-  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 44px;
 }
 
-.navigation__item:not(:last-child) {
-  margin-bottom: 12px;
-}
-
-.navigation__img {
-  margin-right: 30px;
+@media screen and (min-width: 768px) {
+  .navigation__item {
+    display: flex;
+    justify-content: start;
+    height: 27px;
+    width: max-content;
+  }
 }
 
 @media screen and (min-width: 768px) {

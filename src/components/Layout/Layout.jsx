@@ -22,7 +22,7 @@ export const Layout = () => {
           </header>
         )}
 
-        <section className={css.box}>
+        <section className={css.container}>
           <Outlet />
         </section>
       </div>

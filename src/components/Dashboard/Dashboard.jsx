@@ -15,6 +15,7 @@ export const Dashboard = () => {
         <Balance />
       </div>
       {(isTablet || isDesktop) && <Currency />}
+      {isDesktop && <div className={s.border}></div>}
     </div>
   );
 };

@@ -1,20 +1,11 @@
 import styled from 'styled-components';
-// export const Div = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   padding: 0 20px;
-
-//   @media screen and (min-width: 1200px) {
-//     padding: 0 16px;
-//     flex-direction: row;
-//   }
-// `;
 
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-top: 40px;
+  margin-bottom: 40px;
   gap: 32px;
 
   & h2 {

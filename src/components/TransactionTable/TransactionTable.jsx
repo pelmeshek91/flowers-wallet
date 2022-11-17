@@ -53,7 +53,7 @@ export const TransactionTable = () => {
                   );
 
                   return (
-                    <tr key={id}>
+                    <tr key={id} style={{ borderLeft: `11px solid ${color}` }}>
                       <td data-label="Date">{transactionDate}</td>
                       <td data-label="Type">{type === 'INCOME' ? '+' : '-'}</td>
                       <td data-label="Category">{category.name}</td>

@@ -17,8 +17,8 @@ export const TransactionTable = () => {
   const sortedData = data
     ? [...data].sort(
         (prevData, nextData) =>
-          Date.parse(prevData.transactionDate) -
-          Date.parse(nextData.transactionDate)
+          Date.parse(nextData.transactionDate) -
+          Date.parse(prevData.transactionDate)
       )
     : null;
 

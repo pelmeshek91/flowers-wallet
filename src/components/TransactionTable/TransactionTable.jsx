@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useMedia } from 'react-use';
 import css from './TransactionTable.module.css';
 import { selectAllTransactions } from 'redux/transactions/transactionsSelector';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
 import { allCategoriesWithColors } from 'services/const';
 
 export const TransactionTable = () => {
+  const isMobile = useMedia('(max-width: 767px)');
+
   const data = useSelector(selectAllTransactions);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -53,7 +56,12 @@ export const TransactionTable = () => {
                   );
 
                   return (
-                    <tr key={id} style={{ borderLeft: `11px solid ${color}` }}>
+                    <tr
+                      key={id}
+                      style={{
+                        borderLeft: isMobile ? `5px solid ${color}` : '',
+                      }}
+                    >
                       <td data-label="Date">{transactionDate}</td>
                       <td data-label="Type">{type === 'INCOME' ? '+' : '-'}</td>
                       <td data-label="Category">{category.name}</td>

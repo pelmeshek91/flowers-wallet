@@ -5,15 +5,17 @@ import css from './TransactionTable.module.css';
 import { selectAllTransactions } from 'redux/transactions/transactionsSelector';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
 import { allCategoriesWithColors } from 'services/const';
-
+import { selectName } from 'redux/auth/authSelectors';
 export const TransactionTable = () => {
   const isMobile = useMedia('(max-width: 767px)');
 
   const data = useSelector(selectAllTransactions);
   const dispatch = useDispatch();
+
+  const currentName = useSelector(selectName);
   useEffect(() => {
-    dispatch(getTransactions());
-  }, [dispatch]);
+    currentName && dispatch(getTransactions());
+  }, [dispatch, currentName]);
   const sortedData = data
     ? [...data].sort(
         (prevData, nextData) =>

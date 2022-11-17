@@ -61,6 +61,9 @@
   font-size: 16px;
   line-height: 1.5;
 }
+.table tr {
+  border-left: none;
+}
 
 /*responsive*/
 
@@ -79,13 +82,15 @@
 
   .table tr {
     margin-bottom: 15px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 
     background-color: #fff;
   }
 
   .table td {
+    display: flex;
+    align-items: center;
     padding-left: 50%;
     text-align: left;
     position: relative;

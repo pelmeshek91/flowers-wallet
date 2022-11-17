@@ -19,6 +19,7 @@
 .tableWrap div {
   height: calc(100vh - 220px);
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .table__body {
@@ -63,7 +64,7 @@
 
 /*responsive*/
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .table thead {
     display: none;
   }
@@ -78,6 +79,10 @@
 
   .table tr {
     margin-bottom: 15px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    background-color: #fff;
   }
 
   .table td {

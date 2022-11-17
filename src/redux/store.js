@@ -25,10 +25,10 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    allTransactions: getTransactionsReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
     transactionsSummary: transactionsSummaryReducer,
     finance: financeReducer,
-    auth: persistReducer(authPersistConfig, authReducer),
+    allTransactions: getTransactionsReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

@@ -5,20 +5,26 @@ import css from './TransactionTable.module.css';
 import { selectAllTransactions } from 'redux/transactions/transactionsSelector';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
 import { allCategoriesWithColors } from 'services/const';
+import { selectName } from 'redux/auth/authSelectors';
+import financeSelectors from 'redux/transactions/transactionsSelector';
 
 export const TransactionTable = () => {
   const isMobile = useMedia('(max-width: 767px)');
-
   const data = useSelector(selectAllTransactions);
+  const balance = useSelector(financeSelectors.selectTotalBalance);
+
   const dispatch = useDispatch();
+
+  const currentName = useSelector(selectName);
   useEffect(() => {
-    dispatch(getTransactions());
-  }, [dispatch]);
+    currentName && dispatch(getTransactions());
+    balance && dispatch(getTransactions());
+  }, [dispatch, currentName, balance]);
   const sortedData = data
     ? [...data].sort(
         (prevData, nextData) =>
-          Date.parse(prevData.transactionDate) -
-          Date.parse(nextData.transactionDate)
+          Date.parse(nextData.transactionDate) -
+          Date.parse(prevData.transactionDate)
       )
     : null;
 
@@ -67,9 +73,9 @@ export const TransactionTable = () => {
                       <td data-label="Category">{category.name}</td>
                       <td data-label="Comment">{comment}</td>
                       <td data-label="Sum" style={{ color: `${color}` }}>
-                        {Math.abs(amount)}
+                        {Math.abs(amount).toFixed(2)}
                       </td>
-                      <td data-label="Balance">{balanceAfter}</td>
+                      <td data-label="Balance">{balanceAfter.toFixed(2)}</td>
                     </tr>
                   );
                 }

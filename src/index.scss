@@ -6,22 +6,18 @@
   font-family: 'Circe Bold';
   src: url('./fonts/Circe/Circe-Bold.ttf') format('truetype');
 }
-
 @font-face {
   font-family: 'Circe Regular';
   src: url('./fonts/Circe/Circe-Regular.ttf') format('truetype');
 }
-
 @font-face {
   font-family: 'Poppins Bold';
   src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
 }
-
 @font-face {
   font-family: 'Poppins Regular';
   src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
 }
-
 html,
 body {
   margin: 0;
@@ -35,14 +31,14 @@ body {
   box-sizing: inherit;
 }
 
-// body {
-//   position: relative;
-//   font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   background-color: #e7eaf2;
-//   backdrop-filter: blur(25px);
-// }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Circe Regular', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e7eaf2;
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+}
 
 // @media screen and (min-width: 768px) {
 //   body {
@@ -73,6 +69,10 @@ body {
 //   }
 // }
 
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
 ul {
   margin: 0;
   padding: 0;
@@ -86,61 +86,62 @@ a {
 a.active {
   display: flex;
   align-items: center;
-
   height: 27px;
-
   font-family: 'Poppins Bold';
   font-style: normal;
-
   font-size: 18px;
   line-height: 1.5;
-
   color: #000000;
-
-  &:hover {
-    color: var(--accent-active-color);
-    filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
-    transform: translateX(10px);
-    transition: transform 1s;
-  }
-
   color: var(--accent-active-color);
   filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
-  transform: translateX(10px);
-  transition: transform 1s;
+}
+a.active:hover {
+  color: var(--accent-active-color);
+  filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
 }
 
 a.inactive {
   display: flex;
   align-items: center;
   height: 27px;
-
   font-family: 'Poppins Regular';
   font-style: normal;
   font-size: 18px;
-
   line-height: 1.5;
-
   color: #000000;
-  transition: transform 1s;
-
-  &:hover {
-    color: var(--accent-active-color);
-    filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
+}
+a.inactive:hover {
+  color: var(--accent-active-color);
+  filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
+}
+@media screen and (min-width: 768px) {
+  a.active {
+    transform: translateX(10px);
+    transition: transform 1s;
+  }
+  a.inactive {
+    transition: transform 1s;
+  }
+  a.active:hover {
+    transform: translateX(10px);
+    transition: transform 1s;
+  }
+  a.inactive:hover {
     transform: translateX(10px);
     transition: transform 1s;
   }
 }
-
 ::-webkit-scrollbar {
   width: 8px; /* ширина для вертикального скролла */
   height: 8px; /* высота для горизонтального скролла */
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #ff6596;
   border-radius: 9em;
   box-shadow: inset 1px 1px 10px #f3faf7;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: #ff2e71;
 }

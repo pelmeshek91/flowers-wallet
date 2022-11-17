@@ -5,7 +5,7 @@ import { colors } from '../../services/const';
 import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
-  data: null,
+  data: [],
   totalBalance: 0,
   summary: null,
   error: null,
@@ -51,14 +51,22 @@ const financeSlice = createSlice({
       console.dir(state);
       console.log(payload);
       state.isLoading = false;
-      if (payload) {
-        toast.success('Add successfull');
+      if (payload.amount * -1 > payload.balanceAfter) {
+        toast.warning(
+          'You need to increase the balance for applying the transaction with such amount'
+        );
+        return;
       } else {
-        toast.error('Try later');
+        if (payload) {
+          toast.success('Add successfull');
+        } else {
+          toast.error('Try later');
+        }
+        state.data = [...state.data, payload];
+        // state.data.push(payload);
+        console.log(state.data);
+        state.totalBalance = payload.balanceAfter;
       }
-      // state.data = [...state.data, payload];
-      state.data = payload;
-      state.totalBalance = payload.balanceAfter;
     },
     [addTransaction.rejected]: (state, { payload }) => {
       state.isLoading = false;

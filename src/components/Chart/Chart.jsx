@@ -16,6 +16,20 @@ export const Chart = ({ summaryData }) => {
     setLabelName(label);
   };
 
+  const options = {
+    cutout: '65%',
+    plugins: {
+      tooltip: {
+        enabled: true,
+        labelColor: false,
+        callbacks: {
+          label: function ({ label, raw }) {
+            getLable(label, raw);
+          },
+        },
+      },
+    },
+  };
   const dataPie = {
     labels: [],
     datasets: [
@@ -30,21 +44,6 @@ export const Chart = ({ summaryData }) => {
         borderWidth: 0,
       },
     ],
-    cutout: '65%',
-  };
-  const options = {
-    plugins: {
-      tooltip: {
-        enabled: true,
-        labelColor: false,
-        callbacks: {
-          label: function ({ label, raw }) {
-            getLable(label, raw);
-            return;
-          },
-        },
-      },
-    },
   };
 
   if (summaryData.categoriesSummary.length > 0) {
@@ -73,7 +72,7 @@ export const Chart = ({ summaryData }) => {
     <Diagram>
       <h2>Statistics</h2>
 
-      <Box>
+      <Box onPointerOut={() => getLable('', '')}>
         <Doughnut
           data={dataPie}
           options={options}
@@ -81,7 +80,8 @@ export const Chart = ({ summaryData }) => {
         />
         {labelNumber === '' ? (
           <Description>
-            <h4>{Math.abs(expense)}</h4>
+            <h5>{Math.abs(expense)}</h5>
+            <p>Expence</p>
           </Description>
         ) : (
           <Description>

@@ -8,7 +8,7 @@ export const validationSchema = Yup.object().shape({
     .matches(/^(?:\d*\.)?\d+$/, 'Only positive amount')
     .required('Enter the amount, only numbers and comas'),
   comment: Yup.string()
-    .max(15, 'No more than 15 characters')
+    .max(10, 'No more than 10 characters')
     .matches(/^[a-zA-Z\s]+$/, 'Only letters are allowed'),
   categoryId: Yup.string('Choose a category').required('Category is required'),
   transactionDate: Yup.date().required('Date is required'),

@@ -11,7 +11,7 @@ const Balance = () => {
     <div className={css.balance}>
       <p className={css.balance__title}>Your Balance</p>
       <p className={css.balance__total}>
-        &#8372; {balanceAfter ? balanceAfter : balance}
+        &#8372; {balanceAfter ? balanceAfter.toFixed(2) : balance.toFixed(2)}
       </p>
     </div>
   );

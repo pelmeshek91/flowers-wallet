@@ -67,9 +67,9 @@ export const TransactionTable = () => {
                       <td data-label="Category">{category.name}</td>
                       <td data-label="Comment">{comment}</td>
                       <td data-label="Sum" style={{ color: `${color}` }}>
-                        {Math.abs(amount)}
+                        {Math.abs(amount).toFixed(2)}
                       </td>
-                      <td data-label="Balance">{balanceAfter}</td>
+                      <td data-label="Balance">{balanceAfter.toFixed(2)}</td>
                     </tr>
                   );
                 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './TransactionTable.module.css';
 import { selectAllTransactions } from 'redux/transactions/transactionsSelector';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
+import { allCategoriesWithColors } from 'services/const';
 
 export const TransactionTable = () => {
   const data = useSelector(selectAllTransactions);
@@ -10,17 +11,13 @@ export const TransactionTable = () => {
   useEffect(() => {
     dispatch(getTransactions());
   }, [dispatch]);
-  // let sortedData = data
-  //   ? data.sort((a, b) => {
-  //       console.log(newDate(b.transactionDate.split('-').join(''));
-  //       return (
-  //         Number(b.transactionDate.split('-').join('')) -
-  //         Number(a.transactionDate.split('-').join(''))
-  //       );
-  //       // return b.transactionDate.localeCompare(a.transactionDate);
-  //     })
-  // :
-  // console.log(data);
+  const sortedData = data
+    ? [...data].sort(
+        (prevData, nextData) =>
+          Date.parse(prevData.transactionDate) -
+          Date.parse(nextData.transactionDate)
+      )
+    : null;
 
   return (
     <div className={css.tableWrap}>
@@ -39,35 +36,33 @@ export const TransactionTable = () => {
       <div>
         <table className={css.table}>
           <tbody className={css.table__body}>
-            {data &&
-              data.map(
+            {sortedData &&
+              sortedData.map(
                 ({
                   id,
                   type,
                   comment,
                   amount,
+                  categoryId,
                   balanceAfter,
                   transactionDate,
                 }) => {
-                  // console.log(transactionDate);
-                  // const date = new Date(transactionDate).getFullYear();
-                  // console.log(date);
                   const color = type === 'INCOME' ? '#24CCA7' : '#FF6596';
+                  const category = allCategoriesWithColors.find(
+                    element => element.id === categoryId
+                  );
+
                   return (
-                    <>
-                      <tr key={id}>
-                        <td data-label="Date">{transactionDate}</td>
-                        <td data-label="Type">
-                          {type === 'INCOME' ? '+' : '-'}
-                        </td>
-                        <td data-label="Category">Regular Income</td>
-                        <td data-label="Comment">{comment}</td>
-                        <td data-label="Sum" style={{ color: `${color}` }}>
-                          {amount}
-                        </td>
-                        <td data-label="Balance">{balanceAfter}</td>
-                      </tr>
-                    </>
+                    <tr key={id}>
+                      <td data-label="Date">{transactionDate}</td>
+                      <td data-label="Type">{type === 'INCOME' ? '+' : '-'}</td>
+                      <td data-label="Category">{category.name}</td>
+                      <td data-label="Comment">{comment}</td>
+                      <td data-label="Sum" style={{ color: `${color}` }}>
+                        {Math.abs(amount)}
+                      </td>
+                      <td data-label="Balance">{balanceAfter}</td>
+                    </tr>
                   );
                 }
               )}

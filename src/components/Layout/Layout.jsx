@@ -14,7 +14,7 @@ export const Layout = () => {
         {token && (
           <header className={css.header}>
             <div className={css.headerContainer}>
-              <Link href="/" className={css.headerLogo}>
+              <Link to="/home" className={css.headerLogo}>
                 <img src={logoImage} alt="logo-icon" />
               </Link>
               <UserAuthMenu />

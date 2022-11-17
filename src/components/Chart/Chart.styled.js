@@ -26,6 +26,14 @@ export const Description = styled.div`
 
     color: #000000;
   }
+  & h5 {
+    margin: 0;
+    font-family: 'Poppins Bold';
+    font-size: 24px;
+    text-align: center;
+
+    color: #000000;
+  }
   & p {
     margin: 0;
     text-align: center;

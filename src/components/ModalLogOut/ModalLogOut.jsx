@@ -4,6 +4,7 @@ import { logout } from '../../redux/auth/authOperations';
 import s from '../ModalLogOut/ModalLogOut.module.css';
 import modalLogoutImage from '../../images/ModalLogOut/ModalLogOut.jpg';
 import { createPortal } from 'react-dom';
+
 export const ModalLogout = ({ active, setActive }) => {
   const modalRoot = document.querySelector('#modal-root');
   const dispatch = useDispatch();

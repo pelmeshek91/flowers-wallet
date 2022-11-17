@@ -17,7 +17,7 @@
 }
 
 .tableWrap div {
-  height: calc(100% - 250px);
+  height: calc(100vh - 220px);
   overflow-y: scroll;
 }
 

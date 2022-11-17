@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import s from '../Modal/Modal.module.css';
 
 const modalRoot = document.querySelector('#modal-root');
-const Modal = ({ children, closeModal }) => {
+export const Modal = ({ children, closeModal }) => {
   const closeModalByEsc = useCallback(
     e => {
       if (e.code === 'Escape') {

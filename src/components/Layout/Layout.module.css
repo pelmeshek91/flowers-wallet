@@ -3,7 +3,6 @@ p {
 }
 
 .header {
-  /* padding: 15px 16px; */
   background: #ffffff;
 }
 
@@ -25,72 +24,19 @@ p {
 .logoText {
   font-family: 'Poppins Bold';
   font-style: normal;
-  /* font-weight: 700; */
   font-size: 30px;
   line-height: calc(45 / 30);
 }
 
-.box {
+.container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  padding: 0px 20px;
 }
 
 @media screen and (min-width: 1200px) {
-  .box {
+  .container {
     flex-direction: row;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(50px);
     padding: 0px 20px;
-  }
-
-  .box::before {
-    content: ' ';
-    position: absolute;
-    left: 480px;
-    width: 0px;
-    height: 100%;
-    border-left: 1px solid #e7e5f2;
-    box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.05),
-      1px 0px 0px rgba(255, 255, 255, 0.6);
-  }
-}
-
-.test {
-  position: relative;
-  background-color: rgba(255, 255, 255, 1);
-  backdrop-filter: blur(25px);
-  overflow: hidden;
-}
-
-@media screen and (min-width: 768px) {
-  .test::before {
-    content: '';
-    position: absolute;
-    top: 0px;
-    right: -5%;
-    z-index: -40;
-    display: block;
-    width: 634.41px;
-    height: 501.37px;
-    background-color: rgba(255, 255, 255, 1);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url('images/Body/peach.svg');
-  }
-
-  .test::after {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    left: -5%;
-    z-index: -40;
-    display: block;
-    width: 634.41px;
-    height: 501.37px;
-    background-color: rgba(255, 255, 255, 1);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url('images/Body/purple.svg');
   }
 }

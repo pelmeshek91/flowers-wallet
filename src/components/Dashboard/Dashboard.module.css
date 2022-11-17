@@ -1,31 +1,52 @@
 .box {
   display: flex;
-  padding-top: 40px;
+  justify-content: center;
+  margin-top: 40px;
 }
-
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
 @media screen and (min-width: 768px) {
   .box {
     flex-direction: row;
     position: relative;
     align-items: center;
-    /* height: 100vh; */
-    padding: 32px 0 40px 16px;
+    justify-content: space-between;
   }
 
   .navigation {
-    display: flex;
     flex-direction: column;
+    gap: 28px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .box {
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    gap: 38px;
+
     padding-top: 40px;
+    margin: 0;
+    padding-right: 70px;
   }
 
   .navigation {
     display: flex;
+  }
+
+  .border::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    height: calc(100vh - 85px);
+    border: 1px solid rgb(231, 229, 242);
+    box-shadow: rgb(0 0 0 / 5%) -1px 0px 0px, rgb(255 255 255 / 60%) 1px 0px 0px;
   }
 }

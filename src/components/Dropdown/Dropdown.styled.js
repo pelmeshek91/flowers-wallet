@@ -30,12 +30,13 @@ const grey = {
 export const SelectBox = styled('div')(
   ({ theme }) => `
 	position:relative;
-  & div{
+	& div{
+	border-radius: 20px;
+	box-shadow: 0px 6px 15px rgb(0 0 0 / 10%);
 	width: 100%;
-	height: 400px;
-	overflow-y: scroll
+	max-height: 450px;
+	overflow-y: auto
   }
- 
   `
 );
 
@@ -46,7 +47,7 @@ export const StyledButton = styled('button')(
   box-sizing: border-box;
   text-align: left;
   line-height: 1.5;
-  
+  cursor: pointer;
   position: relative;
   padding: 13px 16px;
 
@@ -61,7 +62,6 @@ export const StyledButton = styled('button')(
   transition-duration: 120ms;
 
   &:hover {
-    background: ${theme.palette.mode === 'dark' ? grey[800] : grey[50]};
     border-color: ${theme.palette.mode === 'dark' ? grey[600] : grey[300]};
   }
 
@@ -95,19 +95,17 @@ export const StyledButton = styled('button')(
 export const StyledListbox = styled('ul')(
   ({ theme }) => `
 
-  margin: 12px 0;
   box-sizing: border-box;
   border-radius: 20px;
   width: 100%;
   height:300px
-  overflow: hidden;
   outline: 0px;
   
   font-size: 16px;
   color: #000000;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 6px 15px rgb(0 0 0 / 10%);
-  backdrop-filter: blur(100px);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(100px);
+  overflow: hidden;
   `
 );
 
@@ -115,8 +113,8 @@ export const StyledOption = styled(OptionUnstyled)(
   ({ theme }) => `
   list-style: none;
   padding: 14px 20px;
-  cursor: default;
-  
+    cursor: pointer;
+
   &:last-of-type {
 	  border-bottom: none;
 	}
@@ -132,6 +130,7 @@ export const StyledOption = styled(OptionUnstyled)(
  
 //! hover
   &:hover:not(.${optionUnstyledClasses.disabled}) {
+	border-radius: 20px;
     background:#FFF6F9;
 	color: #FF6596;
   }

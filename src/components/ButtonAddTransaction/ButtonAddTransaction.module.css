@@ -1,7 +1,7 @@
 .btnAdd {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  top: 90vh;
 }
 
 @media screen and (min-width: 1200px) {

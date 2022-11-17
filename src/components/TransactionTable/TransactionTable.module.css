@@ -19,6 +19,7 @@
 .tableWrap div {
   height: calc(100vh - 220px);
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .table__body {

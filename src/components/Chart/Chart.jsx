@@ -72,14 +72,17 @@ export const Chart = ({ summaryData }) => {
     <Diagram>
       <h2>Statistics</h2>
 
-      <Box>
+      <Box onPointerOut={() => getLable('', '')}>
         <Doughnut
           data={dataPie}
           options={options}
           style={{ position: ' relative' }}
         />
         {labelNumber === '' ? (
-          <Description></Description>
+          <Description>
+            <h5>{Math.abs(expense)}</h5>
+            <p>Expence</p>
+          </Description>
         ) : (
           <Description>
             <h4>{labelNumber}%</h4>

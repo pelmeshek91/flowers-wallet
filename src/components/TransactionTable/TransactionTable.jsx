@@ -6,16 +6,20 @@ import { selectAllTransactions } from 'redux/transactions/transactionsSelector';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
 import { allCategoriesWithColors } from 'services/const';
 import { selectName } from 'redux/auth/authSelectors';
+import financeSelectors from 'redux/transactions/transactionsSelector';
+
 export const TransactionTable = () => {
   const isMobile = useMedia('(max-width: 767px)');
-
   const data = useSelector(selectAllTransactions);
+  const balance = useSelector(financeSelectors.selectTotalBalance);
+
   const dispatch = useDispatch();
 
   const currentName = useSelector(selectName);
   useEffect(() => {
     currentName && dispatch(getTransactions());
-  }, [dispatch, currentName]);
+    balance && dispatch(getTransactions());
+  }, [dispatch, currentName, balance]);
   const sortedData = data
     ? [...data].sort(
         (prevData, nextData) =>

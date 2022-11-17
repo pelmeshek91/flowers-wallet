@@ -23,7 +23,7 @@
 @media screen and (min-width: 768px) {
   .navigation__item {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     height: 27px;
     width: max-content;
   }

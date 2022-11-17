@@ -1,23 +1,50 @@
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
-import { Diagram } from './Chart.styled';
+import { Diagram, Description, Box } from './Chart.styled';
 import { allCategoriesWithColors } from 'services/const';
+import { useState } from 'react';
 
 ChartJS.register(ArcElement, Tooltip);
 
 export const Chart = ({ summaryData }) => {
   let expense = 0;
+  const [labelName, setLabelName] = useState('');
+  const [labelNumber, setLabelNumber] = useState('');
+
+  const getLable = (label, raw) => {
+    setLabelNumber(raw);
+    setLabelName(label);
+  };
+
   const dataPie = {
     labels: [],
     datasets: [
       {
         label: '# of Votes',
-        data: [],
-        backgroundColor: summaryData ? [] : ['#BDBDBD'],
+        data:
+          summaryData && summaryData?.categoriesSummary.length > 0 ? [] : [100],
+        backgroundColor:
+          summaryData && summaryData?.categoriesSummary.length > 0
+            ? []
+            : ['rgba(133, 130, 130, 0.7)'],
         borderWidth: 0,
       },
     ],
     cutout: '65%',
+  };
+  const options = {
+    plugins: {
+      tooltip: {
+        enabled: true,
+        labelColor: false,
+        callbacks: {
+          label: function ({ label, raw }) {
+            getLable(label, raw);
+            return;
+          },
+        },
+      },
+    },
   };
 
   if (summaryData.categoriesSummary.length > 0) {
@@ -33,7 +60,10 @@ export const Chart = ({ summaryData }) => {
         return setBgColor;
       });
       const setItem = dataPie.datasets[0];
-      setItem.data.push(total);
+      const percentage = Math.round(
+        (Math.abs(total) / Math.abs(expense)) * 100
+      );
+      setItem.data.push(percentage);
       setItem.backgroundColor.push(setBgColor);
       dataPie.labels.push(name);
     });
@@ -43,10 +73,23 @@ export const Chart = ({ summaryData }) => {
     <Diagram>
       <h2>Statistics</h2>
 
-      <div>
-        <Doughnut data={dataPie} style={{ position: ' relative' }} />
-        <p>{expense}</p>
-      </div>
+      <Box>
+        <Doughnut
+          data={dataPie}
+          options={options}
+          style={{ position: ' relative' }}
+        />
+        {labelNumber === '' ? (
+          <Description>
+            <h4>{Math.abs(expense)}</h4>
+          </Description>
+        ) : (
+          <Description>
+            <h4>{labelNumber}%</h4>
+            <p>{labelName}</p>
+          </Description>
+        )}
+      </Box>
     </Diagram>
   );
 };

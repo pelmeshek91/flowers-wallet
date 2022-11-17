@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 
 export const Dashboard = () => {
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1200px)' });
 
   return (
     <div className={s.box}>

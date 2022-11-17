@@ -11,7 +11,6 @@ import financeSelectors from 'redux/transactions/transactionsSelector';
 export const HomePage = () => {
   // const dispatch = useDispatch();
   const showModal = useSelector(financeSelectors.selectIsModalAddTransaction);
-  console.log(showModal);
   // const categories = useSelector(financeSelectors.selectCategories);
 
   // useEffect(() => {

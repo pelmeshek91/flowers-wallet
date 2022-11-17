@@ -44,22 +44,31 @@ export const Table = ({ summaryData, toGetData }) => {
             ></div>
             <Decription>
               <p>{name}</p>
-              <p>{total}</p>
+              <p>{Math.abs(total)}</p>
             </Decription>
           </Item>
         );
       })}
-
-      <Total>
-        <Expenses>
-          Expenses: <span>{summaryData.expenseSummary}</span>
-        </Expenses>
-      </Total>
-      <Total>
-        <Income>
-          Income: <span>{summaryData.incomeSummary}</span>
-        </Income>
-      </Total>
+      {summaryData?.categoriesSummary.length ? (
+        <>
+          <Total>
+            <Expenses>
+              Expenses: <span>{Math.abs(summaryData.expenseSummary)}</span>
+            </Expenses>
+          </Total>
+          <Total>
+            <Income>
+              Income: <span>{summaryData.incomeSummary}</span>
+            </Income>
+          </Total>
+        </>
+      ) : (
+        <Total>
+          <Income>
+            🙁 Sorry, we can't find any transactions for that period.
+          </Income>
+        </Total>
+      )}
     </List>
   );
 };

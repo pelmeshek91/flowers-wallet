@@ -36,6 +36,9 @@ p {
 
 @media screen and (min-width: 1200px) {
   .container {
+    min-width: 1200px;
+    max-width: 1920px;max-width: 1200px;
+    margin: 0 auto;
     flex-direction: row;
     padding: 0px 20px;
   }

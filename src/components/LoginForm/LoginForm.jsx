@@ -10,11 +10,11 @@ import { AuthButton } from '../Button/Button';
 import { ReactComponent as LogoIcon } from '../../images/AuthForm/logo-icon.svg';
 import { ReactComponent as Mail } from '../../images/AuthForm/mail-icon.svg';
 import { ReactComponent as Password } from '../../images/AuthForm/password-icon.svg';
-// import { ReactComponent as Name } from '../../images/AuthForm/name-icon.svg';
+
 
 import s from './LoginForm.module.css';
 import sb from '../Button/Button.module.css';
-// import { Label } from '@mui/icons-material';
+
 
 const SignupSchema = object().shape({
   password: string()

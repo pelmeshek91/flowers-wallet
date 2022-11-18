@@ -51,20 +51,14 @@ const financeSlice = createSlice({
       console.dir(state);
       console.log(payload);
       state.isLoading = false;
-      // if (payload.amount * -1 > payload.balanceAfter) {
-      //   toast.warning(
-      //     'You need to increase the balance for applying the transaction with such amount'
-      //   );
-      //   return;
-      // } else {
+
       if (payload) {
         toast.success('Add successfull');
       } else {
         toast.error('Try later');
       }
       state.data = [...state.data, payload];
-      // state.data.push(payload);
-      // console.log(state.data);
+
       state.totalBalance = payload.balanceAfter;
     },
     [addTransaction.rejected]: (state, { payload }) => {

@@ -12,16 +12,12 @@ export const TransactionTable = () => {
   const isMobile = useMedia('(max-width: 767px)');
   const data = useSelector(selectAllTransactions);
   const dataTransaction = useSelector(financeSelectors.selectTransactionsData);
-  // const balance = useSelector(financeSelectors.selectTotalBalance);
-  // console.log(data);
-  // console.log(dataTransaction);
 
   const dispatch = useDispatch();
 
   const currentName = useSelector(selectName);
   useEffect(() => {
     currentName && dispatch(getTransactions());
-    // balance && dispatch(getTransactions());
   }, [dispatch, currentName]);
 
   const DataNewArray =
@@ -40,7 +36,6 @@ export const TransactionTable = () => {
         })
       : [];
 
-  // console.log(DataNewArray);
   const sortedData = DataArray
     ? [...DataArray, ...DataNewArray].sort(
         (prevData, nextData) =>

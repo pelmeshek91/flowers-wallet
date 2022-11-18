@@ -1,5 +1,5 @@
 .loginSection {
-  /* max-height: 100vh; */
+  min-height: 100vh;
   padding: 107px 0;
   margin: 0 auto;
   background: var(--main-bg-cl);
@@ -22,7 +22,7 @@
 }
 
 .container {
-  /* height: 100vh; */
+  height: 100vh;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -54,7 +54,7 @@
   .pictureBox {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 153px 0 0;
     margin-left: 76px;
     margin-right: 31px;

@@ -5,3 +5,4 @@ export const selectUserBalance = state => state.auth.user.balance;
 export const selectIsFetchingCurrentUser = state =>
   state.auth.isFetchingCurrentUser;
 export const selectIsLoading = state => state.auth.isLoading;
+export const selectError = state => state.auth.error;

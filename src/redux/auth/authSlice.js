@@ -27,7 +27,7 @@ const authSlice = createSlice({
     [register.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.error = payload;
-      toast.error('payload');
+      toast.error('You register is error');
     },
     [login.pending]: state => {
       state.isLoading = true;
@@ -37,12 +37,14 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.token = token;
       state.user = user;
+      console.log('You login is success');
       toast.success('You login is success');
     },
     [login.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.error = payload;
-      toast.error('payload');
+      console.log('You login is error');
+      toast.error('You login is error');
     },
     [logout.pending]: state => {
       state.isLoading = true;
@@ -65,7 +67,7 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.user = payload;
       state.isFetchingCurrentUser = false;
-      toast.success('You login is success');
+      // toast.success('You login is success');
     },
     [fetchCurrentUser.rejected]: (state, { payload }) => {
       state.isLoading = false;

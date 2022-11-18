@@ -69,10 +69,6 @@ body {
 //   }
 // }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 ul {
   margin: 0;
   padding: 0;
@@ -132,8 +128,8 @@ a.inactive:hover {
   }
 }
 ::-webkit-scrollbar {
-  width: 8px; /* ширина для вертикального скролла */
-  height: 8px; /* высота для горизонтального скролла */
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {

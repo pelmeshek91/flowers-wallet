@@ -11,20 +11,35 @@ import financeSelectors from 'redux/transactions/transactionsSelector';
 export const TransactionTable = () => {
   const isMobile = useMedia('(max-width: 767px)');
   const data = useSelector(selectAllTransactions);
-  const balance = useSelector(financeSelectors.selectTotalBalance);
+  const dataTransaction = useSelector(financeSelectors.selectTransactionsData);
 
   const dispatch = useDispatch();
 
   const currentName = useSelector(selectName);
   useEffect(() => {
     currentName && dispatch(getTransactions());
-    balance && dispatch(getTransactions());
-  }, [dispatch, currentName, balance]);
-  const sortedData = data
-    ? [...data].sort(
+  }, [dispatch, currentName]);
+
+  const DataNewArray =
+    dataTransaction.length > 0
+      ? dataTransaction.map(el => {
+          const transactionDate = Date.parse(el.transactionDate);
+          return { ...el, transactionDate };
+        })
+      : [];
+
+  const DataArray =
+    data?.length > 0
+      ? data.map(el => {
+          const transactionDate = Date.parse(el.transactionDate);
+          return { ...el, transactionDate };
+        })
+      : [];
+
+  const sortedData = DataArray
+    ? [...DataArray, ...DataNewArray].sort(
         (prevData, nextData) =>
-          Date.parse(nextData.transactionDate) -
-          Date.parse(prevData.transactionDate)
+          nextData.transactionDate - prevData.transactionDate
       )
     : null;
 
@@ -68,7 +83,9 @@ export const TransactionTable = () => {
                         borderLeft: isMobile ? `5px solid ${color}` : '',
                       }}
                     >
-                      <td data-label="Date">{transactionDate}</td>
+                      <td data-label="Date">
+                        {new Date(transactionDate).toISOString().slice(0, 10)}
+                      </td>
                       <td data-label="Type">{type === 'INCOME' ? '+' : '-'}</td>
                       <td data-label="Category">{category.name}</td>
                       <td data-label="Comment">{comment}</td>

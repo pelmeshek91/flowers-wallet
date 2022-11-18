@@ -23,7 +23,6 @@ const getTransactionsSlice = createSlice({
     },
     [getTransactions.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
-      console.log(payload);
       state.allTransactions = payload.reverse();
       // state.allTransactions.balanceAfter = payload.balanceAfter
     },

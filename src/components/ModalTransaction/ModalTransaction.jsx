@@ -87,8 +87,6 @@ const ModalAddTransaction = () => {
       }
       return;
     }
-    console.log(balance);
-    console.log(balanceAfter);
     if (
       type === 'EXPENSE' &&
       normalizedAmount * -1 >
@@ -96,7 +94,6 @@ const ModalAddTransaction = () => {
           ? balanceAfter.toFixed(2)
           : balance.toFixed(2))
     ) {
-      console.log(111);
       toast.warning(
         'You need to increase the balance for applying the transaction with such amount'
       );

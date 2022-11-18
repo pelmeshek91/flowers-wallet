@@ -48,6 +48,7 @@ const ModalAddTransaction = () => {
   const [type, setType] = useState('EXPENSE');
   const startDate = new Date();
   const toastId = useRef('enterAmount');
+  const dataTransaction = useSelector(financeSelectors.selectTransactionsData);
 
   useEffect(() => {
     if (!categories) dispatch(getCategories());
@@ -90,7 +91,10 @@ const ModalAddTransaction = () => {
     console.log(balanceAfter);
     if (
       type === 'EXPENSE' &&
-      normalizedAmount * -1 > (balanceAfter ? balanceAfter : balance)
+      normalizedAmount * -1 >
+        (dataTransaction.length > 0
+          ? balanceAfter.toFixed(2)
+          : balance.toFixed(2))
     ) {
       console.log(111);
       toast.warning(

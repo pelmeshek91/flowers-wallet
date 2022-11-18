@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
 import { useDispatch } from 'react-redux';
+// import { useSelector } from 'react-redux';
+// import { selectError } from 'redux/auth/authSelectors';
+
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { toast } from 'react-toastify';
 
 import { login } from '../../redux/auth/authOperations';
 import { AuthButton } from '../Button/Button';
@@ -27,6 +33,10 @@ const SignupSchema = object().shape({
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+
+  // const error = useSelector(selectError);
+
+  // error && toast.error(`${error}`);
 
   return (
     <div className={s.mainFormBox}>
@@ -53,6 +63,7 @@ export const LoginForm = () => {
         >
           {({ errors, touched }) => (
             <Form className={s.form}>
+              {/* <ToastContainer position="top-center" autoClose={2000} /> */}
               <div className={s.label}>
                 <Mail className={s.inputIcon} />
                 <Field

@@ -40,34 +40,34 @@ body {
   backdrop-filter: blur(25px);
 }
 
-@media screen and (min-width: 768px) {
-  body {
-    background-image: url('images/Body/peach.svg'),
-      url('images/Body/purple.svg');
-    background-repeat: no-repeat;
-    background-position: 260% -40%, -160% 140%;
-  }
-}
-@media screen and (min-width: 1000px) {
-  body {
-    background-position: 140% -40%, -40% 150%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  body {
-    background-position: 140% -40%, -40% 160%;
-  }
-}
-@media screen and (min-width: 1280px) {
-  body {
-    background-position: 130% -40%, -20% 160%;
-  }
-}
-@media screen and (min-width: 1480px) {
-  body {
-    background-position: 120% -30%, -20% 160%;
-  }
-}
+// @media screen and (min-width: 768px) {
+//   body {
+//     background-image: url('images/Body/peach.svg'),
+//       url('images/Body/purple.svg');
+//     background-repeat: no-repeat;
+//     background-position: 260% -40%, -160% 140%;
+//   }
+// }
+// @media screen and (min-width: 1000px) {
+//   body {
+//     background-position: 140% -40%, -40% 150%;
+//   }
+// }
+// @media screen and (min-width: 1200px) {
+//   body {
+//     background-position: 140% -40%, -40% 160%;
+//   }
+// }
+// @media screen and (min-width: 1280px) {
+//   body {
+//     background-position: 130% -40%, -20% 160%;
+//   }
+// }
+// @media screen and (min-width: 1480px) {
+//   body {
+//     background-position: 120% -30%, -20% 160%;
+//   }
+// }
 
 ul {
   margin: 0;

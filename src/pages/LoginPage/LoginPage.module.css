@@ -1,6 +1,8 @@
 .loginSection {
+  min-height: 100vh;
   padding: 107px 0;
   margin: 0 auto;
+  background: var(--main-bg-cl);
 }
 
 @media screen and (min-width: 768px) {
@@ -52,7 +54,7 @@
   .pictureBox {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 153px 0 0;
     margin-left: 76px;
     margin-right: 31px;

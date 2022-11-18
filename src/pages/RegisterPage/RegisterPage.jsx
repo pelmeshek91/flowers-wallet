@@ -1,5 +1,7 @@
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import { useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { selectToken } from 'redux/auth/authSelectors';
 
 import { ReactComponent as Picture } from '../../images/AuthForm/women-picture.svg';
@@ -16,6 +18,7 @@ export const RegisterPage = () => {
 
   return (
     <section className={s.registerSection}>
+      <ToastContainer position="top-center" autoClose={2000} />
       {isTablet && <EllipsPink className={s.ellipsPink} />}
       {isTablet && <EllipsViolet className={s.ellipsViolet} />}
       <div className={s.container}>

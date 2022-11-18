@@ -37,10 +37,17 @@ export const TransactionTable = () => {
       : [];
 
   const sortedData = DataArray
-    ? [...DataArray, ...DataNewArray].sort(
-        (prevData, nextData) =>
-          nextData.transactionDate - prevData.transactionDate
-      )
+    ? [...DataArray, ...DataNewArray]
+        .sort(
+          (prevData, nextData) =>
+            nextData.transactionDate - prevData.transactionDate
+        )
+        .reduce((acc, element, index) => {
+          if (acc[0]?.id !== element.id) {
+            acc.push(element);
+          }
+          return acc;
+        }, [])
     : null;
 
   return (

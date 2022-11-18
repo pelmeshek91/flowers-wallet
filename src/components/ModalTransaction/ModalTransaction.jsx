@@ -17,6 +17,7 @@ import 'react-datetime/css/react-datetime.css';
 import s from './ModalAddTransaction.module.css';
 import { toast } from 'react-toastify';
 import { getCategories } from 'redux/transactions/transactionsOperations';
+import { selectUserBalance } from '../../redux/auth/authSelectors';
 
 const handleAmount = value => {
   if (!value || Number.isNaN(Number(value))) return value;
@@ -41,6 +42,8 @@ const valid = function (current) {
 const ModalAddTransaction = () => {
   const dispatch = useDispatch();
   const categories = useSelector(financeSelectors.selectCategories);
+  const balance = useSelector(selectUserBalance);
+  const balanceAfter = useSelector(financeSelectors.selectTotalBalance);
   const [chooseType, setChooseType] = useState(false);
   const [type, setType] = useState('EXPENSE');
   const startDate = new Date();
@@ -81,6 +84,19 @@ const ModalAddTransaction = () => {
       if (!toast.isActive(toastId.current)) {
         toastId.current = toast.error('Enter amount!');
       }
+      return;
+    }
+    console.log(balance);
+    console.log(balanceAfter);
+    if (
+      type === 'EXPENSE' &&
+      normalizedAmount * -1 > (balanceAfter ? balanceAfter : balance)
+    ) {
+      console.log(111);
+      toast.warning(
+        'You need to increase the balance for applying the transaction with such amount'
+      );
+      isCloseModal();
       return;
     }
     dispatch(

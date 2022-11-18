@@ -48,8 +48,6 @@ const financeSlice = createSlice({
       state.error = null;
     },
     [addTransaction.fulfilled]: (state, { payload }) => {
-      console.dir(state);
-      console.log(payload);
       state.isLoading = false;
 
       if (payload) {
